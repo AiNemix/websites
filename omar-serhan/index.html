@@ -1,1 +1,941 @@
-﻿<!DOCTYPE html><html><head><title>omar-serhan</title></head><body><h1>omar-serhan</h1><p>Coming soon.</p></body></html>
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
+    <title>Omar Serhan – Ihr Experte für Gold in Hildesheim</title>
+    <meta name='description' content='Transparenter Goldankauf, exklusiver Goldverkauf und faire Preise für Edelmetalle in Hildesheim. Vertrauen Sie auf jahrelange Expertise.'>
+    <link rel='stylesheet' href='assets/css/styles.css'>
+    <style>
+        /* === WOW EFFECTS === */
+        @keyframes goldShimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4); }
+            50% { box-shadow: 0 0 20px 4px rgba(184, 134, 11, 0.15); }
+        }
+        @keyframes countUp { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+        .hero h1 {
+            background: linear-gradient(90deg, #fff 30%, #FFD700 50%, #fff 70%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: goldShimmer 4s ease-in-out infinite;
+        }
+
+        /* Gold Price Ticker */
+        .gold-ticker {
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--colors-surface, #2C2C2C) 50%, #1a1a1a 100%);
+            border-bottom: 2px solid var(--colors-accent, #B8860B);
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .gold-ticker::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.03), transparent);
+            animation: goldShimmer 6s linear infinite;
+        }
+        .gold-ticker .container {
+            display: flex; align-items: center; justify-content: center;
+            gap: 2rem; flex-wrap: wrap;
+        }
+        .ticker-item {
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .ticker-label {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--colors-muted, #999);
+        }
+        .ticker-price {
+            font-family: var(--font-display, 'Playfair Display', serif);
+            font-size: 1.5rem; font-weight: 700;
+            color: var(--colors-accent2, #FFD700);
+            animation: countUp 0.5s ease-out;
+        }
+        .ticker-unit {
+            font-size: 0.75rem; color: var(--colors-muted, #999);
+        }
+        .ticker-update {
+            font-size: 0.7rem; color: var(--colors-muted, #999);
+        }
+        .ticker-live {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            font-size: 0.7rem; color: #22c55e; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .ticker-live::before {
+            content: ''; width: 8px; height: 8px; border-radius: 50%;
+            background: #22c55e;
+            animation: pulse-gold 2s ease-in-out infinite;
+            box-shadow: 0 0 6px #22c55e;
+        }
+
+        /* Products Showcase */
+        .products-showcase { padding: var(--spacing-xl, 4rem) 0; }
+        .products-showcase h2 {
+            background: linear-gradient(90deg, var(--colors-text, #eee) 30%, var(--colors-accent2, #FFD700) 50%, var(--colors-text, #eee) 70%);
+            background-size: 200% auto;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            animation: goldShimmer 5s ease-in-out infinite;
+        }
+        .products-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.2rem; margin-top: 2rem;
+        }
+        .product-card {
+            background: var(--colors-surface, #2C2C2C);
+            border: 1px solid var(--colors-border, #444);
+            border-radius: var(--radius-lg, 12px);
+            padding: 1.5rem; text-align: center;
+            transition: all 0.3s ease;
+            position: relative; overflow: hidden;
+        }
+        .product-card::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.05), transparent);
+            transition: left 0.6s ease;
+        }
+        .product-card:hover::before { left: 100%; }
+        .product-card:hover {
+            border-color: var(--colors-accent, #B8860B);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(184, 134, 11, 0.15);
+        }
+        .product-card .product-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .product-card h4 {
+            font-family: var(--font-display, 'Playfair Display', serif);
+            font-size: 1rem; margin-bottom: 0.3rem;
+            color: var(--colors-text, #eee);
+        }
+        .product-card .product-weight {
+            font-size: 0.8rem; color: var(--colors-muted, #999); margin-bottom: 0.8rem;
+        }
+        .product-card .product-price {
+            font-size: 1.3rem; font-weight: 700;
+            color: var(--colors-accent2, #FFD700);
+            font-family: var(--font-display, 'Playfair Display', serif);
+        }
+        .product-card .product-cta {
+            display: inline-block; margin-top: 0.8rem; padding: 6px 16px;
+            background: var(--colors-primary, #7f1d1d); color: var(--colors-text, #eee);
+            border-radius: var(--radius-sm, 6px); font-size: 0.8rem; font-weight: 600;
+            transition: background 0.2s;
+        }
+        .product-card .product-cta:hover { background: #a02d2d; color: #fff; }
+        .products-more {
+            text-align: center; margin-top: 2rem;
+        }
+        .tax-hint {
+            text-align: center; font-size: 0.8rem; color: var(--colors-muted, #999);
+            font-style: italic; margin-top: 1.5rem;
+        }
+
+        /* Animated stats */
+        .stats-bar {
+            display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+            padding: 1.5rem 0;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-family: var(--font-display, 'Playfair Display', serif);
+            font-size: 2.2rem; font-weight: 700;
+            color: var(--colors-accent2, #FFD700);
+        }
+        .stat-label {
+            font-size: 0.8rem; color: var(--colors-muted, #999);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* Pillar card hover glow */
+        .pillar-card { transition: all 0.3s ease; }
+        .pillar-card:hover {
+            border-color: var(--colors-accent, #B8860B);
+            box-shadow: 0 8px 30px rgba(184, 134, 11, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Service cards enhanced hover */
+        .service-card { transition: all 0.4s ease; }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+        }
+
+        /* Step numbers - clean circular badge */
+        .step-number {
+            animation: none;
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            border-radius: 50%;
+            border: 2px solid var(--colors-accent, #B8860B);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-right: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .ticker-price { font-size: 1.2rem; }
+            .gold-ticker .container { gap: 1rem; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .product-card { padding: 1rem; }
+            .product-card .product-price { font-size: 1.1rem; }
+            .stats-bar { gap: 1.5rem; }
+            .stat-number { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
+
+    <header class='site-header'>
+        <div class='container header-container'>
+            <a href='./' class='logo'>Omar Serhan</a>
+            <nav class='main-nav'>
+                <ul>
+                    <li><a href='./' class='active'>Startseite</a></li>
+                    <li><a href='goldankauf/'>Goldankauf</a></li>
+                    <li><a href='goldverkauf/'>Goldverkauf</a></li>
+                    <li><a href='ueber-uns/'>Über uns</a></li>
+                    <li><a href='kontakt/'>Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href='kontakt/' class='btn btn-primary header-cta'>Bewertung anfordern</a>
+            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+        </div>
+    </header>
+
+    <main id='main-content'>
+        <!-- Live Gold Price Ticker -->
+        <div class='gold-ticker'>
+            <div class='container'>
+                <span class='ticker-live'>Live</span>
+                <div class='ticker-item'>
+                    <span class='ticker-label'>Gold (XAU/EUR)</span>
+                    <span class='ticker-price' id='hp-gold-price'>–</span>
+                    <span class='ticker-unit'>/ Feinunze</span>
+                </div>
+                <span class='ticker-update' id='hp-update-time'></span>
+            </div>
+        </div>
+
+        <!-- KM_IMAGE_REF: assets/img/image.png -->
+        <section class='hero' style='background-image: url(assets/img/image.png);' data-km-image='assets/img/image.png'>
+            <div class='hero-overlay'></div>
+            <div class='container hero-content text-center reveal'>
+                <span class='kicker'>Ihr Goldpartner in Hildesheim</span>
+                <h1>Ihr vertrauensvoller Partner für Gold</h1>
+                <p class='subline'>Transparenz, Sicherheit und faire Preise für Ihre Edelmetalle. Entdecken Sie den Wert, der in Ihren Schätzen steckt – diskret und fair bewertet.</p>
+                <div class='cta-group'>
+                    <a href='kontakt/' class='btn btn-primary'>Kostenlose Bewertung anfordern</a>
+                    <a href='goldverkauf/' class='btn btn-outline'>Goldprodukte entdecken</a>
+                </div>
+                <div class='trust-chips'>
+                    <span>Faire Preise</span>
+                    <span>Expertenberatung</span>
+                    <span>Lokale Präsenz</span>
+                </div>
+            </div>
+        </section>
+
+        <section class='trust-stripe surface'>
+            <div class='container text-center reveal'>
+                <h2>Ihr Vertrauen ist unser Goldstandard</h2>
+                <div class='features-grid'>
+                    <div class='feature-item'>
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='feature-icon'><path d='M12 2L9.18 8.45 2 9.27l5.18 5.05L5.82 22 12 18.27 18.18 22l-1.36-7.68L22 9.27l-7.18-.82L12 2z'/></svg>
+                        <span>Zertifizierte Expertise</span>
+                    </div>
+                    <div class='feature-item'>
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='feature-icon'><path d='M18 11.42a1 1 0 00-1-1H7a1 1 0 00-1 1v7.16a1 1 0 001 1h10a1 1 0 001-1zM9 13v4h2v-4zm4 0v4h2v-4z'/><path d='M20.62 8.47l-1.12-2.25A3.94 3.94 0 0016.12 4H7.88a3.94 3.94 0 00-3.38 2.22l-1.12 2.25A4 4 0 006.12 13h11.76a4 4 0 002.74-4.53zM8.33 6h7.34l.45.9H7.88z'/></svg>
+                        <span>Transparente Preise</span>
+                    </div>
+                    <div class='feature-item'>
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='feature-icon'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z'/></svg>
+                        <span>Diskrete Abwicklung</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class='surface'>
+            <div class='container'>
+                <div class='stats-bar reveal'>
+                    <div class='stat-item'>
+                        <div class='stat-number'>500+</div>
+                        <div class='stat-label'>Zufriedene Kunden</div>
+                    </div>
+                    <div class='stat-item'>
+                        <div class='stat-number'>15+</div>
+                        <div class='stat-label'>Jahre Erfahrung</div>
+                    </div>
+                    <div class='stat-item'>
+                        <div class='stat-number'>100%</div>
+                        <div class='stat-label'>Diskret & sicher</div>
+                    </div>
+                    <div class='stat-item'>
+                        <div class='stat-number'>999,9</div>
+                        <div class='stat-label'>Feingold Qualität</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Gold Chart -->
+        <section class='gold-chart-section'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Live Goldpreis (XAU/EUR)</h2>
+                    <p>Aktueller Goldkurs in Euro – Daten von TradingView</p>
+                </div>
+                <div class='chart-wrapper'>
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_xaueur"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                        new TradingView.widget({
+                            "width": "100%",
+                            "height": 400,
+                            "symbol": "OANDA:XAUEUR",
+                            "interval": "D",
+                            "timezone": "Europe/Berlin",
+                            "theme": "dark",
+                            "style": "1",
+                            "locale": "de_DE",
+                            "toolbar_bg": "#1a1a1a",
+                            "enable_publishing": false,
+                            "hide_top_toolbar": false,
+                            "hide_legend": false,
+                            "save_image": false,
+                            "container_id": "tradingview_xaueur",
+                            "backgroundColor": "#1a1a1a",
+                            "gridColor": "rgba(255,215,0,0.05)",
+                            "hide_side_toolbar": true,
+                            "allow_symbol_change": false,
+                            "studies": []
+                        });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Showcase like Degussa -->
+        <section class='products-showcase'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Goldbarren & Goldmünzen kaufen</h2>
+                    <p>Investieren Sie in physisches Gold – zu aktuellen Marktpreisen, steuerfrei gemäß §25c UStG.</p>
+                </div>
+                <div class='products-grid'>
+                    <div class='product-card reveal'>
+                        <div class='product-icon'><img src='assets/img/prod_bar_1g.jpg' alt='Goldbarren 1g' loading='lazy'></div>
+                        <h4>Goldbarren 1g</h4>
+                        <div class='product-weight'>999,9 Feingold</div>
+                        <div class='product-price price-cell' data-weight='1' data-premium='0.12'>–</div>
+                        <a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 1g' class='product-cta'>Anfragen</a>
+                    </div>
+                    <div class='product-card reveal'>
+                        <div class='product-icon'><img src='assets/img/prod_bar_10g.jpg' alt='Goldbarren 10g' loading='lazy'></div>
+                        <h4>Goldbarren 10g</h4>
+                        <div class='product-weight'>999,9 Feingold</div>
+                        <div class='product-price price-cell' data-weight='10' data-premium='0.05'>–</div>
+                        <a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 10g' class='product-cta'>Anfragen</a>
+                    </div>
+                    <div class='product-card reveal'>
+                        <div class='product-icon'><img src='assets/img/prod_bar_1oz.jpg' alt='Goldbarren 1 oz' loading='lazy'></div>
+                        <h4>Goldbarren 1 oz</h4>
+                        <div class='product-weight'>31,1g · 999,9</div>
+                        <div class='product-price price-cell' data-weight='31.1' data-premium='0.035'>–</div>
+                        <a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 1oz' class='product-cta'>Anfragen</a>
+                    </div>
+                    <div class='product-card reveal'>
+                        <div class='product-icon'><img src='assets/img/prod_bar_100g.jpg' alt='Goldbarren 100g' loading='lazy'></div>
+                        <h4>Goldbarren 100g</h4>
+                        <div class='product-weight'>999,9 Feingold</div>
+                        <div class='product-price price-cell' data-weight='100' data-premium='0.018'>–</div>
+                        <a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 100g' class='product-cta'>Anfragen</a>
+                    </div>
+                    <div class='product-card reveal'>
+                        <div class='product-icon'><img src='assets/img/prod_coin_kruger.jpg' alt='Krügerrand 1 oz' loading='lazy'></div>
+                        <h4>Krügerrand 1 oz</h4>
+                        <div class='product-weight'>33,93g · Südafrika</div>
+                        <div class='product-price price-cell' data-weight='31.1' data-premium='0.05'>–</div>
+                        <a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Krügerrand 1oz' class='product-cta'>Anfragen</a>
+                    </div>
+                    <div class='product-card reveal'>
+                        <div class='product-icon'><img src='assets/img/prod_coin_maple.jpg' alt='Maple Leaf 1 oz' loading='lazy'></div>
+                        <h4>Maple Leaf 1 oz</h4>
+                        <div class='product-weight'>31,1g · Kanada</div>
+                        <div class='product-price price-cell' data-weight='31.1' data-premium='0.05'>–</div>
+                        <a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Maple Leaf 1oz' class='product-cta'>Anfragen</a>
+                    </div>
+                    <div class='product-card reveal'>
+                        <div class='product-icon'><img src='assets/img/prod_coin_philh.jpg' alt='Philharmoniker 1 oz' loading='lazy'></div>
+                        <h4>Philharmoniker 1 oz</h4>
+                        <div class='product-weight'>31,1g · Österreich</div>
+                        <div class='product-price price-cell' data-weight='31.1' data-premium='0.05'>–</div>
+                        <a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Philharmoniker 1oz' class='product-cta'>Anfragen</a>
+                    </div>
+                    <div class='product-card reveal'>
+                        <div class='product-icon'><img src='assets/img/prod_bar_1kg.jpg' alt='Goldbarren 1 kg' loading='lazy'></div>
+                        <h4>Goldbarren 1 kg</h4>
+                        <div class='product-weight'>1.000g · 999,9</div>
+                        <div class='product-price price-cell' data-weight='1000' data-premium='0.008'>–</div>
+                        <a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 1kg' class='product-cta'>Anfragen</a>
+                    </div>
+                </div>
+                <p class='tax-hint'>Anlagegold ist gemäß §25c UStG von der Mehrwertsteuer befreit. Preise sind Richtwerte basierend auf dem aktuellen Spotpreis.</p>
+                <div class='products-more'>
+                    <a href='goldverkauf/' class='btn btn-outline'>Alle Produkte ansehen</a>
+                </div>
+            </div>
+        </section>
+
+        <section class='value-proposition'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Ihre Vorteile bei Omar Serhan</h2>
+                </div>
+                <div class='pillars-grid'>
+                    <div class='pillar-card reveal'>
+                        <h3>Expertise & Erfahrung</h3>
+                        <p>Seit Jahren sind wir Ihr erfahrener Ansprechpartner für Edelmetalle in Hildesheim. Unsere tiefgreifende Marktkenntnis sichert Ihnen stets eine fundierte Beratung und Bewertung.</p>
+                        <ul class='benefits-list'>
+                            <li>Jahrelange Marktkenntnis</li>
+                            <li>Fundierte Beratung</li>
+                            <li>Sichere Einschätzung</li>
+                        </ul>
+                    </div>
+                    <div class='pillar-card reveal'>
+                        <h3>Transparente Bewertung</h3>
+                        <p>Bei uns erleben Sie den Goldankauf und -verkauf in voller Transparenz. Jeder Schritt der Bewertung wird nachvollziehbar erklärt, damit Sie den Wert Ihrer Edelmetalle genau verstehen.</p>
+                        <ul class='benefits-list'>
+                            <li>Nachvollziehbare Schritte</li>
+                            <li>Faire Preisgestaltung</li>
+                            <li>Ehrliche Kommunikation</li>
+                        </ul>
+                    </div>
+                    <div class='pillar-card reveal'>
+                        <h3>Sichere Abwicklung</h3>
+                        <p>Diskretion und Sicherheit stehen bei jeder Transaktion an erster Stelle. Ob Ankauf oder Verkauf, Ihre Angelegenheiten werden mit größter Sorgfalt und Vertraulichkeit behandelt.</p>
+                        <ul class='benefits-list'>
+                            <li>Absolute Diskretion</li>
+                            <li>Vertrauliche Beratung</li>
+                            <li>Geschützte Transaktionen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class='signature-divider'></div>
+
+        <section class='services-teaser surface'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Unsere Leistungen für Sie</h2>
+                </div>
+                <div class='services-grid'>
+                    <a href='goldankauf/' class='service-card reveal'>
+                        <!-- KM_IMAGE_REF: assets/img/image_1.png -->
+                        <img src='assets/img/image_1.png' alt='Verschiedenes Altgold auf einer präzisen Waage' loading='lazy' class='card-image' data-km-image='assets/img/image_1.png'>
+                        <div class='card-content'>
+                            <h3>Goldankauf</h3>
+                            <p>Verwandeln Sie Ihr Altgold, Bruchgold oder Zahngold in bares Geld. Wir bieten Ihnen faire Preise und eine transparente Bewertung Ihrer Edelmetalle.</p>
+                            <span class='card-link'>Mehr erfahren</span>
+                        </div>
+                    </a>
+                    <a href='goldverkauf/' class='service-card reveal'>
+                        <!-- KM_IMAGE_REF: assets/img/image_2.png -->
+                        <img src='assets/img/image_2.png' alt='Elegant arrangierte Goldbarren und Goldmünzen' loading='lazy' class='card-image' data-km-image='assets/img/image_2.png'>
+                        <div class='card-content'>
+                            <h3>Goldverkauf</h3>
+                            <p>Investieren Sie in bleibende Werte mit unserem exklusiven Angebot an Goldbarren und Goldmünzen. Sichern Sie Ihre Zukunft mit physischem Gold.</p>
+                            <span class='card-link'>Mehr erfahren</span>
+                        </div>
+                    </a>
+                    <a href='goldverkauf/' class='service-card reveal'>
+                        <!-- KM_IMAGE_REF: assets/img/image_3.png -->
+                        <img src='assets/img/image_3.png' alt='Detailaufnahme von edlem Goldschmuck' loading='lazy' class='card-image' data-km-image='assets/img/image_3.png'>
+                        <div class='card-content'>
+                            <h3>Edler Schmuck</h3>
+                            <p>Entdecken Sie eine erlesene Auswahl an hochwertigem Goldschmuck, der Eleganz und Wert vereint. Finden Sie Ihr nächstes Lieblingsstück bei uns.</p>
+                            <span class='card-link'>Mehr erfahren</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class='process-section'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Ihr Weg zu fairem Goldhandel</h2>
+                </div>
+                <div class='process-steps'>
+                    <div class='process-step reveal'>
+                        <div class='step-number'>1</div>
+                        <div class='step-content'>
+                            <h3>Kontakt aufnehmen</h3>
+                            <p>Vereinbaren Sie einen diskreten Termin in unserer Filiale in Hildesheim. Wir nehmen uns Zeit für Sie und Ihr Anliegen.</p>
+                        </div>
+                    </div>
+                    <div class='process-step reveal'>
+                        <div class='step-number'>2</div>
+                        <div class='step-content'>
+                            <h3>Kostenlose Bewertung</h3>
+                            <p>Ihre Edelmetalle werden von unseren Experten präzise und transparent bewertet. Sie erhalten eine detaillierte Aufschlüsselung.</p>
+                        </div>
+                    </div>
+                    <div class='process-step reveal'>
+                        <div class='step-number'>3</div>
+                        <div class='step-content'>
+                            <h3>Faires Angebot</h3>
+                            <p>Basierend auf dem aktuellen Goldkurs unterbreiten wir Ihnen ein unverbindliches und faires Angebot für Ihre Schätze.</p>
+                        </div>
+                    </div>
+                    <div class='process-step reveal'>
+                        <div class='step-number'>4</div>
+                        <div class='step-content'>
+                            <h3>Sichere Abwicklung</h3>
+                            <p>Bei Annahme des Angebots erfolgt die Auszahlung sofort und diskret. Beim Kauf erhalten Sie zertifizierte Ware.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class='about-teaser surface'>
+            <div class='container reveal'>
+                <div class='about-teaser-grid'>
+                    <div class='about-teaser-content'>
+                        <h2>Über Omar Serhan</h2>
+                        <p>Bei Omar Serhan in Hildesheim steht der Kunde im Mittelpunkt. Unsere Philosophie basiert auf absoluter Diskretion, höchster Kundenorientierung und tiefgreifendem Fachwissen im Edelmetallhandel. Wir verstehen, dass der Handel mit Gold Vertrauenssache ist, und legen größten Wert auf eine transparente und persönliche Beratung. Unser Ziel ist es, Ihnen nicht nur den besten Preis zu bieten, sondern auch ein Gefühl von Sicherheit und Wertschätzung bei jeder Transaktion zu vermitteln.</p>
+                        <a href='ueber-uns/' class='btn btn-outline'>Mehr über uns</a>
+                    </div>
+                    <div class='about-teaser-image'>
+                        <!-- KM_IMAGE_REF: assets/img/image_4.png -->
+                        <img src='assets/img/image_4.png' alt='Symbolbild für diskrete und professionelle Beratung' loading='lazy' data-km-image='assets/img/image_4.png'>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class='testimonials'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Das sagen unsere Kunden</h2>
+                </div>
+                <div class='testimonial-slider-wrapper'>
+                    <div class='testimonial-slider'>
+                        <div class='testimonial-slide'>
+                            <p class='quote'>'Die Beratung war hervorragend und der Ankaufsprozess absolut transparent. Ich fühlte mich bestens aufgehoben.'</p>
+                            <cite class='author'>Zufriedener Kunde aus Hildesheim</cite>
+                        </div>
+                        <div class='testimonial-slide'>
+                            <p class='quote'>'Ich habe hier Goldbarren gekauft und bin von der Qualität und dem Service begeistert. Eine klare Empfehlung!'</p>
+                            <cite class='author'>Anleger aus der Region</cite>
+                        </div>
+                        <div class='testimonial-slide'>
+                            <p class='quote'>'Sehr diskret und professionell. Mein Altgold wurde fair bewertet und die Auszahlung erfolgte umgehend.'</p>
+                            <cite class='author'>Privatverkäufer</cite>
+                        </div>
+                    </div>
+                    <div class='slider-controls'>
+                        <button class='slider-btn prev' aria-label='Vorheriges Testimonial'>&lt;</button>
+                        <div class='slider-dots'></div>
+                        <button class='slider-btn next' aria-label='Nächstes Testimonial'>&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class='faq-teaser surface'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Häufig gestellte Fragen</h2>
+                </div>
+                <div class='faq-accordion'>
+                    <details class='faq-item'>
+                        <summary>Wie funktioniert der Goldankauf?</summary>
+                        <p>Der Goldankauf bei Omar Serhan ist einfach und transparent. Sie vereinbaren einen Termin, unsere Experten bewerten Ihr Gold präzise und machen Ihnen ein faires Angebot. Bei Annahme erfolgt die sofortige Auszahlung.</p>
+                    </details>
+                    <details class='faq-item'>
+                        <summary>Welche Goldarten kaufen Sie an?</summary>
+                        <p>Wir kaufen eine Vielzahl von Goldarten an, darunter Altgold, Bruchgold, Zahngold, Goldmünzen, Goldbarren und hochwertigen Goldschmuck. Bringen Sie einfach Ihre Edelmetalle zur Bewertung mit.</p>
+                    </details>
+                    <details class='faq-item'>
+                        <summary>Wie wird der Wert ermittelt?</summary>
+                        <p>Der Wert Ihrer Edelmetalle wird anhand des aktuellen Goldkurses, des Feingehaltes (Punze) und des Gewichts ermittelt. Wir nutzen geeichte Waagen und erklären Ihnen den gesamten Prozess detailliert.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class='cta-footer'>
+            <div class='container text-center reveal'>
+                <h2>Bereit für Ihre Goldtransaktion?</h2>
+                <div class='cta-group'>
+                    <a href='kontakt/' class='btn btn-primary'>Jetzt Kontakt aufnehmen</a>
+                    <a href='ueber-uns/' class='btn btn-outline'>Mehr erfahren</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class='site-footer surface'>
+        <div class='container'>
+            <div class='footer-grid'>
+                <div class='footer-col'>
+                    <h4>Omar Serhan</h4>
+                    <p>Ihr vertrauensvoller Partner für Goldankauf und Goldverkauf in Hildesheim.</p>
+                </div>
+                <div class='footer-col'>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href='./'>Startseite</a></li>
+                        <li><a href='goldankauf/'>Goldankauf</a></li>
+                        <li><a href='goldverkauf/'>Goldverkauf</a></li>
+                        <li><a href='ueber-uns/'>Über uns</a></li>
+                        <li><a href='kontakt/'>Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class='footer-col'>
+                    <h4>Kontakt</h4>
+                    <address>
+                        Goldankauf, Kaiserstraße 25<br>
+                        31134 Hildesheim<br>
+                        <a href='tel:+4951219990764'>05121 999 0764</a><br>
+                        <a href='tel:+491787330555'>0178 7330 555</a><br>
+                        <a href='mailto:info@goldankauf-hildesheim.de'>info@goldankauf-hildesheim.de</a>
+                    </address>
+                </div>
+                <div class='footer-col'>
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href='impressum/'>Impressum</a></li>
+                        <li><a href='datenschutz/'>Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class='footer-bottom'>
+                <p>&copy; 2024 Omar Serhan. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class='cookie-banner' id='cookie-banner'>
+        <p>Diese Website verwendet Cookies, um die Funktionalität zu gewährleisten. <a href='datenschutz/'>Mehr erfahren</a></p>
+        <div class='cookie-buttons'>
+            <button id='accept-cookies' class='btn btn-primary'>Akzeptieren</button>
+        </div>
+    </div>
+    
+    <div id='km-lightbox' class='km-lightbox' style='display: none;'>
+        <button class='close-lightbox' aria-label='Schließen'>&times;</button>
+        <button class='prev-lightbox' aria-label='Vorheriges Bild'>&lt;</button>
+        <button class='next-lightbox' aria-label='Nächstes Bild'>&gt;</button>
+        <img src='' alt='Großansicht Bild' class='lightbox-content'>
+    </div>
+
+    <div class='sticky-cta' id='sticky-cta'>
+        <a href='kontakt/' class='btn btn-primary'>Kostenlose Bewertung</a>
+    </div>
+
+    <script src='assets/js/main.js'></script>
+
+    <!-- Live Gold Price for Homepage -->
+    <script>
+    (function() {
+        var TROY_OZ_GRAM = 31.1035;
+        function updateHomePrices(spotPerOz) {
+            var el = document.getElementById('hp-gold-price');
+            if (el) el.textContent = spotPerOz.toLocaleString('de-DE', {style:'currency', currency:'EUR'});
+            var t = document.getElementById('hp-update-time');
+            if (t) t.textContent = new Date().toLocaleTimeString('de-DE');
+            document.querySelectorAll('.price-cell[data-weight]').forEach(function(c) {
+                var w = parseFloat(c.dataset.weight), p = parseFloat(c.dataset.premium);
+                var price = (spotPerOz / TROY_OZ_GRAM) * w * (1 + p);
+                c.textContent = price.toLocaleString('de-DE', {style:'currency', currency:'EUR', minimumFractionDigits:2, maximumFractionDigits:2});
+            });
+        }
+        function tryApi(url, extract) {
+            return fetch(url)
+                .then(function(r) {
+                    if (!r.ok) throw new Error(r.status);
+                    return r.json();
+                })
+                .then(extract);
+        }
+        function fetchGold() {
+            tryApi('https://api.gold-api.com/price/XAU/EUR', function(d) {
+                if (d && d.price > 0) return d.price;
+                throw new Error('no price');
+            })
+            .then(updateHomePrices)
+            .catch(function() {
+                return tryApi('https://api.gold-api.com/price/XAU', function(d) {
+                    if (d && d.price > 0) return d.price * (d.exchangeRate || 0.86);
+                    throw new Error('no price');
+                })
+                .then(updateHomePrices);
+            })
+            .catch(function() {
+                return tryApi('https://api.metals.live/v1/spot/gold', function(arr) {
+                    if (arr && arr.length && arr[0].price > 0) return arr[0].price * 0.86;
+                    throw new Error('no price');
+                })
+                .then(updateHomePrices);
+            })
+            .catch(function() {
+                return tryApi('https://data-asg.goldprice.org/dbXRates/EUR', function(d) {
+                    if (d && d.items && d.items[0] && d.items[0].xauPrice > 0) {
+                        updateHomePrices(d.items[0].xauPrice);
+                        return;
+                    }
+                    throw new Error('no price');
+                });
+            })
+            .catch(function() {
+                var el = document.getElementById('hp-gold-price');
+                if (el) el.textContent = 'Preis auf Anfrage';
+                document.querySelectorAll('.price-cell[data-weight]').forEach(function(c) { c.textContent = 'Auf Anfrage'; });
+            });
+        }
+        fetchGold();
+        setInterval(fetchGold, 5 * 60 * 1000);
+    })();
+    </script>
+
+<style id='km-chat-fix'>
+/*KM_CHAT_SANITIZED*/
+/* ensure chat never blocks the whole page */
+.n8n-chat__overlay, .n8n-chat-overlay, .n8n-chat-widget__overlay, .n8n-chat-widget-overlay {
+  pointer-events: none !important;
+  background: transparent !important;
+}
+.n8n-chat__overlay * , .n8n-chat-overlay * , .n8n-chat-widget__overlay * , .n8n-chat-widget-overlay * {
+  pointer-events: none !important;
+}
+/* keep the actual launcher/window clickable */
+.n8n-chat, .n8n-chat-widget, .n8n-chat-widget * {
+  pointer-events: auto;
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+<style id="km-chat-theme">
+  :root {
+    --chat--font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --chat--color-primary: #f97316;
+    --chat--color-primary-shade-50: #fa8c40;
+    --chat--color-secondary: #facc15;
+    --chat--color-light: #f8fafc;
+    --chat--color-dark: #050a14;
+
+    --chat--window--width: min(420px, 100vw);
+    --chat--window--height: 72vh;
+    --chat--border-radius: 24px;
+
+    --chat--header--background: transparent;
+    --chat--header--color: #f8fafc;
+    --chat--header--padding: 0.95rem 1.05rem;
+    --chat--heading--font-size: 0.98rem;
+    --chat--subtitle--font-size: 0.80rem;
+
+    --chat--message--bot--background: #f97b24;
+    --chat--message--bot--color: #0b1220;
+    --chat--message--user--background: #0b1220;
+    --chat--message--user--color: #e5e7eb;
+
+    --chat--launcher--background: #f97316;
+    --chat--launcher--color: #0b1220;
+    --chat--launcher--border-radius: 999px;
+  }
+
+  @keyframes km-widget-fade-up {
+    from { opacity: 0; transform: translateY(14px) scale(0.985); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes km-launcher-glow {
+    0%   { box-shadow: 0 0 0 0 #893f0c; }
+    60%  { box-shadow: 0 0 0 14px rgba(0,0,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+  }
+
+  /* Window: hochwertiger, weniger "Tool-Look" */
+  .chat-window {
+    position: relative;
+    border-radius: var(--chat--border-radius);
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 8% 0%, rgba(255,255,255,0.12), transparent 55%),
+      radial-gradient(circle at 120% 10%, rgba(255,255,255,0.08), transparent 60%),
+      linear-gradient(180deg, rgba(8, 15, 28, 0.94), rgba(6, 10, 18, 0.92));
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow:
+      0 28px 84px rgba(0,0,0,0.48),
+      0 10px 26px rgba(0,0,0,0.32);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: km-widget-fade-up 220ms cubic-bezier(.2,.9,.2,1);
+  }
+
+  /* Header: "App-Bar" + dezentes Brand-Badge */
+  .chat-window header {
+    background: linear-gradient(135deg, #422415 0%, #f99216 45%, #fbd231 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .chat-window header::before {
+    content: "";
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.55), rgba(255,255,255,0.0) 60%),
+      linear-gradient(135deg, #f98916, #f97316);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.30);
+    flex: 0 0 auto;
+  }
+  .chat-window header h1,
+  .chat-window header .chat-header-title {
+    font-weight: 650 !important;
+    letter-spacing: 0.01em;
+  }
+  .chat-window header p,
+  .chat-window header .chat-header-subtitle {
+    opacity: 0.86;
+  }
+
+  /* Messages: moderner Rhythmus */
+  .chat-messages { padding: 0.90rem 0.90rem 1.0rem; }
+  .chat-message {
+    border-radius: 20px !important;
+    line-height: 1.40;
+    letter-spacing: 0.01em;
+    box-shadow: none;
+  }
+  .chat-message.chat-message--bot { border: 1px solid rgba(255,255,255,0.10); }
+  .chat-message.chat-message--user { border: 1px solid rgba(255,255,255,0.06); }
+
+  /* Input: weniger "Formular", mehr "Messenger" */
+  .chat-input {
+    padding: 0.80rem 0.80rem 0.90rem;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    background: rgba(6, 10, 18, 0.70);
+    backdrop-filter: blur(10px);
+  }
+  .chat-input textarea,
+  .chat-input input {
+    border-radius: 16px !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    background: rgba(255,255,255,0.06) !important;
+    color: #e5e7eb !important;
+    outline: none !important;
+  }
+  .chat-input textarea:focus,
+  .chat-input input:focus {
+    border-color: #fb9a57 !important;
+    box-shadow: 0 0 0 4px #5f2c08 !important;
+  }
+
+  /* Send Button */
+  .chat-input button {
+    border-radius: 16px !important;
+    background: #f97316 !important;
+    color: #0b1220 !important;
+    border: 1px solid rgba(255,255,255,0.10) !important;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.30);
+    transition: transform 140ms ease, filter 140ms ease;
+  }
+  .chat-input button:hover { transform: translateY(-1px); filter: brightness(1.03); }
+
+  /* Launcher: cleaner + weniger "Badge/Text" */
+  .chat-launcher {
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+    box-shadow: 0 18px 46px rgba(0,0,0,0.40);
+    animation: km-launcher-glow 3.0s ease-in-out infinite;
+  }
+  .chat-launcher:hover { transform: translateY(-1px); filter: brightness(1.03); }
+
+  /* Footer entfernen, falls vorhanden */
+  .chat-footer, .chat-window footer { display: none !important; }
+
+  /* Mobile: native App Feeling + Safe Area */
+  @media (max-width: 768px) {
+    .chat-window {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: calc(100vh - 74px) !important;
+      bottom: 0 !important;
+      right: 0 !important;
+      border-radius: 20px 20px 0 0;
+      border-left: none;
+      border-right: none;
+    }
+    .chat-input { padding-bottom: calc(0.95rem + env(safe-area-inset-bottom)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chat-window, .chat-launcher { animation: none !important; }
+    .chat-input button { transition: none !important; }
+  }
+</style>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://n8n.srv1000937.hstgr.cloud/webhook/km-chat/chat',
+    webhookConfig: { method: 'POST', headers: {} },
+    mode: 'window',
+    chatInputKey: 'chatInput',
+    chatSessionKey: 'sessionId',
+    loadPreviousSession: true,
+    metadata: { tenantId: 'km-example' },
+    showWelcomeScreen: false,
+    defaultLanguage: 'de',
+    initialMessages: [
+      'Willkommen bei Ihr Unternehmen! 👋',
+      'Wie können wir Ihnen konkret weiterhelfen?'
+    ],
+    i18n: {
+      de: {
+        title: 'Chat mit Ihr Unternehmen',
+        subtitle: 'Schnelle, persönliche Antworten zu Leistungen, Terminen & Angeboten.',
+        footer: '',
+        getStarted: 'Chat starten',
+        inputPlaceholder: 'Kurz Ihre Frage hier eintippen …'
+      }
+    }
+  });
+</script>
+</body>
+</html>

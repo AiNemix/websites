@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
+    <title>Goldverkauf in Hildesheim – Omar Serhan</title>
+    <meta name='description' content='Goldbarren und Goldmünzen kaufen in Hildesheim. Live-Goldpreis, faire Konditionen und zertifizierte Qualität bei Omar Serhan.'>
+    <link rel='stylesheet' href='../assets/css/styles.css'>
+    <style>
+        .gold-price-banner {
+            background: linear-gradient(135deg, var(--colors-surface) 0%, #1a1a1a 100%);
+            border: 1px solid var(--colors-accent);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        .gold-price-banner .price-label {
+            font-size: 0.9rem;
+            color: var(--colors-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .gold-price-banner .price-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--colors-accent2);
+            font-weight: 700;
+        }
+        .gold-price-banner .price-unit {
+            font-size: 0.9rem;
+            color: var(--colors-muted);
+        }
+        .gold-price-banner .price-update {
+            font-size: 0.8rem;
+            color: var(--colors-muted);
+            margin-top: var(--spacing-xs);
+        }
+        .chart-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--colors-border);
+            margin-bottom: var(--spacing-xl);
+        }
+        .product-table-wrapper {
+            overflow-x: auto;
+            margin-bottom: var(--spacing-xl);
+        }
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+        .product-table thead {
+            background-color: var(--colors-surface);
+        }
+        .product-table th {
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-align: left;
+            font-weight: 600;
+            color: var(--colors-accent2);
+            border-bottom: 2px solid var(--colors-accent);
+            white-space: nowrap;
+        }
+        .product-table td {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-bottom: 1px solid var(--colors-border);
+            white-space: nowrap;
+        }
+        .product-table tbody tr:hover {
+            background-color: rgba(184, 134, 11, 0.08);
+        }
+        .product-table .price-cell {
+            font-weight: 600;
+            color: var(--colors-accent2);
+            font-size: 1.1rem;
+        }
+        .product-table .cta-cell a {
+            display: inline-block;
+            padding: 6px 16px;
+            background-color: var(--colors-primary);
+            color: var(--colors-text);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background-color 0.2s ease;
+        }
+        .product-table .cta-cell a:hover {
+            background-color: #a02d2d;
+            color: #fff;
+        }
+        .tax-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--colors-muted);
+            margin-top: var(--spacing-md);
+            font-style: italic;
+        }
+        .products-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        .products-nav a {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border: 1px solid var(--colors-border);
+            border-radius: var(--radius-md);
+            color: var(--colors-text);
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .products-nav a:hover,
+        .products-nav a.active {
+            border-color: var(--colors-accent);
+            background-color: rgba(184, 134, 11, 0.15);
+            color: var(--colors-accent2);
+        }
+        @media (max-width: 768px) {
+            .gold-price-banner .price-value { font-size: 1.8rem; }
+            .product-table { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
+
+    <header class='site-header'>
+        <div class='container header-container'>
+            <a href='../' class='logo'>Omar Serhan</a>
+            <nav class='main-nav'>
+                <ul>
+                    <li><a href='../'>Startseite</a></li>
+                    <li><a href='../goldankauf/'>Goldankauf</a></li>
+                    <li><a href='../goldverkauf/' class='active'>Goldverkauf</a></li>
+                    <li><a href='../ueber-uns/'>Über uns</a></li>
+                    <li><a href='../kontakt/'>Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href='../kontakt/' class='btn btn-primary header-cta'>Bewertung anfordern</a>
+            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+        </div>
+    </header>
+
+    <main id='main-content'>
+        <section class='hero-subpage with-bg' style='background-image: url(../assets/img/image_2.png);' data-km-image='assets/img/image_2.png'>
+            <div class='hero-overlay'></div>
+            <div class='container text-center reveal'>
+                <h1>Goldverkauf – Ihre Investition in Werte</h1>
+                <p class='subline'>Goldbarren und Goldmünzen zu aktuellen Marktpreisen. Zertifizierte Qualität, faire Konditionen.</p>
+            </div>
+        </section>
+
+        <section class='intro-section'>
+            <div class='container narrow reveal'>
+                <div class='gold-price-banner'>
+                    <div class='price-label'>Aktueller Goldpreis (XAU/EUR)</div>
+                    <div class='price-value' id='gold-spot-price'>Wird geladen...</div>
+                    <div class='price-unit'>pro Feinunze (31,1g)</div>
+                    <div class='price-update' id='price-update-time'></div>
+                </div>
+                <div class='section-intro text-center'>
+                    <h2>Investieren Sie in physisches Gold</h2>
+                    <p>Gold ist seit Jahrtausenden ein bewährter Wertspeicher. Bei Omar Serhan erhalten Sie zertifizierte Goldbarren und international anerkannte Anlagemünzen zu fairen, am Spotpreis orientierten Konditionen. Anlagegold ist in Deutschland gemäß §25c UStG von der Mehrwertsteuer befreit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class='surface'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Goldpreis-Entwicklung</h2>
+                </div>
+                <div class='chart-container'>
+                    <!-- TradingView Widget -->
+                    <div class='tradingview-widget-container'>
+                        <div id='tradingview-chart' style='height: 400px;'></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Unsere Goldbarren</h2>
+                    <p>LBMA-zertifizierte Goldbarren in 999,9/1000 Feingold. Alle Preise inkl. Aufschlag, zzgl. Versicherung bei Versand.</p>
+                </div>
+                <div class='product-table-wrapper'>
+                    <table class='product-table' id='bars-table'>
+                        <thead>
+                            <tr>
+                                <th>Produkt</th>
+                                <th>Gewicht</th>
+                                <th>Feinheit</th>
+                                <th>Preis</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Goldbarren 1g</td><td>1 g</td><td>999,9</td><td class='price-cell' data-weight='1' data-premium='0.12'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 1g'>Anfragen</a></td></tr>
+                            <tr><td>Goldbarren 5g</td><td>5 g</td><td>999,9</td><td class='price-cell' data-weight='5' data-premium='0.07'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 5g'>Anfragen</a></td></tr>
+                            <tr><td>Goldbarren 10g</td><td>10 g</td><td>999,9</td><td class='price-cell' data-weight='10' data-premium='0.05'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 10g'>Anfragen</a></td></tr>
+                            <tr><td>Goldbarren 1 oz</td><td>31,1 g</td><td>999,9</td><td class='price-cell' data-weight='31.1' data-premium='0.035'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 1oz'>Anfragen</a></td></tr>
+                            <tr><td>Goldbarren 50g</td><td>50 g</td><td>999,9</td><td class='price-cell' data-weight='50' data-premium='0.025'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 50g'>Anfragen</a></td></tr>
+                            <tr><td>Goldbarren 100g</td><td>100 g</td><td>999,9</td><td class='price-cell' data-weight='100' data-premium='0.018'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 100g'>Anfragen</a></td></tr>
+                            <tr><td>Goldbarren 250g</td><td>250 g</td><td>999,9</td><td class='price-cell' data-weight='250' data-premium='0.012'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 250g'>Anfragen</a></td></tr>
+                            <tr><td>Goldbarren 500g</td><td>500 g</td><td>999,9</td><td class='price-cell' data-weight='500' data-premium='0.01'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 500g'>Anfragen</a></td></tr>
+                            <tr><td>Goldbarren 1 kg</td><td>1.000 g</td><td>999,9</td><td class='price-cell' data-weight='1000' data-premium='0.008'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Goldbarren 1kg'>Anfragen</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class='tax-note'>Anlagegold ist gemäß §25c UStG von der Mehrwertsteuer befreit. Preise sind Richtwerte basierend auf dem aktuellen Spotpreis und können bei Abschluss abweichen.</p>
+            </div>
+        </section>
+
+        <section class='surface'>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Unsere Goldmünzen</h2>
+                    <p>International anerkannte Anlagemünzen in höchster Qualität.</p>
+                </div>
+                <div class='product-table-wrapper'>
+                    <table class='product-table' id='coins-table'>
+                        <thead>
+                            <tr>
+                                <th>Münze</th>
+                                <th>Gewicht</th>
+                                <th>Feinheit</th>
+                                <th>Herkunft</th>
+                                <th>Preis</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Krügerrand 1 oz</td><td>33,93 g (1 oz fein)</td><td>916,7</td><td>Südafrika</td><td class='price-cell' data-weight='31.1' data-premium='0.05'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Krügerrand 1oz'>Anfragen</a></td></tr>
+                            <tr><td>Maple Leaf 1 oz</td><td>31,1 g</td><td>999,9</td><td>Kanada</td><td class='price-cell' data-weight='31.1' data-premium='0.05'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Maple Leaf 1oz'>Anfragen</a></td></tr>
+                            <tr><td>Wiener Philharmoniker 1 oz</td><td>31,1 g</td><td>999,9</td><td>Österreich</td><td class='price-cell' data-weight='31.1' data-premium='0.05'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Wiener Philharmoniker 1oz'>Anfragen</a></td></tr>
+                            <tr><td>Britannia 1 oz</td><td>31,1 g</td><td>999,9</td><td>Großbritannien</td><td class='price-cell' data-weight='31.1' data-premium='0.05'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Britannia 1oz'>Anfragen</a></td></tr>
+                            <tr><td>Krügerrand 1/2 oz</td><td>16,97 g (1/2 oz fein)</td><td>916,7</td><td>Südafrika</td><td class='price-cell' data-weight='15.55' data-premium='0.07'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Krügerrand 1/2oz'>Anfragen</a></td></tr>
+                            <tr><td>Krügerrand 1/4 oz</td><td>8,48 g (1/4 oz fein)</td><td>916,7</td><td>Südafrika</td><td class='price-cell' data-weight='7.775' data-premium='0.09'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Krügerrand 1/4oz'>Anfragen</a></td></tr>
+                            <tr><td>Maple Leaf 1/4 oz</td><td>7,78 g</td><td>999,9</td><td>Kanada</td><td class='price-cell' data-weight='7.775' data-premium='0.09'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Maple Leaf 1/4oz'>Anfragen</a></td></tr>
+                            <tr><td>Krügerrand 1/10 oz</td><td>3,39 g (1/10 oz fein)</td><td>916,7</td><td>Südafrika</td><td class='price-cell' data-weight='3.11' data-premium='0.14'>–</td><td class='cta-cell'><a href='mailto:info@goldankauf-hildesheim.de?subject=Anfrage Krügerrand 1/10oz'>Anfragen</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class='tax-note'>Anlagegold ist gemäß §25c UStG von der Mehrwertsteuer befreit. Preise sind Richtwerte basierend auf dem aktuellen Spotpreis und können bei Abschluss abweichen.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class='container reveal'>
+                <div class='section-intro text-center'>
+                    <h2>Ihre Vorteile beim Goldkauf</h2>
+                </div>
+                <div class='advantages-list'>
+                    <div class='advantage-item reveal'>
+                        <h3>Zertifizierte Qualität</h3>
+                        <p>LBMA-zertifizierte Barren und staatlich geprägte Münzen. Jedes Produkt ist geprüft und mit Echtheitszertifikat.</p>
+                    </div>
+                    <div class='advantage-item reveal'>
+                        <h3>Aktuelle Marktpreise</h3>
+                        <p>Unsere Preise orientieren sich in Echtzeit am internationalen Goldspot. Transparent und fair kalkuliert.</p>
+                    </div>
+                    <div class='advantage-item reveal'>
+                        <h3>Persönliche Beratung</h3>
+                        <p>Individuelle Anlageberatung in unserer Filiale in Hildesheim. Diskret, kompetent und unverbindlich.</p>
+                    </div>
+                    <div class='advantage-item reveal'>
+                        <h3>Sofortige Verfügbarkeit</h3>
+                        <p>Gängige Barren und Münzen direkt aus unserem Lagerbestand. Sofortige Mitnahme nach Bezahlung möglich.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class='cta-section surface'>
+            <div class='container text-center reveal'>
+                <h2>Jetzt Gold kaufen</h2>
+                <p>Kontaktieren Sie uns für ein individuelles Angebot oder besuchen Sie uns in Hildesheim.</p>
+                <div class='cta-group'>
+                    <a href='mailto:info@goldankauf-hildesheim.de?subject=Goldkauf Anfrage' class='btn btn-primary'>Per E-Mail anfragen</a>
+                    <a href='../kontakt/' class='btn btn-outline'>Kontakt aufnehmen</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class='site-footer surface'>
+        <div class='container'>
+            <div class='footer-grid'>
+                <div class='footer-col'>
+                    <h4>Omar Serhan</h4>
+                    <p>Ihr vertrauensvoller Partner für Goldankauf und Goldverkauf in Hildesheim.</p>
+                </div>
+                <div class='footer-col'>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href='../'>Startseite</a></li>
+                        <li><a href='../goldankauf/'>Goldankauf</a></li>
+                        <li><a href='../goldverkauf/'>Goldverkauf</a></li>
+                        <li><a href='../ueber-uns/'>Über uns</a></li>
+                        <li><a href='../kontakt/'>Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class='footer-col'>
+                    <h4>Kontakt</h4>
+                    <address>
+                        Goldankauf, Kaiserstraße 25<br>
+                        31134 Hildesheim<br>
+                        <a href='tel:+4915755717194'>+4915755717194</a><br>
+                        <a href='mailto:info@goldankauf-hildesheim.de'>info@goldankauf-hildesheim.de</a>
+                    </address>
+                </div>
+                <div class='footer-col'>
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href='../impressum/'>Impressum</a></li>
+                        <li><a href='../datenschutz/'>Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class='footer-bottom'>
+                <p>&copy; 2024 Omar Serhan. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id='km-lightbox' class='km-lightbox' style='display: none;'>
+        <button class='close-lightbox' aria-label='Schließen'>&times;</button>
+        <button class='prev-lightbox' aria-label='Vorheriges Bild'>&lt;</button>
+        <button class='next-lightbox' aria-label='Nächstes Bild'>&gt;</button>
+        <img src='' alt='Großansicht Bild' class='lightbox-content'>
+    </div>
+
+    <div class='sticky-cta' id='sticky-cta'>
+        <a href='../kontakt/' class='btn btn-primary'>Kostenlose Bewertung</a>
+    </div>
+
+    <script src='../assets/js/main.js'></script>
+
+    <!-- TradingView Chart Widget -->
+    <script type='text/javascript' src='https://s3.tradingview.com/tv.js'></script>
+    <script>
+    new TradingView.widget({
+        "container_id": "tradingview-chart",
+        "autosize": true,
+        "symbol": "OANDA:XAUEUR",
+        "interval": "D",
+        "timezone": "Europe/Berlin",
+        "theme": "dark",
+        "style": "1",
+        "locale": "de_DE",
+        "toolbar_bg": "#1A1A1A",
+        "enable_publishing": false,
+        "hide_top_toolbar": false,
+        "hide_legend": false,
+        "save_image": false,
+        "backgroundColor": "#1A1A1A",
+        "gridColor": "rgba(74, 74, 74, 0.3)",
+        "height": 400
+    });
+    </script>
+
+    <!-- Gold price fetcher and product price calculator -->
+    <script>
+    (function() {
+        var TROY_OZ_GRAM = 31.1035;
+
+        function updatePrices(spotPerOz) {
+            document.getElementById('gold-spot-price').textContent =
+                spotPerOz.toLocaleString('de-DE', {style: 'currency', currency: 'EUR'});
+            document.getElementById('price-update-time').textContent =
+                'Zuletzt aktualisiert: ' + new Date().toLocaleTimeString('de-DE');
+
+            var cells = document.querySelectorAll('.price-cell[data-weight]');
+            cells.forEach(function(cell) {
+                var weightG = parseFloat(cell.dataset.weight);
+                var premium = parseFloat(cell.dataset.premium);
+                var pricePerGram = spotPerOz / TROY_OZ_GRAM;
+                var price = pricePerGram * weightG * (1 + premium);
+                cell.textContent = price.toLocaleString('de-DE', {
+                    style: 'currency', currency: 'EUR',
+                    minimumFractionDigits: 2, maximumFractionDigits: 2
+                });
+            });
+        }
+
+        function fetchGoldPrice() {
+            fetch('https://api.gold-api.com/price/XAU/EUR')
+                .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+                .then(function(d) {
+                    if (d && d.price > 0) { updatePrices(d.price); return; }
+                    throw new Error('No price data');
+                })
+                .catch(function() {
+                    // Fallback 1: gold-api.com USD with exchange rate
+                    return fetch('https://api.gold-api.com/price/XAU')
+                        .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+                        .then(function(d) {
+                            if (d && d.price > 0) { updatePrices(d.price * 0.86); return; }
+                            throw new Error('No price data');
+                        });
+                })
+                .catch(function() {
+                    // Fallback 2: goldprice.org
+                    return fetch('https://data-asg.goldprice.org/dbXRates/EUR')
+                        .then(function(r) { return r.json(); })
+                        .then(function(data) {
+                            if (data && data.items && data.items[0] && data.items[0].xauPrice > 0) {
+                                updatePrices(data.items[0].xauPrice); return;
+                            }
+                            throw new Error('No price data');
+                        });
+                })
+                .catch(function() { showFallback(); });
+        }
+
+        function showFallback() {
+            document.getElementById('gold-spot-price').textContent = 'Preis auf Anfrage';
+            document.getElementById('price-update-time').textContent =
+                'Bitte kontaktieren Sie uns für aktuelle Preise.';
+            var cells = document.querySelectorAll('.price-cell[data-weight]');
+            cells.forEach(function(cell) {
+                cell.textContent = 'Auf Anfrage';
+            });
+        }
+
+        fetchGoldPrice();
+        setInterval(fetchGoldPrice, 5 * 60 * 1000); // refresh every 5 minutes
+    })();
+    </script>
+</body>
+</html>
