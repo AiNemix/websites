@@ -30,6 +30,9 @@
   --accent:    #22c55e;
   --gold:      #d4a853;
 
+  --warm:      #d4763a;
+  --warm-light: #fdf0e8;
+
   --radius-sm: 6px;
   --radius:    12px;
   --radius-lg: 20px;
@@ -272,6 +275,8 @@ p  { color: var(--slate-600); line-height: 1.75; }
   background: linear-gradient(135deg, var(--slate-200), var(--slate-300));
   position: relative; overflow: hidden;
 }
+/* property card — contain image zoom */
+.property-card > div:first-child { overflow: hidden; }
 .property-card__img-placeholder {
   width: 100%; height: 220px;
   background: linear-gradient(135deg, var(--green-900) 0%, var(--slate-700) 100%);

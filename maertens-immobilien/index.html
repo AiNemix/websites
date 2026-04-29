@@ -28,15 +28,41 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=70') center/cover no-repeat;
-      opacity: .08;
+      background: url('https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=1920&q=70') center/cover no-repeat;
+      opacity: .12;
       pointer-events: none;
     }
 
-    /* Property image */
+    /* iframe clip — only show property listings, hide their nav */
+    .embed-clip-container {
+      position: relative;
+      overflow: hidden;
+      height: 680px;
+    }
+    .embed-clip-container iframe {
+      position: absolute;
+      top: -52px;        /* clips their tab-nav bar */
+      left: 0;
+      width: 100%;
+      height: calc(100% + 52px);
+      border: none;
+      display: block;
+      background: var(--slate-50);
+    }
+    @media (max-width: 768px) {
+      .embed-clip-container { height: 480px; }
+    }
+
+    /* Property image — warm filter for cozy feel */
     .prop-img {
       width: 100%; height: 220px; object-fit: cover; display: block;
       background: linear-gradient(135deg, var(--green-900), var(--slate-700));
+      filter: brightness(1.03) saturate(1.08) sepia(0.06);
+      transition: filter .4s ease, transform .4s ease;
+    }
+    .property-card:hover .prop-img {
+      filter: brightness(1.06) saturate(1.12) sepia(0.04);
+      transform: scale(1.03);
     }
 
     /* Glass overlay on hero image cards */
@@ -343,16 +369,17 @@
         <div class="embed-toolbar-dots">
           <span></span><span></span><span></span>
         </div>
-        <div class="embed-toolbar-url">maertens-immobilien.com/de/</div>
+        <div class="embed-toolbar-url">maertens-immobilien.com — Immobilien</div>
         <button class="embed-toolbar-btn" onclick="window.open('https://www.maertens-immobilien.com/de/','_blank')">↗ Vollbild</button>
       </div>
-      <iframe
-        class="embed-iframe"
-        src="https://www.maertens-immobilien.com/de/"
-        title="Maertens Immobilien — Objektübersicht"
-        loading="lazy"
-        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
-      ></iframe>
+      <div class="embed-clip-container">
+        <iframe
+          src="https://www.maertens-immobilien.com/de/"
+          title="Maertens Immobilien — Objektübersicht"
+          loading="lazy"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
+        ></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -377,7 +404,7 @@
       <!-- Property 1 — Braunschweig Wohnung AKTIV -->
       <div class="property-card" data-animate>
         <div style="position:relative">
-          <img class="prop-img" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Eigentumswohnung Braunschweig" loading="lazy">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Eigentumswohnung Braunschweig" loading="lazy">
           <span class="property-card__badge badge-active">Aktiv</span>
         </div>
         <div class="property-card__body">
@@ -407,7 +434,7 @@
       <!-- Property 2 — Braunschweig Wohnung 350k AKTIV -->
       <div class="property-card" data-animate>
         <div style="position:relative">
-          <img class="prop-img" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80" alt="Großzügige Eigentumswohnung Braunschweig" loading="lazy">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Großzügige Eigentumswohnung Braunschweig" loading="lazy">
           <span class="property-card__badge badge-active">Neu</span>
         </div>
         <div class="property-card__body">
@@ -437,7 +464,7 @@
       <!-- Property 3 — Bielefeld RESERVIERT -->
       <div class="property-card" data-animate>
         <div style="position:relative">
-          <img class="prop-img" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Einfamilienhaus Bielefeld" loading="lazy">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=800&q=80" alt="Einfamilienhaus Bielefeld" loading="lazy">
           <span class="property-card__badge badge-reserved">Reserviert</span>
         </div>
         <div class="property-card__body">
@@ -464,7 +491,7 @@
       <!-- Property 4 — Gifhorn VERKAUFT -->
       <div class="property-card" data-animate>
         <div style="position:relative">
-          <img class="prop-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Doppelhaushälfte Gifhorn" loading="lazy">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80" alt="Doppelhaushälfte Gifhorn" loading="lazy">
           <span class="property-card__badge badge-sold">Verkauft</span>
         </div>
         <div class="property-card__body">
@@ -516,7 +543,7 @@
       <!-- Property 6 — Weddel VERKAUFT -->
       <div class="property-card" data-animate>
         <div style="position:relative">
-          <img class="prop-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="Einfamilienhaus Weddel" loading="lazy">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=800&q=80" alt="Einfamilienhaus Weddel" loading="lazy">
           <span class="property-card__badge badge-sold">Verkauft</span>
         </div>
         <div class="property-card__body">
@@ -1198,13 +1225,13 @@
       <div class="footer__col">
         <h4>Navigation</h4>
         <div class="footer__links">
-          <a href="#start">Startseite</a>
+          <a href="index.html">Startseite</a>
           <a href="#immobilien">Alle Immobilien</a>
-          <a href="#leistungen">Leistungen</a>
+          <a href="ueber-uns.html">Über uns</a>
           <a href="#rechner">Finanzierungsrechner</a>
           <a href="#team">Team</a>
-          <a href="#bewertungen">Bewertungen</a>
           <a href="#kontakt">Kontakt</a>
+          <a href="impressum.html">Impressum</a>
         </div>
       </div>
 
@@ -1242,10 +1269,9 @@
     <div class="footer__bottom">
       <span>© 2025 Maertens Immobilien GmbH · Alle Rechte vorbehalten</span>
       <div class="footer__bottom-links">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">Widerruf</a>
-        <a href="#">AGB</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="ueber-uns.html">Über uns</a>
       </div>
     </div>
   </div>
