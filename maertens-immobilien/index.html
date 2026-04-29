@@ -1,1 +1,1267 @@
-﻿<!DOCTYPE html><html><head><title>maertens-immobilien</title></head><body><h1>maertens-immobilien</h1><p>Coming soon.</p></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maertens Immobilien GmbH – Ihr Immobilienmakler in Braunschweig. Transparent. Offen. Digital. Kauf, Verkauf & Vermietung von Immobilien in der Region.">
+  <meta name="keywords" content="Immobilien Braunschweig, Makler Braunschweig, Haus kaufen, Wohnung kaufen, Immobilienmakler">
+  <title>Maertens Immobilien GmbH — Braunschweig</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a6b3a'/%3E%3Cpath d='M16 6 L28 16 L26 16 L26 26 L18 26 L18 20 L14 20 L14 26 L6 26 L6 16 L4 16 Z' fill='white'/%3E%3C/svg%3E">
+
+  <style>
+    /* Font override — Sora for headings */
+    h1, h2, h3, h4, .navbar__logo, .footer__logo span {
+      font-family: 'Sora', system-ui, sans-serif;
+    }
+
+    /* Hero image overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=70') center/cover no-repeat;
+      opacity: .08;
+      pointer-events: none;
+    }
+
+    /* Property image */
+    .prop-img {
+      width: 100%; height: 220px; object-fit: cover; display: block;
+      background: linear-gradient(135deg, var(--green-900), var(--slate-700));
+    }
+
+    /* Glass overlay on hero image cards */
+    .hero-img-card {
+      border-radius: var(--radius-xl); overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,.5);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .hero-img-card img {
+      width: 100%; height: 260px; object-fit: cover; display: block;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      background: #fff; border-bottom: 1px solid var(--slate-100);
+      padding: 0;
+    }
+    .stats-bar__inner {
+      display: flex; align-items: center; justify-content: center;
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      gap: 0;
+    }
+    .stats-bar__item {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      padding: 28px 16px; border-right: 1px solid var(--slate-100);
+      transition: background .2s;
+    }
+    .stats-bar__item:last-child { border-right: none; }
+    .stats-bar__item:hover { background: var(--green-50); }
+    .stats-bar__num {
+      font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800;
+      color: var(--primary); line-height: 1;
+    }
+    .stats-bar__label {
+      font-size: .78rem; color: var(--slate-500); text-transform: uppercase;
+      letter-spacing: .07em; margin-top: 4px; text-align: center;
+    }
+
+    /* Process section */
+    .process { background: var(--slate-50); }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; top: 28px; left: 10%; right: 10%;
+      height: 2px; background: linear-gradient(90deg, var(--green-100), var(--green-600), var(--green-100));
+      z-index: 0;
+    }
+    .process-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .process-num {
+      width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 20px;
+      background: var(--primary); color: #fff; display: flex; align-items: center;
+      justify-content: center; font-family: 'Sora', sans-serif; font-size: 1.2rem;
+      font-weight: 800; box-shadow: 0 4px 16px rgba(26,107,58,.35);
+      border: 3px solid #fff;
+    }
+    .process-step h4 { font-size: .95rem; color: var(--slate-800); margin-bottom: 8px; }
+    .process-step p { font-size: .82rem; }
+
+    /* Why us / USP grid */
+    .usp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .usp-card {
+      background: var(--green-50); border: 1px solid var(--green-100);
+      border-radius: var(--radius-lg); padding: 28px;
+    }
+    .usp-icon { font-size: 2rem; margin-bottom: 14px; }
+    .usp-card h3 { font-size: 1rem; color: var(--slate-800); margin-bottom: 8px; }
+    .usp-card p { font-size: .85rem; }
+
+    /* Map placeholder */
+    .map-embed {
+      border-radius: var(--radius-xl); overflow: hidden;
+      box-shadow: var(--shadow-lg); height: 380px;
+      border: 1px solid var(--slate-200);
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: none; }
+
+    /* Notification toast */
+    .toast {
+      position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(16px);
+      background: var(--slate-900); color: #fff;
+      padding: 14px 24px; border-radius: var(--radius); font-size: .9rem;
+      box-shadow: var(--shadow-xl); z-index: 9999;
+      opacity: 0; transition: all .3s; pointer-events: none; white-space: nowrap;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Certifications row */
+    .cert-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
+    .cert-badge {
+      display: flex; align-items: center; gap: 8px; padding: 10px 16px;
+      background: var(--slate-100); border-radius: var(--radius); font-size: .82rem;
+      font-weight: 600; color: var(--slate-600);
+    }
+    .cert-badge svg { width: 16px; height: 16px; color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .process-steps { grid-template-columns: repeat(2,1fr); }
+      .process-steps::before { display: none; }
+      .usp-grid { grid-template-columns: 1fr; }
+      .stats-bar__inner { flex-wrap: wrap; }
+      .stats-bar__item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid var(--slate-100); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="/" class="navbar__logo">
+      <div class="navbar__logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+      </div>
+      Maertens <span>Immobilien</span>
+    </a>
+
+    <nav class="navbar__nav">
+      <a href="#immobilien">Immobilien</a>
+      <div class="dropdown">
+        <a href="#leistungen">Leistungen ▾</a>
+        <div class="dropdown-menu">
+          <a href="#leistungen">Verkauf</a>
+          <a href="#leistungen">Vermietung</a>
+          <a href="#leistungen">Bewertung</a>
+          <a href="#leistungen">Beratung</a>
+        </div>
+      </div>
+      <a href="#rechner">Finanzierung</a>
+      <a href="#team">Team</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="navbar__cta">
+      <a href="tel:017052243" class="btn btn-ghost btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        0170 522 43 55
+      </a>
+      <a href="#kontakt" class="btn btn-primary">Kostenlose Bewertung</a>
+    </div>
+
+    <button class="navbar__mobile" id="mobileMenuBtn" aria-label="Menü öffnen">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__header">
+    <span class="mobile-menu__logo">Maertens Immobilien</span>
+    <button id="mobileMenuClose">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2" width="28" height="28">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu__links">
+    <a href="#immobilien" onclick="closeMobileMenu()">Immobilien</a>
+    <a href="#leistungen" onclick="closeMobileMenu()">Leistungen</a>
+    <a href="#rechner" onclick="closeMobileMenu()">Finanzierungsrechner</a>
+    <a href="#team" onclick="closeMobileMenu()">Team</a>
+    <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
+  </div>
+  <div class="mobile-menu__footer">
+    <a href="tel:017052243" class="btn btn-secondary" style="text-align:center">📞 0170 522 43 55</a>
+    <a href="#kontakt" class="btn btn-primary" onclick="closeMobileMenu()">Kostenlose Bewertung</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero" id="start">
+  <div class="hero__bg-pattern"></div>
+  <div class="hero__glow"></div>
+
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span></span>
+        Braunschweig &amp; Region
+      </div>
+      <h1 class="fade-up">Wir verkaufen<br><em>Ihre Immobilie.</em></h1>
+      <p class="hero__sub fade-up fade-up-delay-1">
+        Transparent. Offen. Digital. — Ihr persönlicher Makler für Braunschweig, Wolfsburg, Gifhorn und Umgebung mit über 20 Jahren Erfahrung.
+      </p>
+      <div class="hero__actions fade-up fade-up-delay-2">
+        <a href="#immobilien" class="btn btn-primary btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          Immobilien entdecken
+        </a>
+        <a href="#kontakt" class="btn btn-white btn-lg">Jetzt Bewertung anfragen</a>
+      </div>
+      <div class="hero__stats fade-up fade-up-delay-3">
+        <div class="hero__stat">
+          <strong>200+</strong>
+          <span>Verkaufte Immobilien</span>
+        </div>
+        <div class="hero__stat">
+          <strong>20+</strong>
+          <span>Jahre Erfahrung</span>
+        </div>
+        <div class="hero__stat">
+          <strong>98%</strong>
+          <span>Zufriedene Kunden</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero-img-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Premium Immobilie in Braunschweig" loading="eager">
+      </div>
+      <div class="hero__search-card">
+        <h3>🏠 Immobilie finden</h3>
+        <div class="search-tabs">
+          <button class="search-tab active" onclick="setSearchTab(this,'kaufen')">Kaufen</button>
+          <button class="search-tab" onclick="setSearchTab(this,'mieten')">Mieten</button>
+          <button class="search-tab" onclick="setSearchTab(this,'bewerten')">Bewerten</button>
+        </div>
+        <div class="search-form">
+          <input type="text" placeholder="Ort, PLZ oder Stadtteil" id="searchLocation">
+          <div class="search-row">
+            <select id="searchType">
+              <option value="">Objekttyp</option>
+              <option>Einfamilienhaus</option>
+              <option>Doppelhaushälfte</option>
+              <option>Reihenhaus</option>
+              <option>Eigentumswohnung</option>
+              <option>Mehrfamilienhaus</option>
+              <option>Grundstück</option>
+            </select>
+            <select id="searchPrice">
+              <option value="">Max. Preis</option>
+              <option>bis 150.000 €</option>
+              <option>bis 250.000 €</option>
+              <option>bis 350.000 €</option>
+              <option>bis 500.000 €</option>
+              <option>über 500.000 €</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" onclick="doSearch()" style="width:100%">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            Suchen
+          </button>
+        </div>
+      </div>
+      <div class="hero__trust">
+        <div class="trust-badge">
+          <strong>IHK</strong>
+          <span>Zertifiziert</span>
+        </div>
+        <div class="trust-badge">
+          <strong>§34c</strong>
+          <span>Gewerbeordnung</span>
+        </div>
+        <div class="trust-badge">
+          <strong>DSGVO</strong>
+          <span>Konform</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ STATS BAR ═══════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-bar__inner">
+    <div class="stats-bar__item" data-animate>
+      <span class="stats-bar__num" data-count="200">0</span>
+      <span class="stats-bar__label">Verkaufte Objekte</span>
+    </div>
+    <div class="stats-bar__item" data-animate>
+      <span class="stats-bar__num" data-count="20">0</span>
+      <span class="stats-bar__label">Jahre Erfahrung</span>
+    </div>
+    <div class="stats-bar__item" data-animate>
+      <span class="stats-bar__num" data-count="98">0</span>
+      <span class="stats-bar__label">% Zufriedenheit</span>
+    </div>
+    <div class="stats-bar__item" data-animate>
+      <span class="stats-bar__num" data-count="5">0</span>
+      <span class="stats-bar__label">Regionen</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ IMMOBILIEN EMBED ═══════════════════════ -->
+<section class="embed-section" id="immobilien">
+  <div class="container">
+    <div class="embed-header" data-animate>
+      <div class="section-label">Aktuelle Objekte</div>
+      <h2>Unsere Immobilien</h2>
+      <p style="color:var(--slate-500); max-width:540px; margin:0 auto">Durchsuchen Sie unser aktuelles Portfolio direkt in unserem Immobilien-Verwaltungssystem.</p>
+    </div>
+    <div class="embed-wrapper" data-animate>
+      <div class="embed-toolbar">
+        <div class="embed-toolbar-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="embed-toolbar-url">maertens-immobilien.com/de/</div>
+        <button class="embed-toolbar-btn" onclick="window.open('https://www.maertens-immobilien.com/de/','_blank')">↗ Vollbild</button>
+      </div>
+      <iframe
+        class="embed-iframe"
+        src="https://www.maertens-immobilien.com/de/"
+        title="Maertens Immobilien — Objektübersicht"
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ FEATURED PROPERTIES ═══════════════════════ -->
+<section class="section properties" id="angebote">
+  <div class="container">
+    <div class="properties-header" data-animate>
+      <div>
+        <div class="section-label">Highlights</div>
+        <h2>Ausgewählte Angebote</h2>
+      </div>
+      <a href="https://www.maertens-immobilien.com/de/" target="_blank" class="btn btn-secondary">
+        Alle Objekte ansehen
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="grid-3" id="propertiesGrid">
+
+      <!-- Property 1 — Braunschweig Wohnung AKTIV -->
+      <div class="property-card" data-animate>
+        <div style="position:relative">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Eigentumswohnung Braunschweig" loading="lazy">
+          <span class="property-card__badge badge-active">Aktiv</span>
+        </div>
+        <div class="property-card__body">
+          <div class="property-card__price">300.000 €</div>
+          <div class="property-card__title">Gepflegte Eigentumswohnung</div>
+          <div class="property-card__loc">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Braunschweig
+          </div>
+          <div class="property-card__meta">
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              85 m²
+            </span>
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              3 Zimmer
+            </span>
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              Balkon
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 2 — Braunschweig Wohnung 350k AKTIV -->
+      <div class="property-card" data-animate>
+        <div style="position:relative">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80" alt="Großzügige Eigentumswohnung Braunschweig" loading="lazy">
+          <span class="property-card__badge badge-active">Neu</span>
+        </div>
+        <div class="property-card__body">
+          <div class="property-card__price">350.000 €</div>
+          <div class="property-card__title">Großzügige Eigentumswohnung</div>
+          <div class="property-card__loc">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Braunschweig
+          </div>
+          <div class="property-card__meta">
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              110 m²
+            </span>
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              4 Zimmer
+            </span>
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              Garage
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 3 — Bielefeld RESERVIERT -->
+      <div class="property-card" data-animate>
+        <div style="position:relative">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Einfamilienhaus Bielefeld" loading="lazy">
+          <span class="property-card__badge badge-reserved">Reserviert</span>
+        </div>
+        <div class="property-card__body">
+          <div class="property-card__price">220.000 €</div>
+          <div class="property-card__title">Einfamilienhaus mit Garten</div>
+          <div class="property-card__loc">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Bielefeld
+          </div>
+          <div class="property-card__meta">
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              140 m²
+            </span>
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              5 Zimmer
+            </span>
+            <span class="property-meta-item">🌿 Garten</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 4 — Gifhorn VERKAUFT -->
+      <div class="property-card" data-animate>
+        <div style="position:relative">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Doppelhaushälfte Gifhorn" loading="lazy">
+          <span class="property-card__badge badge-sold">Verkauft</span>
+        </div>
+        <div class="property-card__body">
+          <div class="property-card__price">299.000 €</div>
+          <div class="property-card__title">Doppelhaushälfte mit Terrasse</div>
+          <div class="property-card__loc">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Gifhorn
+          </div>
+          <div class="property-card__meta">
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              120 m²
+            </span>
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              4 Zimmer
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 5 — Wolfsburg VERKAUFT -->
+      <div class="property-card" data-animate>
+        <div style="position:relative">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="Reihenhaus Wolfsburg" loading="lazy">
+          <span class="property-card__badge badge-sold">Verkauft</span>
+        </div>
+        <div class="property-card__body">
+          <div class="property-card__price">299.000 €</div>
+          <div class="property-card__title">Modernes Reihenhaus</div>
+          <div class="property-card__loc">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Wolfsburg
+          </div>
+          <div class="property-card__meta">
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              130 m²
+            </span>
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              4 Zimmer
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 6 — Weddel VERKAUFT -->
+      <div class="property-card" data-animate>
+        <div style="position:relative">
+          <img class="prop-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="Einfamilienhaus Weddel" loading="lazy">
+          <span class="property-card__badge badge-sold">Verkauft</span>
+        </div>
+        <div class="property-card__body">
+          <div class="property-card__price">269.000 €</div>
+          <div class="property-card__title">Freistehendes Einfamilienhaus</div>
+          <div class="property-card__loc">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Weddel
+          </div>
+          <div class="property-card__meta">
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              160 m²
+            </span>
+            <span class="property-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              5 Zimmer
+            </span>
+            <span class="property-meta-item">🌿 Garten</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:40px" data-animate>
+      <a href="https://www.maertens-immobilien.com/de/" target="_blank" class="btn btn-primary btn-lg">
+        Alle Immobilien durchsuchen →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ PROCESS ═══════════════════════ -->
+<section class="section process" id="prozess">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:56px" data-animate>
+      <div class="section-label">So funktioniert's</div>
+      <h2>In 4 Schritten zum Erfolg</h2>
+      <p style="max-width:500px; margin:12px auto 0">Wir begleiten Sie von der ersten Bewertung bis zur notariellen Beurkundung.</p>
+    </div>
+    <div class="process-steps" data-animate>
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <h4>Kostenlose Bewertung</h4>
+        <p>Professionelle Marktpreisermittlung Ihrer Immobilie — kostenlos und unverbindlich.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <h4>Vermarktung starten</h4>
+        <p>Professionelle Fotos, digitales Exposé, Schaltung auf allen relevanten Portalen.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <h4>Besichtigungen & Verhandlung</h4>
+        <p>Wir koordinieren alle Termine und führen Preisverhandlungen in Ihrem Interesse.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <h4>Notartermin & Übergabe</h4>
+        <p>Vorbereitung aller Unterlagen, Begleitung zum Notar und professionelle Schlüsselübergabe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+<section class="section services" id="leistungen">
+  <div class="container">
+    <div class="section-label">Leistungen</div>
+    <h2>Was wir für Sie tun</h2>
+    <p>Umfassender Rundum-Service — von der Bewertung bis zur Schlüsselübergabe.</p>
+    <div class="grid-3">
+
+      <div class="service-card" data-animate>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg>
+        </div>
+        <h3>Immobilienbewertung</h3>
+        <p>Kostenlose, fundierte Marktpreisermittlung auf Basis aktueller Vergleichsdaten aus der Region.</p>
+      </div>
+
+      <div class="service-card" data-animate>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3>Professionelles Exposé</h3>
+        <p>Hochwertige Fotos, ansprechendes digitales Exposé und gezielte Vermarktung auf allen Top-Portalen.</p>
+      </div>
+
+      <div class="service-card" data-animate>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3>Besichtigungsmanagement</h3>
+        <p>Koordination aller Besichtigungstermine, Qualifizierung der Kaufinteressenten und Berichterstattung.</p>
+      </div>
+
+      <div class="service-card" data-animate>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3>Notartermin-Vorbereitung</h3>
+        <p>Vollständige Zusammenstellung aller notwendigen Unterlagen und reibungslose Abwicklung.</p>
+      </div>
+
+      <div class="service-card" data-animate>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </div>
+        <h3>Kauf &amp; Vermietung</h3>
+        <p>Ob Eigennutzer oder Kapitalanleger — wir finden die passende Immobilie oder den idealen Mieter.</p>
+      </div>
+
+      <div class="service-card" data-animate>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3>Digitale Vermarktung</h3>
+        <p>Moderne, datengestützte Vermarktungsstrategie mit Zugang zu über 2 Millionen aktiven Suchenden.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ USP / WHY US ═══════════════════════ -->
+<section class="section" style="background:#fff" id="warum">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px" data-animate>
+      <div class="section-label">Unser Versprechen</div>
+      <h2>Warum Maertens Immobilien?</h2>
+      <p style="max-width:500px; margin:12px auto 0">Wir stehen für Transparenz, Ehrlichkeit und echten Mehrwert — kein Marketing-Buzzwords, nur Ergebnisse.</p>
+    </div>
+    <div class="usp-grid" data-animate>
+      <div class="usp-card">
+        <div class="usp-icon">🎯</div>
+        <h3>Regionaler Experte</h3>
+        <p>Tiefes Marktverständnis für Braunschweig, Wolfsburg, Gifhorn und Umgebung — seit über 20 Jahren.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">📊</div>
+        <h3>Transparente Kommunikation</h3>
+        <p>Wir halten Sie immer auf dem Laufenden — regelmäßige Berichte über Anfragen, Besichtigungen und Marktentwicklung.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">💡</div>
+        <h3>Digital &amp; Modern</h3>
+        <p>Digitales Exposé, virtuelle Besichtigung, Online-Vertragsmanagement — zeitgemäß und komfortabel.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">🤝</div>
+        <h3>Persönliche Betreuung</h3>
+        <p>Ein fester Ansprechpartner vom ersten bis zum letzten Tag — kein Callcenter, kein Vertretungschaos.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">✅</div>
+        <h3>Faire Konditionen</h3>
+        <p>Klare Kosten, keine versteckten Gebühren — nur Erfolgshonorar wenn wir Ihre Immobilie verkaufen.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">🏆</div>
+        <h3>Nachgewiesene Erfolge</h3>
+        <p>Über 200 erfolgreich vermittelte Immobilien sprechen für sich — und unsere Kunden sprechen für uns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ FINANZIERUNGSRECHNER ═══════════════════════ -->
+<section class="section calculators" id="rechner">
+  <div class="container">
+    <div data-animate style="margin-bottom:40px">
+      <div class="section-label">Tools</div>
+      <h2>Finanzierungsrechner</h2>
+      <p>Berechnen Sie Ihre monatliche Rate, Mietrendite oder Ihr maximales Budget — direkt und kostenlos.</p>
+    </div>
+
+    <div class="calc-tabs" data-animate>
+      <button class="calc-tab active" onclick="switchCalc(this, 'tilgung')">Tilgungsrechner</button>
+      <button class="calc-tab" onclick="switchCalc(this, 'miete')">Mietrendite</button>
+      <button class="calc-tab" onclick="switchCalc(this, 'budget')">Budgetrechner</button>
+    </div>
+
+    <!-- TILGUNGSRECHNER -->
+    <div class="calc-panel active" id="calc-tilgung">
+      <div class="calc-wrapper">
+        <div class="calc-form">
+          <div class="form-group">
+            <label class="form-label">Kaufpreis (€)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="t-kaufpreis" value="300000" oninput="calcTilgung()">
+              <span class="form-suffix">€</span>
+            </div>
+            <input type="range" class="range-input" min="50000" max="1000000" step="5000" value="300000"
+              oninput="document.getElementById('t-kaufpreis').value=this.value; calcTilgung()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Eigenkapital (€)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="t-eigenkapital" value="60000" oninput="calcTilgung()">
+              <span class="form-suffix">€</span>
+            </div>
+            <input type="range" class="range-input" min="0" max="500000" step="5000" value="60000"
+              oninput="document.getElementById('t-eigenkapital').value=this.value; calcTilgung()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sollzins p.a. (%)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="t-zins" value="3.5" step="0.1" oninput="calcTilgung()">
+              <span class="form-suffix">%</span>
+            </div>
+            <input type="range" class="range-input" min="0.5" max="8" step="0.1" value="3.5"
+              oninput="document.getElementById('t-zins').value=this.value; calcTilgung()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tilgung p.a. (%)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="t-tilgung" value="2" step="0.1" oninput="calcTilgung()">
+              <span class="form-suffix">%</span>
+            </div>
+            <input type="range" class="range-input" min="1" max="10" step="0.1" value="2"
+              oninput="document.getElementById('t-tilgung').value=this.value; calcTilgung()">
+          </div>
+        </div>
+        <div class="calc-result" id="result-tilgung">
+          <h3>📊 Ihr Ergebnis</h3>
+          <div class="result-item">
+            <div class="result-label">Monatliche Rate</div>
+            <div class="result-value highlight" id="t-rate">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Darlehensbetrag</div>
+            <div class="result-value" id="t-darlehen">—</div>
+            <div class="result-note">Kaufpreis minus Eigenkapital</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Zinslast (Monat)</div>
+            <div class="result-value" id="t-zinslast">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Geschätzte Laufzeit</div>
+            <div class="result-value" id="t-laufzeit">—</div>
+          </div>
+          <p style="font-size:.75rem; color:rgba(255,255,255,.35); margin-top:16px">* Rechnerische Schätzung ohne Nebenkosten (Notar, Grunderwerbsteuer, Makler). Für eine persönliche Finanzierungsberatung kontaktieren Sie uns.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIETRENDITE -->
+    <div class="calc-panel" id="calc-miete">
+      <div class="calc-wrapper">
+        <div class="calc-form">
+          <div class="form-group">
+            <label class="form-label">Kaufpreis (€)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="m-kaufpreis" value="250000" oninput="calcMiete()">
+              <span class="form-suffix">€</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Monatliche Kaltmiete (€)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="m-miete" value="900" oninput="calcMiete()">
+              <span class="form-suffix">€</span>
+            </div>
+            <input type="range" class="range-input" min="200" max="5000" step="50" value="900"
+              oninput="document.getElementById('m-miete').value=this.value; calcMiete()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nebenkosten (% des Kaufpreises)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="m-nebenkosten" value="10" step="0.5" oninput="calcMiete()">
+              <span class="form-suffix">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Leerstand / Instandhaltung (% der Miete)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="m-kosten" value="15" step="1" oninput="calcMiete()">
+              <span class="form-suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="calc-result" id="result-miete">
+          <h3>📊 Ihr Ergebnis</h3>
+          <div class="result-item">
+            <div class="result-label">Brutto-Mietrendite</div>
+            <div class="result-value highlight" id="m-brutto">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Netto-Mietrendite</div>
+            <div class="result-value" id="m-netto">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Jährliche Mieteinnahmen</div>
+            <div class="result-value" id="m-jahrlich">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Gesamtinvestition</div>
+            <div class="result-value" id="m-gesamt">—</div>
+          </div>
+          <p style="font-size:.75rem; color:rgba(255,255,255,.35); margin-top:16px">* Ohne Steuereffekte. Für eine vollständige Investitionsanalyse beraten wir Sie gerne persönlich.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUDGETRECHNER -->
+    <div class="calc-panel" id="calc-budget">
+      <div class="calc-wrapper">
+        <div class="calc-form">
+          <div class="form-group">
+            <label class="form-label">Monatliches Nettoeinkommen (€)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="b-einkommen" value="3500" oninput="calcBudget()">
+              <span class="form-suffix">€</span>
+            </div>
+            <input type="range" class="range-input" min="1000" max="15000" step="100" value="3500"
+              oninput="document.getElementById('b-einkommen').value=this.value; calcBudget()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Eigenkapital (€)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="b-eigenkapital" value="50000" oninput="calcBudget()">
+              <span class="form-suffix">€</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Monatliche Belastung (max. % Einkommen)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="b-quote" value="35" oninput="calcBudget()">
+              <span class="form-suffix">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Zinssatz p.a. (%)</label>
+            <div class="form-input-group">
+              <input type="number" class="form-input" id="b-zins" value="3.5" step="0.1" oninput="calcBudget()">
+              <span class="form-suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="calc-result" id="result-budget">
+          <h3>📊 Ihr Ergebnis</h3>
+          <div class="result-item">
+            <div class="result-label">Max. Immobilienpreis</div>
+            <div class="result-value highlight" id="b-max">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Max. Darlehensbetrag</div>
+            <div class="result-value" id="b-darlehen">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Monatliche Rate (max.)</div>
+            <div class="result-value" id="b-rate">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Empfohlenes Eigenkapital</div>
+            <div class="result-value" id="b-ekempf">—</div>
+          </div>
+          <p style="font-size:.75rem; color:rgba(255,255,255,.35); margin-top:16px">* Faustregel: 20% Eigenkapital + Nebenkosten (~10%). Für eine verbindliche Finanzierungsberatung stehen wir bereit.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ TEAM ═══════════════════════ -->
+<section class="section team" id="team">
+  <div class="container">
+    <div class="section-label" style="margin:0 auto 12px; display:table">Team</div>
+    <h2 data-animate>Ihre Ansprechpartner</h2>
+    <p data-animate>Persönliche Beratung auf Augenhöhe — wir sind für Sie da.</p>
+
+    <div class="team-grid">
+
+      <div class="team-card" data-animate>
+        <div class="team-card__header">
+          <div class="team-avatar">DM</div>
+          <div class="team-card__info">
+            <h3>Dieter Maertens</h3>
+            <span class="team-card__role">Geschäftsführer &amp; Immobilienmakler</span>
+          </div>
+        </div>
+        <div class="team-card__body">
+          <p>Als Gründer und Geschäftsführer der Maertens Immobilien GmbH steht Dieter Maertens für persönliche Beratung, regionale Marktkenntnisse und kompromisslose Seriosität. Mit über 20 Jahren Erfahrung im Braunschweiger Immobilienmarkt ist er Ihr verlässlicher Partner beim Kauf und Verkauf.</p>
+          <div class="team-card__contact">
+            <div class="team-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              0170 522 43 55
+            </div>
+            <div class="team-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              info@maertens-immobilien.com
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card" data-animate>
+        <div class="team-card__header">
+          <div class="team-avatar">WB</div>
+          <div class="team-card__info">
+            <h3>Wolfgang Buhse</h3>
+            <span class="team-card__role">Immobilienmakler &amp; Fachwirt IW</span>
+          </div>
+        </div>
+        <div class="team-card__body">
+          <p>Wolfgang Buhse bringt fundiertes Fachwissen als geprüfter Fachwirt der Immobilienwirtschaft in jedes Beratungsgespräch. Ob Bewertung, Vermietung oder Kapitalanlage — er berät Sie präzise, ehrlich und lösungsorientiert.</p>
+          <div class="team-card__contact">
+            <div class="team-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              0531 — auf Anfrage
+            </div>
+            <div class="team-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+              Fachwirt Immobilienwirtschaft (IHK)
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cert-row" style="justify-content:center; margin-top:40px" data-animate>
+      <div class="cert-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        §34c GewO Zulassung
+      </div>
+      <div class="cert-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        IHK Braunschweig
+      </div>
+      <div class="cert-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        DSGVO konform
+      </div>
+      <div class="cert-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Fachwirt Immobilienwirtschaft
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+<section class="section testimonials" id="bewertungen">
+  <div class="container">
+    <div class="section-label" style="margin:0 auto 12px; display:table">Kundenstimmen</div>
+    <h2 data-animate>Was unsere Kunden sagen</h2>
+    <p data-animate>Über 200 zufriedene Verkäufer und Käufer — lesen Sie selbst.</p>
+
+    <div class="testimonial-track" data-animate>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Herr Maertens hat unser Haus in Braunschweig zum Bestpreis verkauft — schnell, transparent und ohne Stress. Die Kommunikation war immer erstklassig. Absolute Weiterempfehlung!"</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MH</div>
+          <div>
+            <div class="testimonial-name">Michael H.</div>
+            <div class="testimonial-date">Verkäufer, Braunschweig — 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Wir haben mit Herrn Buhse unsere erste Eigentumswohnung gekauft. Er hat uns geduldig erklärt, worauf wir achten müssen, und uns vor einem überteuerten Angebot bewahrt. Danke!"</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SK</div>
+          <div>
+            <div class="testimonial-name">Sandra &amp; Klaus K.</div>
+            <div class="testimonial-date">Käufer, Gifhorn — 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Das Exposé war professionell, die Besichtigungen perfekt koordiniert und der Notartermin hat reibungslos geklappt. In 6 Wochen war alles durch — beeindruckend."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">TR</div>
+          <div>
+            <div class="testimonial-name">Thomas R.</div>
+            <div class="testimonial-date">Verkäufer, Wolfsburg — 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Endlich ein Makler, der zuhört. Keine leeren Versprechen, nur konkretes Handeln. Unser Haus in Weddel war schnell und fair verkauft. Wir sind sehr dankbar."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">BF</div>
+          <div>
+            <div class="testimonial-name">Brigitte F.</div>
+            <div class="testimonial-date">Verkäuferin, Weddel — 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Als Kapitalanleger schätze ich die Mietrendite-Analysen von Herrn Buhse sehr. Sachlich, fundiert und ohne Schönrednerei. Genau das, was ich von einem Profi erwarte."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PW</div>
+          <div>
+            <div class="testimonial-name">Peter W.</div>
+            <div class="testimonial-date">Investor, Braunschweig — 2025</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ CTA BANNER ═══════════════════════ -->
+<section class="cta-banner" id="bewertung">
+  <div class="container" data-animate>
+    <div class="section-label" style="background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.2); color:#fff; margin:0 auto 20px; display:table">Kostenlos &amp; unverbindlich</div>
+    <h2>Wie viel ist Ihre Immobilie wert?</h2>
+    <p>Erhalten Sie in 24 Stunden eine fundierte Marktpreiseinschätzung von unserem Expertenteam — ohne versteckte Kosten oder Verpflichtungen.</p>
+    <div class="cta-banner__actions">
+      <a href="#kontakt" class="btn btn-white btn-lg">
+        Jetzt Bewertung anfragen
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="tel:01705224355" class="btn btn-lg" style="background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.25)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        0170 522 43 55
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section class="section contact" id="kontakt">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info" data-animate>
+        <div class="section-label">Kontakt</div>
+        <h2>Schreiben Sie uns</h2>
+        <p>Wir antworten innerhalb von 24 Stunden. Oder rufen Sie uns einfach an — wir freuen uns auf das Gespräch.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <strong>Adresse</strong>
+              <span>Aegidienmarkt 14, 38100 Braunschweig</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <strong>Telefon</strong>
+              <span>0170 - 522 43 55</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <strong>E-Mail</strong>
+              <span>info@maertens-immobilien.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <strong>Öffnungszeiten</strong>
+              <span>Mo–Fr 9–18 Uhr, Sa nach Vereinbarung</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-embed" style="margin-top:32px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2434.0!2d10.5259!3d52.2646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47aff44e2ceabb1b%3A0x79c7f5c15c8e91c!2sAegidienmarkt%2014%2C%2038100%20Braunschweig!5e0!3m2!1sde!2sde!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Standort Maertens Immobilien"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="contact-form-card" data-animate>
+        <h3>Kontaktanfrage senden</h3>
+        <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group" style="margin:0">
+              <label class="form-label">Vorname *</label>
+              <input type="text" class="form-input" name="vorname" required placeholder="Max">
+            </div>
+            <div class="form-group" style="margin:0">
+              <label class="form-label">Nachname *</label>
+              <input type="text" class="form-input" name="nachname" required placeholder="Mustermann">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-Mail *</label>
+            <input type="email" class="form-input" name="email" required placeholder="max@beispiel.de">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Telefon</label>
+            <input type="tel" class="form-input" name="telefon" placeholder="0170 123 456">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ich interessiere mich für</label>
+            <select class="form-input" name="interesse">
+              <option>Immobilie verkaufen</option>
+              <option>Immobilie kaufen</option>
+              <option>Immobilie mieten</option>
+              <option>Bewertung meiner Immobilie</option>
+              <option>Allgemeine Beratung</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nachricht</label>
+            <textarea class="form-input" name="nachricht" rows="4" placeholder="Womit können wir Ihnen helfen?"></textarea>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="datenschutz" required>
+            <label for="datenschutz">Ich habe die <a href="#" style="color:var(--primary); text-decoration:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            Anfrage absenden
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <p>Vielen Dank! Ihre Anfrage wurde gesendet. Wir melden uns innerhalb von 24 Stunden.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <div class="footer__logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+          <span>Maertens Immobilien</span>
+        </div>
+        <p>Transparent. Offen. Digital. — Ihr persönlicher Immobilienmakler in Braunschweig und der Region seit über 20 Jahren.</p>
+        <div style="margin-top:20px; display:flex; gap:10px">
+          <a href="https://www.maertens-immobilien.com/de/" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); color:rgba(255,255,255,.7); padding:8px 14px; border-radius:8px; font-size:.8rem; transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.1)'">
+            🌐 Immobilienportal
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <div class="footer__links">
+          <a href="#start">Startseite</a>
+          <a href="#immobilien">Alle Immobilien</a>
+          <a href="#leistungen">Leistungen</a>
+          <a href="#rechner">Finanzierungsrechner</a>
+          <a href="#team">Team</a>
+          <a href="#bewertungen">Bewertungen</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Leistungen</h4>
+        <div class="footer__links">
+          <a href="#leistungen">Immobilienbewertung</a>
+          <a href="#leistungen">Verkauf</a>
+          <a href="#leistungen">Vermietung</a>
+          <a href="#leistungen">Exposé-Erstellung</a>
+          <a href="#leistungen">Notartermin</a>
+          <a href="#leistungen">Beratung</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <div class="footer__contact-items">
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Aegidienmarkt 14<br>38100 Braunschweig</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:01705224355" style="color:inherit">0170 522 43 55</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:info@maertens-immobilien.com" style="color:inherit">info@maertens-immobilien.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2025 Maertens Immobilien GmbH · Alle Rechte vorbehalten</span>
+      <div class="footer__bottom-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Widerruf</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
