@@ -1,0 +1,78 @@
+/* Maertens Skin Override v1 — dark green accent + cookie banner */
+:root,
+:root[data-theme],
+:root.dark,
+:root.light {
+  --accent: #1f4d2a !important;
+  --accent-1: #1f4d2a !important;
+  --accent-2: #2d6b3a !important;
+  --accent-dark: #163a1f !important;
+  --primary: #1f4d2a !important;
+  --color-primary: #1f4d2a !important;
+  --color-accent: #1f4d2a !important;
+  --brand: #1f4d2a !important;
+  --brand-primary: #1f4d2a !important;
+  --link: #1f4d2a !important;
+  --color-link: #1f4d2a !important;
+}
+.btn-primary,
+.button-primary,
+.cta,
+.cta-primary,
+button.primary,
+.bg-primary,
+.bg-accent { background-color: #1f4d2a !important; border-color: #1f4d2a !important; }
+.text-primary,
+.text-accent,
+.color-primary,
+.text-brand { color: #1f4d2a !important; }
+a, a:visited { color: #1f4d2a; }
+a:hover { color: #2d6b3a; }
+h1, h2, h3 strong, .accent { color: #1f4d2a; }
+
+#ml-cookie-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 99999;
+  background: #fff; border-top: 3px solid #1f4d2a;
+  box-shadow: 0 -4px 16px rgba(0,0,0,.12);
+  padding: 16px 20px; display: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px; color: #222;
+}
+#ml-cookie-banner.show { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+#ml-cookie-banner .ml-text { flex: 1 1 360px; line-height: 1.5; }
+#ml-cookie-banner .ml-text a { color: #1f4d2a; text-decoration: underline; }
+#ml-cookie-banner .ml-actions { display: flex; gap: 8px; flex-shrink: 0; }
+#ml-cookie-banner button {
+  border: 1px solid #1f4d2a; background: #fff; color: #1f4d2a;
+  padding: 9px 18px; font-size: 14px; font-weight: 600;
+  border-radius: 6px; cursor: pointer; transition: all .15s;
+}
+#ml-cookie-banner button.ml-primary { background: #1f4d2a; color: #fff; }
+#ml-cookie-banner button:hover { transform: translateY(-1px); }
+@media (max-width: 640px) {
+  #ml-cookie-banner { padding: 14px 16px; }
+  #ml-cookie-banner .ml-actions { width: 100%; }
+  #ml-cookie-banner .ml-actions button { flex: 1; }
+}
+
+#ml-immo-embed {
+  margin: 48px 0; padding: 0;
+  background: #f6f7f6; border: 1px solid #d4dcd6;
+  border-radius: 8px; overflow: hidden;
+}
+#ml-immo-embed h2 { padding: 20px 24px 8px; margin: 0; color: #1f4d2a; font-size: 24px; }
+#ml-immo-embed p.ml-sub { padding: 0 24px 16px; margin: 0; color: #555; font-size: 14px; }
+#ml-immo-embed iframe { display: block; width: 100%; height: 780px; border: 0; background: #fff; }
+
+.ml-tslider { position: relative; overflow: hidden; padding: 24px 0; }
+.ml-tslider .ml-tslider-track { display: flex; transition: transform .45s ease; }
+.ml-tslider .ml-tslider-slide { flex: 0 0 100%; padding: 0 16px; box-sizing: border-box; }
+.ml-tslider .ml-tslider-nav { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.ml-tslider .ml-tslider-dot { width: 10px; height: 10px; border-radius: 50%;
+  background: #cfd6d1; border: 0; cursor: pointer; padding: 0; }
+.ml-tslider .ml-tslider-dot.active { background: #1f4d2a; }
+
+img.ml-broken, img[src=""], img:not([src]) {
+  background: linear-gradient(135deg, #d4dcd6 0%, #b7c3ba 100%);
+  min-height: 220px; display: block; position: relative;
+}
