@@ -3,101 +3,132 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
-    <title>Immobilienangebote - Maertens Immobilien GmbH</title>
-    <meta name='description' content='Entdecken Sie unsere aktuellen Immobilienangebote in Braunschweig und Umgebung.'>
+    <title>Immobilienangebote – Maertens Immobilien GmbH</title>
+    <meta name='description' content='Entdecken Sie eine vielfältige Auswahl an Häusern, Wohnungen und Gewerbeobjekten in Braunschweig und Umgebung.'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Arial:wght@400;700&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Manrope:wght@400;700&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='../assets/css/styles.css'>
+    <script defer src='../assets/js/main.js'></script>
 
 <link rel="stylesheet" href="../maertens-skin.css">
 <script src="../maertens-fix.js" defer></script>
 </head>
 <body>
     <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
-
-    <header class='site-header'>
-        <div class='container'>
+    <header id='main-header' class='main-header'>
+        <div class='container header-container'>
             <a href='../' class='logo'>Maertens Immobilien</a>
-            <nav class='nav-main'>
+            <nav class='main-nav'>
                 <ul>
                     <li><a href='../'>Startseite</a></li>
-                    <li><a href='../verkaufen/'>Verkaufen</a></li>
+                    <li><a href='../leistungen/'>Leistungen</a></li>
                     <li><a href='' class='active'>Immobilien</a></li>
+                    <li><a href='../verkaufen/'>Verkaufen</a></li>
                     <li><a href='../ueber-uns/'>Über Uns</a></li>
                     <li><a href='../kontakt/'>Kontakt</a></li>
                 </ul>
             </nav>
-            <button class='nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
+            <button id='mobile-menu-toggle' class='mobile-menu-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+                <span class='hamburger-icon'></span>
             </button>
         </div>
     </header>
 
-    <nav class='nav-mobile'>
-        <button class='nav-close' aria-label='Menü schließen'>&times;</button>
+    <nav id='mobile-menu' class='mobile-menu' aria-label='Mobiles Menü'>
+        <button class='close-menu-btn' aria-label='Menü schließen'>&times;</button>
         <ul>
             <li><a href='../'>Startseite</a></li>
+            <li><a href='../leistungen/'>Leistungen</a></li>
+            <li><a href='' class='active'>Immobilien</a></li>
             <li><a href='../verkaufen/'>Verkaufen</a></li>
-            <li><a href=''>Immobilien</a></li>
             <li><a href='../ueber-uns/'>Über Uns</a></li>
             <li><a href='../kontakt/'>Kontakt</a></li>
         </ul>
     </nav>
 
     <main id='main-content'>
-        <section class='page-header-section section-padding surface-alt'>
-            <div class='container'>
-                <span class='kicker'>Unsere Angebote</span>
-                <h1>Aktuelle Immobilien</h1>
-                <p>Hier finden Sie eine Auswahl unserer derzeit verfügbaren Objekte.</p>
+        <section class='hero-simple'>
+            <div class='container text-center reveal-on-scroll'>
+                <h1>Unsere aktuellen Immobilienangebote</h1>
+                <p class='subline'>Entdecken Sie eine vielfältige Auswahl an Häusern, Wohnungen und Gewerbeobjekten in Braunschweig und Umgebung.</p>
             </div>
         </section>
 
-        <section class='gallery-section section-padding'>
+        <section class='section listings-page'>
             <div class='container'>
-                <h2>Impressionen</h2>
-                <p>Aktuell befinden sich unsere Angebote in der Aufbereitung. Hier sehen Sie einige Beispiel-Impressionen. Kontaktieren Sie uns gerne für eine persönliche Anfrage.</p>
-                <div class='gallery-grid' data-lightbox-gallery='impressionen'>
-                    <!-- KM_IMAGE_REF: assets/img/image_2.png -->
-                    <img src='../assets/img/image_2.png' data-km-image='assets/img/image_2.png' alt='Modernes Einfamilienhaus in Braunschweig' loading='lazy' class='gallery-item' sizes='(max-width: 768px) 100vw, 33vw'>
-                    <!-- KM_IMAGE_REF: assets/img/image_3.png -->
-                    <img src='../assets/img/image_3.png' data-km-image='assets/img/image_3.png' alt='Charmante Altbauwohnung in Braunschweig' loading='lazy' class='gallery-item' sizes='(max-width: 768px) 100vw, 33vw'>
-                    <!-- KM_IMAGE_REF: assets/img/image_1.png -->
-                    <img src='../assets/img/image_1.png' data-km-image='assets/img/image_1.png' alt='Architekturpläne auf einem Schreibtisch' loading='lazy' class='gallery-item' sizes='(max-width: 768px) 100vw, 33vw'>
-                    <!-- KM_IMAGE_REF: assets/img/image.png -->
-                    <img src='../assets/img/image.png' data-km-image='assets/img/image.png' alt='Fassade eines Altbau-Mehrfamilienhauses' loading='lazy' class='gallery-item' sizes='(max-width: 768px) 100vw, 33vw'>
+                <div class='section-intro text-center reveal-on-scroll'>
+                    <h2>Aktuelle Objekte</h2>
+                    <p>Hier finden Sie eine Auswahl unserer derzeit verfügbaren Immobilien. Für weitere Informationen oder Besichtigungstermine kontaktieren Sie uns bitte.</p>
                 </div>
-                 <div class='cta-group' style='margin-top: 2rem; text-align: center;'>
-                    <a href='../kontakt/' class='btn btn-primary'>Jetzt anfragen</a>
+                <div class='grid-3 reveal-on-scroll stagger-children'>
+                    <div class='listing-card'>
+                        <h4>Exklusive Wohnung in Top-Lage</h4>
+                        <div class='listing-details'>
+                            <span><strong>Preis:</strong> 450.000 €</span>
+                            <span><strong>Größe:</strong> 120 m²</span>
+                            <span><strong>Zimmer:</strong> 4</span>
+                        </div>
+                        <a href='../kontakt/' class='btn btn-primary'>Anfragen</a>
+                    </div>
+                    <div class='listing-card'>
+                        <h4>Modernes Haus mit Garten</h4>
+                        <div class='listing-details'>
+                            <span><strong>Preis:</strong> 680.000 €</span>
+                            <span><strong>Größe:</strong> 180 m²</span>
+                            <span><strong>Zimmer:</strong> 5</span>
+                        </div>
+                        <a href='../kontakt/' class='btn btn-primary'>Anfragen</a>
+                    </div>
+                    <div class='listing-card'>
+                        <h4>Gewerbeobjekt im Herzen der Stadt</h4>
+                        <div class='listing-details'>
+                            <span><strong>Preis:</strong> Auf Anfrage</span>
+                            <span><strong>Größe:</strong> 250 m²</span>
+                            <span><strong>Zimmer:</strong> variabel</span>
+                        </div>
+                        <a href='../kontakt/' class='btn btn-primary'>Anfragen</a>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <div class='signature-divider'></div>
+
+        <section class='section gallery-section'>
+            <div class='container'>
+                <div class='section-intro text-center reveal-on-scroll'>
+                    <h2>Impressionen</h2>
+                    <p>Bilder sagen mehr als tausend Worte. Entdecken Sie hier einige visuelle Eindrücke.</p>
+                </div>
+                <div class='image-gallery grid-3 reveal-on-scroll stagger-children'>
+                    <!--KM_IMAGE_REF: assets/img/image.png-->
+                    <img src='../assets/img/image.png' data-km-image='assets/img/image.png' alt='Modernes Apartmentgebäude bei Sonnenuntergang' class='gallery-image' loading='lazy' sizes='(max-width: 768px) 100vw, 33vw'>
+                    <!--KM_IMAGE_REF: assets/img/image_4.png-->
+                    <img src='../assets/img/image_4.png' data-km-image='assets/img/image_4.png' alt='Einladender Büroraum mit Fokus auf Design' class='gallery-image' loading='lazy' sizes='(max-width: 768px) 100vw, 33vw'>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class='site-footer-main'>
+    <footer class='main-footer'>
         <div class='container'>
             <div class='footer-grid'>
                 <div class='footer-col'>
                     <h4>Maertens Immobilien GmbH</h4>
-                    <p>Ihr Partner für den Immobilienverkauf in Braunschweig.</p>
+                    <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig.</p>
                 </div>
                 <div class='footer-col'>
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href='../'>Startseite</a></li>
-                        <li><a href='../verkaufen/'>Verkaufen</a></li>
+                        <li><a href='../leistungen/'>Leistungen</a></li>
                         <li><a href=''>Immobilien</a></li>
+                        <li><a href='../verkaufen/'>Verkaufen</a></li>
                         <li><a href='../ueber-uns/'>Über Uns</a></li>
                         <li><a href='../kontakt/'>Kontakt</a></li>
                     </ul>
-                </div>
-                <div class='footer-col'>
-                    <h4>Kontakt</h4>
-                    <p>Dieter Maertens<br>Aegidienmarkt 14<br>38100 Braunschweig</p>
-                    <p><a href='tel:+491705224355'>+49 170 5224355</a><br><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
                 </div>
                 <div class='footer-col'>
                     <h4>Rechtliches</h4>
@@ -106,6 +137,15 @@
                         <li><a href='../datenschutz/'>Datenschutz</a></li>
                     </ul>
                 </div>
+                <div class='footer-col'>
+                    <h4>Kontakt</h4>
+                    <address>
+                        Aegidienmarkt 14<br>
+                        38100 Braunschweig<br>
+                        <a href='tel:+491705224355'>+49 170 5224355</a><br>
+                        <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a>
+                    </address>
+                </div>
             </div>
             <div class='footer-bottom'>
                 <p>&copy; 2024 Maertens Immobilien GmbH. Alle Rechte vorbehalten.</p>
@@ -113,28 +153,31 @@
         </div>
     </footer>
 
-    <div class='cookie-banner' id='cookie-banner'>
-        <div class='container'>
-            <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. <a href='../datenschutz/'>Mehr erfahren</a></p>
+    <div id='cookie-banner' class='cookie-banner'>
+        <div class='container cookie-container'>
+            <p>Wir verwenden Cookies, um die Funktionalität der Website zu gewährleisten. <a href='../datenschutz/'>Mehr erfahren</a></p>
             <div class='cookie-buttons'>
-                <button id='cookie-accept' class='btn btn-primary'>Akzeptieren</button>
-                <button id='cookie-decline' class='btn btn-secondary'>Ablehnen</button>
+                <button id='accept-cookies' class='btn btn-primary'>Akzeptieren</button>
             </div>
         </div>
     </div>
 
-    <div id='km-lightbox' class='lightbox'>
-        <button class='lightbox-close' aria-label='Galerie schließen'>&times;</button>
-        <button class='lightbox-prev' aria-label='Vorheriges Bild'>&#10094;</button>
-        <button class='lightbox-next' aria-label='Nächstes Bild'>&#10095;</button>
-        <div class='lightbox-content'>
-            <img src='' alt='Großansicht Bild'>
+    <div id='km-lightbox' class='km-lightbox' style='display: none;'>
+        <button class='km-lightbox-close' aria-label='Galerie schließen'>&times;</button>
+        <button class='km-lightbox-prev' aria-label='Vorheriges Bild'>&#10094;</button>
+        <button class='km-lightbox-next' aria-label='Nächstes Bild'>&#10095;</button>
+        <div class='km-lightbox-content'>
+            <img src='' alt='Großansicht Bild' id='km-lightbox-img'>
         </div>
     </div>
 
-    <a href='#' class='back-to-top' aria-label='Zurück nach oben'>&uarr;</a>
+    <div id='sticky-cta' class='sticky-cta'>
+        <div class='container sticky-cta-container'>
+            <p>Starten Sie jetzt den Verkauf Ihrer Immobilie.</p>
+            <a href='../kontakt/' class='btn btn-primary'>Kostenlose Beratung</a>
+        </div>
+    </div>
 
-    <script src='../assets/js/main.js'></script>
 
 
 <style id='km-chat-fix'>

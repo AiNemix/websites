@@ -3,98 +3,116 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
-    <title>Über Uns - Maertens Immobilien GmbH</title>
-    <meta name='description' content='Lernen Sie Dieter Maertens und die Maertens Immobilien GmbH kennen. Ihr persönlicher und erfahrener Partner in Braunschweig.'>
+    <title>Über Uns – Maertens Immobilien GmbH</title>
+    <meta name='description' content='Ihr lokaler Partner für den erfolgreichen Immobilienverkauf in Braunschweig.'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Arial:wght@400;700&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Manrope:wght@400;700&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='../assets/css/styles.css'>
+    <script defer src='../assets/js/main.js'></script>
 
 <link rel="stylesheet" href="../maertens-skin.css">
 <script src="../maertens-fix.js" defer></script>
 </head>
 <body>
     <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
-
-    <header class='site-header'>
-        <div class='container'>
+    <header id='main-header' class='main-header'>
+        <div class='container header-container'>
             <a href='../' class='logo'>Maertens Immobilien</a>
-            <nav class='nav-main'>
+            <nav class='main-nav'>
                 <ul>
                     <li><a href='../'>Startseite</a></li>
-                    <li><a href='../verkaufen/'>Verkaufen</a></li>
+                    <li><a href='../leistungen/'>Leistungen</a></li>
                     <li><a href='../immobilien/'>Immobilien</a></li>
+                    <li><a href='../verkaufen/'>Verkaufen</a></li>
                     <li><a href='' class='active'>Über Uns</a></li>
                     <li><a href='../kontakt/'>Kontakt</a></li>
                 </ul>
             </nav>
-            <button class='nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
+            <button id='mobile-menu-toggle' class='mobile-menu-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+                <span class='hamburger-icon'></span>
             </button>
         </div>
     </header>
 
-    <nav class='nav-mobile'>
-        <button class='nav-close' aria-label='Menü schließen'>&times;</button>
+    <nav id='mobile-menu' class='mobile-menu' aria-label='Mobiles Menü'>
+        <button class='close-menu-btn' aria-label='Menü schließen'>&times;</button>
         <ul>
             <li><a href='../'>Startseite</a></li>
-            <li><a href='../verkaufen/'>Verkaufen</a></li>
+            <li><a href='../leistungen/'>Leistungen</a></li>
             <li><a href='../immobilien/'>Immobilien</a></li>
-            <li><a href=''>Über Uns</a></li>
+            <li><a href='../verkaufen/'>Verkaufen</a></li>
+            <li><a href='' class='active'>Über Uns</a></li>
             <li><a href='../kontakt/'>Kontakt</a></li>
         </ul>
     </nav>
 
     <main id='main-content'>
-        <section class='page-header-section section-padding surface-alt'>
-            <div class='container'>
-                <span class='kicker'>Persönlich & Engagiert</span>
+        <section class='hero-simple'>
+            <div class='container text-center reveal-on-scroll'>
                 <h1>Über Maertens Immobilien</h1>
-                <p>Ihr lokaler Experte mit persönlicher Betreuung durch Dieter Maertens.</p>
+                <p class='subline'>Ihr lokaler Partner für den erfolgreichen Immobilienverkauf in Braunschweig.</p>
             </div>
         </section>
 
-        <section class='content-section section-padding'>
-            <div class='container content-container about-grid'>
-                <div class='about-text'>
-                    <h2>Ihr persönlicher Ansprechpartner: Dieter Maertens</h2>
-                    <p>Bei Maertens Immobilien GmbH steht die persönliche Betreuung im Mittelpunkt. Als Inhaber und Hauptansprechpartner begleitet Dieter Maertens Sie persönlich von der ersten Beratung bis zum erfolgreichen Vertragsabschluss. Mit jahrelanger Erfahrung und tiefgreifender Kenntnis des Braunschweiger Immobilienmarktes stellen wir sicher, dass Ihr Anliegen in den besten Händen ist.</p>
-                    <p>Unser Fokus liegt auf einer transparenten, ehrlichen und zielorientierten Zusammenarbeit. Wir verstehen, dass der Verkauf einer Immobilie eine wichtige Entscheidung ist, und setzen uns mit vollem Engagement für Ihre Ziele ein.</p>
-                    <div class='cta-group' style='margin-top: 2rem;'>
-                        <a href='../kontakt/' class='btn btn-primary'>Lernen Sie uns kennen</a>
+        <section class='section'>
+            <div class='container'>
+                <div class='split-layout-reversed reveal-on-scroll'>
+                    <div class='split-content'>
+                        <h2>Unsere Philosophie</h2>
+                        <p>Wir legen Wert auf persönliche Betreuung, transparente Prozesse und eine partnerschaftliche Zusammenarbeit. Ihr Erfolg ist unser Ziel. Wir sind ein erfahrenes Team von Immobilienexperten mit fundierter Marktkenntnis und Leidenschaft für unsere Arbeit. Wir verfügen über langjährige Erfahrung im Immobilienverkauf und kennen den Braunschweiger Markt wie unsere Westentasche.</p>
+                    </div>
+                    <div class='split-image'>
+                         <!--KM_IMAGE_REF: assets/img/image_4.png-->
+                        <img src='../assets/img/image_4.png' data-km-image='assets/img/image_4.png' alt='Büro von Maertens Immobilien' loading='lazy' sizes='(max-width: 768px) 100vw, 50vw'>
                     </div>
                 </div>
-                <div class='about-image-wrapper'>
-                    <!-- KM_IMAGE_REF: assets/img/image_1.png -->
-                    <img src='../assets/img/image_1.png' data-km-image='assets/img/image_1.png' alt='Symbolbild: Professionelle Beratung bei Maertens Immobilien' loading='lazy' sizes='(max-width: 768px) 100vw, 50vw'>
+            </div>
+        </section>
+
+        <div class='signature-divider'></div>
+
+        <section class='section bg-surface'>
+            <div class='container'>
+                <div class='section-intro text-center reveal-on-scroll'>
+                    <h2>Unsere Expertise</h2>
+                </div>
+                <div class='grid-3 reveal-on-scroll stagger-children'>
+                    <div class='card text-center'>
+                        <h3>Marktkenntnis</h3>
+                        <p>Detailliertes Wissen über Lagen, Preise und Entwicklungen in Braunschweig.</p>
+                    </div>
+                    <div class='card text-center'>
+                        <h3>Netzwerk</h3>
+                        <p>Starke Verbindungen zu Käufern, Verkäufern und Branchenpartnern.</p>
+                    </div>
+                    <div class='card text-center'>
+                        <h3>Verhandlungsgeschick</h3>
+                        <p>Wir setzen uns für Ihre Interessen ein und erzielen den bestmöglichen Preis.</p>
+                    </div>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class='site-footer-main'>
+    <footer class='main-footer'>
         <div class='container'>
             <div class='footer-grid'>
                 <div class='footer-col'>
                     <h4>Maertens Immobilien GmbH</h4>
-                    <p>Ihr Partner für den Immobilienverkauf in Braunschweig.</p>
+                    <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig.</p>
                 </div>
                 <div class='footer-col'>
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href='../'>Startseite</a></li>
-                        <li><a href='../verkaufen/'>Verkaufen</a></li>
+                        <li><a href='../leistungen/'>Leistungen</a></li>
                         <li><a href='../immobilien/'>Immobilien</a></li>
+                        <li><a href='../verkaufen/'>Verkaufen</a></li>
                         <li><a href=''>Über Uns</a></li>
                         <li><a href='../kontakt/'>Kontakt</a></li>
                     </ul>
-                </div>
-                <div class='footer-col'>
-                    <h4>Kontakt</h4>
-                    <p>Dieter Maertens<br>Aegidienmarkt 14<br>38100 Braunschweig</p>
-                    <p><a href='tel:+491705224355'>+49 170 5224355</a><br><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
                 </div>
                 <div class='footer-col'>
                     <h4>Rechtliches</h4>
@@ -103,6 +121,15 @@
                         <li><a href='../datenschutz/'>Datenschutz</a></li>
                     </ul>
                 </div>
+                <div class='footer-col'>
+                    <h4>Kontakt</h4>
+                    <address>
+                        Aegidienmarkt 14<br>
+                        38100 Braunschweig<br>
+                        <a href='tel:+491705224355'>+49 170 5224355</a><br>
+                        <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a>
+                    </address>
+                </div>
             </div>
             <div class='footer-bottom'>
                 <p>&copy; 2024 Maertens Immobilien GmbH. Alle Rechte vorbehalten.</p>
@@ -110,28 +137,31 @@
         </div>
     </footer>
 
-    <div class='cookie-banner' id='cookie-banner'>
-        <div class='container'>
-            <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. <a href='../datenschutz/'>Mehr erfahren</a></p>
+    <div id='cookie-banner' class='cookie-banner'>
+        <div class='container cookie-container'>
+            <p>Wir verwenden Cookies, um die Funktionalität der Website zu gewährleisten. <a href='../datenschutz/'>Mehr erfahren</a></p>
             <div class='cookie-buttons'>
-                <button id='cookie-accept' class='btn btn-primary'>Akzeptieren</button>
-                <button id='cookie-decline' class='btn btn-secondary'>Ablehnen</button>
+                <button id='accept-cookies' class='btn btn-primary'>Akzeptieren</button>
             </div>
         </div>
     </div>
 
-    <div id='km-lightbox' class='lightbox'>
-        <button class='lightbox-close' aria-label='Galerie schließen'>&times;</button>
-        <button class='lightbox-prev' aria-label='Vorheriges Bild'>&#10094;</button>
-        <button class='lightbox-next' aria-label='Nächstes Bild'>&#10095;</button>
-        <div class='lightbox-content'>
-            <img src='' alt='Großansicht Bild'>
+    <div id='km-lightbox' class='km-lightbox' style='display: none;'>
+        <button class='km-lightbox-close' aria-label='Galerie schließen'>&times;</button>
+        <button class='km-lightbox-prev' aria-label='Vorheriges Bild'>&#10094;</button>
+        <button class='km-lightbox-next' aria-label='Nächstes Bild'>&#10095;</button>
+        <div class='km-lightbox-content'>
+            <img src='' alt='Großansicht Bild' id='km-lightbox-img'>
         </div>
     </div>
 
-    <a href='#' class='back-to-top' aria-label='Zurück nach oben'>&uarr;</a>
+    <div id='sticky-cta' class='sticky-cta'>
+        <div class='container sticky-cta-container'>
+            <p>Starten Sie jetzt den Verkauf Ihrer Immobilie.</p>
+            <a href='../kontakt/' class='btn btn-primary'>Kostenlose Beratung</a>
+        </div>
+    </div>
 
-    <script src='../assets/js/main.js'></script>
 
 
 <style id='km-chat-fix'>
