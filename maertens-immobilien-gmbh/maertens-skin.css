@@ -1,4 +1,4 @@
-/* Maertens Skin v2 — dark green + polish */
+/* Maertens Skin v3 — dark green + polish + header glass */
 :root,:root[data-theme],:root.dark,:root.light{
   --accent:#1f4d2a !important;
   --accent-1:#1f4d2a !important;
@@ -12,8 +12,6 @@
   --brand-primary:#1f4d2a !important;
   --link:#1f4d2a !important;
   --color-link:#1f4d2a !important;
-  --header-text:#ffffff;
-  --header-text-hover:#e6f0e9;
 }
 
 html{scroll-behavior:smooth;}
@@ -34,27 +32,41 @@ a,a:visited{color:#1f4d2a;transition:color .15s;}
 a:hover{color:#2d6b3a;}
 h1 strong,h2 strong,h3 strong,.accent{color:#1f4d2a;}
 
-/* HEADER: weiße Schrift auf grünem Hero, dunkel auf weißem Bereich */
-header,header *,
-nav,nav a,
-.site-header,.site-header *,
-.main-header,.main-header *{
-  color:var(--header-text) !important;
+/* ─── HEADER GLASS ──────────────────────────────────────────── */
+/* Default: dark-green frosted glass with white text */
+header.main-header,
+header[class*="site-header"],
+header[class*="main-header"]{
+  background-color:rgba(31,77,42,.92) !important;
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
 }
-/* Light-themed header variant if header has bg-white or no bg */
-header[class*="white"], header[class*="light"],
-header.scrolled, .site-header.scrolled,
-header[style*="background:#fff"], header[style*="background:white"]{
-  background:#fff !important;
+header.main-header *,
+header.main-header a,
+header.main-header .logo,
+header.main-header .main-nav a,
+.main-nav a,
+.main-header .logo{
+  color:#ffffff !important;
 }
-header[class*="white"] a, header[class*="light"] a,
-header.scrolled a, .site-header.scrolled a{
+header.main-header .main-nav a::after,
+.main-nav a::after{
+  background-color:#ffffff !important;
+}
+
+/* Scrolled state: switches to white frosted glass with dark-green text */
+header.main-header.scrolled{
+  background-color:rgba(255,255,255,.96) !important;
+}
+header.main-header.scrolled *,
+header.main-header.scrolled a,
+header.main-header.scrolled .logo,
+header.main-header.scrolled .main-nav a{
   color:#1f4d2a !important;
 }
-/* Nav-Link Hover */
-header a:hover, nav a:hover{
-  color:var(--header-text-hover) !important;
-  opacity:.85;
+header.main-header.scrolled .main-nav a::after{
+  background-color:#1f4d2a !important;
 }
 
 /* Hero polish */
@@ -65,25 +77,20 @@ header a:hover, nav a:hover{
 }
 .hero > *,[class*="hero"] > *{position:relative;z-index:1;}
 
-/* Cards: hover lift */
-article,.card,[class*="card"]{
-  transition:transform .25s,box-shadow .25s;
-}
+/* Cards hover */
+article,.card,[class*="card"]{transition:transform .25s,box-shadow .25s;}
 article:hover,.card:hover,[class*="card"]:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);
 }
 
-/* Stat numbers — bigger, bolder, animated */
+/* Stat numbers */
 .stat-number,[class*="stat"] strong,[class*="number"]{
-  color:#1f4d2a;
-  font-weight:800;
-  font-size:clamp(2rem, 5vw, 3.5rem);
-  line-height:1;
+  color:#1f4d2a;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);line-height:1;
 }
 
 /* Scroll reveal */
-.ml-reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);}
+.ml-reveal{opacity:0;transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);}
 .ml-reveal.is-visible{opacity:1;transform:none;}
 
 /* Cookie banner */
@@ -111,7 +118,7 @@ article:hover,.card:hover,[class*="card"]:hover{
   box-shadow:0 8px 32px rgba(0,0,0,.06);}
 #ml-immo-embed h2{padding:24px 28px 6px;margin:0;color:#1f4d2a;font-size:28px;}
 #ml-immo-embed p.ml-sub{padding:0 28px 18px;margin:0;color:#555;font-size:14px;}
-#ml-immo-embed iframe{display:block;width:100%;height:780px;border:0;background:#fff;}
+#ml-immo-embed iframe{display:block;width:100%;height:820px;border:0;background:#fff;}
 
 /* Testimonials slider */
 .ml-tslider{position:relative;overflow:hidden;padding:24px 0;}
@@ -122,7 +129,7 @@ article:hover,.card:hover,[class*="card"]:hover{
   border:0;cursor:pointer;padding:0;transition:all .2s;}
 .ml-tslider .ml-tslider-dot.active{background:#1f4d2a;transform:scale(1.2);}
 
-/* Image fallback */
+/* Broken image fallback */
 img.ml-broken,img[src=""],img:not([src]){
   background:linear-gradient(135deg,#d4dcd6 0%,#b7c3ba 100%);
   min-height:220px;display:block;position:relative;}

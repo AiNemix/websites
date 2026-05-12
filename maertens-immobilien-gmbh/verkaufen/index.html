@@ -1,112 +1,133 @@
 <!DOCTYPE html>
 <html lang='de'>
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
-  <title>Immobilie verkaufen – Maertens Immobilien GmbH</title>
-  <meta name='description' content='Starten Sie den Verkauf Ihrer Immobilie in Braunschweig mit einer kostenlosen und unverbindlichen Bewertung.'>
-  <link rel='preconnect' href='https://fonts.googleapis.com'>
-  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-  <link href='https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap' rel='stylesheet'>
-  <link rel='stylesheet' href='../assets/css/styles.css'>
-  <script src='../assets/js/main.js' defer></script>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
+    <title>Immobilie verkaufen - Maertens Immobilien GmbH</title>
+    <meta name='description' content='Erfahren Sie mehr über unseren Verkaufsprozess und fordern Sie eine kostenlose Bewertung Ihrer Immobilie in Braunschweig an.'>
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' href='../assets/css/styles.css'>
+    <link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>'>
 
 <link rel="stylesheet" href="../maertens-skin.css">
 <script src="../maertens-fix.js" defer></script>
 </head>
 <body>
-  <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
+    <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
 
-  <header id='main-header' class='main-header'>
-    <div class='container header-container'>
-      <a href='../' class='logo'>Maertens Immobilien</a>
-      <nav class='main-nav'>
+    <header class='site-header'>
+        <div class='container'>
+            <a href='../' class='logo'>Maertens Immobilien</a>
+            <nav class='main-nav'>
+                <ul>
+                    <li><a href='../'>Startseite</a></li>
+                    <li><a href='' class='active'>Verkaufen</a></li>
+                    <li><a href='../immobilien/'>Immobilien</a></li>
+                    <li><a href='../ueber-uns/'>Über Uns</a></li>
+                    <li><a href='../kontakt/'>Kontakt</a></li>
+                </ul>
+            </nav>
+            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+                <span class='bar'></span>
+                <span class='bar'></span>
+                <span class='bar'></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class='mobile-nav-drawer'>
         <ul>
-          <li><a href='../'>Startseite</a></li>
-          <li><a href='../immobilien/'>Immobilien</a></li>
-          <li><a href='../verkaufen/' class='active'>Verkaufen</a></li>
-          <li><a href='../ueber-uns/'>Über Uns</a></li>
-          <li><a href='../kontakt/'>Kontakt</a></li>
+            <li><a href='../'>Startseite</a></li>
+            <li><a href='' class='active'>Verkaufen</a></li>
+            <li><a href='../immobilien/'>Immobilien</a></li>
+            <li><a href='../ueber-uns/'>Über Uns</a></li>
+            <li><a href='../kontakt/'>Kontakt</a></li>
         </ul>
-      </nav>
-      <button id='mobile-menu-toggle' class='mobile-menu-toggle' aria-label='Menü öffnen' aria-expanded='false'>
-        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3 12H21' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M3 6H21' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M3 18H21' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
-      </button>
-    </div>
-  </header>
-
-  <div id='mobile-menu' class='mobile-menu'>
-    <div class='mobile-menu-header'>
-        <a href='../' class='logo'>Maertens Immobilien</a>
-        <button id='mobile-menu-close' class='mobile-menu-close' aria-label='Menü schließen'>
-            <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M18 6L6 18' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M6 6L18 18' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
-        </button>
-    </div>
-    <nav class='mobile-nav'>
-      <ul>
-          <li><a href='../'>Startseite</a></li>
-          <li><a href='../immobilien/'>Immobilien</a></li>
-          <li><a href='../verkaufen/'>Verkaufen</a></li>
-          <li><a href='../ueber-uns/'>Über Uns</a></li>
-          <li><a href='../kontakt/'>Kontakt</a></li>
-      </ul>
     </nav>
-  </div>
 
-  <main id='main-content'>
-    <section class='page-hero section-padding'>
-        <div class='container text-center'>
-            <h1>Ihre Immobilie erfolgreich verkaufen</h1>
-            <p class='subline'>Der erste Schritt zu einem erfolgreichen Verkauf ist eine realistische Wertermittlung.</p>
+    <main id='main-content'>
+        <section class='page-header'>
+            <div class='container'>
+                <h1>Ihre Immobilie verkaufen</h1>
+                <p>Wir begleiten Sie professionell und engagiert durch den gesamten Verkaufsprozess.</p>
+            </div>
+        </section>
+
+        <section id='bewertung' class='surface-treatment'>
+            <div class='container'>
+                 <div class='section-intro'>
+                    <span class='kicker'>Starten Sie hier</span>
+                    <h2>Kostenlose Immobilienbewertung</h2>
+                    <p>Füllen Sie das Formular aus, um eine erste, unverbindliche Werteinschätzung für Ihre Immobilie zu erhalten. Wir kontaktieren Sie im Anschluss für eine detaillierte Analyse.</p>
+                </div>
+                <form class='contact-form' action='#' method='POST'>
+                    <div class='form-grid'>
+                        <div class='form-group'>
+                            <label for='name'>Name</label>
+                            <input type='text' id='name' name='name' required>
+                        </div>
+                        <div class='form-group'>
+                            <label for='email'>E-Mail</label>
+                            <input type='email' id='email' name='email' required>
+                        </div>
+                         <div class='form-group'>
+                            <label for='phone'>Telefon</label>
+                            <input type='tel' id='phone' name='phone'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='property-type'>Immobilienart</label>
+                            <input type='text' id='property-type' name='property-type' placeholder='z.B. Einfamilienhaus, Wohnung'>
+                        </div>
+                        <div class='form-group full-width'>
+                            <label for='message'>Adresse & weitere Details</label>
+                            <textarea id='message' name='message' rows='4'></textarea>
+                        </div>
+                    </div>
+                    <button type='submit' class='btn btn-primary'>Bewertung anfordern</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class='site-footer-main'>
+        <div class='container'>
+            <div class='footer-grid'>
+                <div class='footer-col about'>
+                    <h4>Maertens Immobilien GmbH</h4>
+                    <p>Ihr lokaler Experte für den Immobilienverkauf in Braunschweig. Persönlich, kompetent und engagiert.</p>
+                </div>
+                <div class='footer-col links'>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href='../'>Startseite</a></li>
+                        <li><a href=''>Verkaufen</a></li>
+                        <li><a href='../immobilien/'>Immobilien</a></li>
+                        <li><a href='../ueber-uns/'>Über Uns</a></li>
+                        <li><a href='../kontakt/'>Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class='footer-col contact'>
+                    <h4>Kontakt</h4>
+                    <address>
+                        Maertens Immobilien GmbH<br>
+                        Aegidienmarkt 14<br>
+                        38100 Braunschweig
+                    </address>
+                    <p><a href='tel:+491705224355'>+49 170 5224355</a><br><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
+                </div>
+            </div>
+            <div class='footer-bottom'>
+                <p>&copy; 2024 Maertens Immobilien GmbH</p>
+                <ul>
+                    <li><a href='../impressum/'>Impressum</a></li>
+                    <li><a href='../datenschutz/'>Datenschutz</a></li>
+                </ul>
+            </div>
         </div>
-    </section>
-
-    <section id='bewertung' class='content-section section-padding surface-bg'>
-        <div class='container text-center'>
-            <h2>Kostenlose Immobilienbewertung</h2>
-            <p>Wir bieten Ihnen eine professionelle und unverbindliche Bewertung Ihrer Immobilie an. Basierend auf aktuellen Marktdaten und unserer langjährigen Erfahrung ermitteln wir den optimalen Verkaufspreis. Füllen Sie einfach das Formular auf unserer Kontaktseite aus oder rufen Sie uns an, um einen Termin zu vereinbaren.</p>
-            <a href='../kontakt/' class='btn btn-primary'>Zur Kontaktseite</a>
-        </div>
-    </section>
-  </main>
-
-  <footer class='main-footer section-padding'>
-    <div class='container footer-grid'>
-      <div class='footer-col footer-about'>
-        <h3>Maertens Immobilien GmbH</h3>
-        <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig. Persönlich, kompetent und engagiert.</p>
-      </div>
-      <div class='footer-col footer-contact'>
-        <h3>Kontakt</h3>
-        <p>Aegidienmarkt 14<br>38100 Braunschweig</p>
-        <p>
-          <a href='tel:+491705224355'>+49 170 5224355</a><br>
-          <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a>
-        </p>
-      </div>
-      <div class='footer-col footer-links'>
-        <h3>Navigation</h3>
-        <ul>
-          <li><a href='../'>Startseite</a></li>
-          <li><a href='../immobilien/'>Immobilien</a></li>
-          <li><a href='../verkaufen/'>Verkaufen</a></li>
-          <li><a href='../ueber-uns/'>Über Uns</a></li>
-          <li><a href='../kontakt/'>Kontakt</a></li>
-        </ul>
-      </div>
-      <div class='footer-col footer-legal'>
-        <h3>Rechtliches</h3>
-        <ul>
-          <li><a href='../impressum/'>Impressum</a></li>
-          <li><a href='../datenschutz/'>Datenschutz</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class='container footer-bottom'>
-      <p>&copy; 2024 Maertens Immobilien GmbH. Alle Rechte vorbehalten.</p>
-    </div>
-  </footer>
-
+    </footer>
+    <script src='../assets/js/main.js'></script>
 
 
 <style id='km-chat-fix'>
