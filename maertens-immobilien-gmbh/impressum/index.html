@@ -3,11 +3,11 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
-    <title>Impressum - Maertens Immobilien GmbH</title>
-    <meta name='robots' content='noindex'>
+    <title>Impressum – Maertens Immobilien GmbH</title>
+    <meta name='description' content='Impressum der Maertens Immobilien GmbH in Braunschweig.'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='../assets/css/styles.css'>
     <link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>'>
 
@@ -17,7 +17,7 @@
 <body>
     <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
 
-    <header class='site-header'>
+    <header class='site-header' id='site-header'>
         <div class='container'>
             <a href='../' class='logo'>Maertens Immobilien</a>
             <nav class='main-nav'>
@@ -29,15 +29,16 @@
                     <li><a href='../kontakt/'>Kontakt</a></li>
                 </ul>
             </nav>
-            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
-                <span class='bar'></span>
-                <span class='bar'></span>
-                <span class='bar'></span>
+            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-controls='mobile-nav' aria-expanded='false'>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
             </button>
         </div>
     </header>
 
-    <nav class='mobile-nav-drawer'>
+    <nav class='mobile-nav' id='mobile-nav' aria-hidden='true'>
+        <button class='mobile-nav-close' aria-label='Menü schließen'>&times;</button>
         <ul>
             <li><a href='../'>Startseite</a></li>
             <li><a href='../verkaufen/'>Verkaufen</a></li>
@@ -48,52 +49,36 @@
     </nav>
 
     <main id='main-content'>
-        <section class='page-header'>
-            <div class='container'>
+        <section class='hero-subpage'>
+            <div class='container reveal-on-scroll'>
                 <h1>Impressum</h1>
             </div>
         </section>
 
-        <section class='legal-content'>
+        <section class='legal-content section-padding'>
             <div class='container'>
-                <h2>Angaben gemäß § 5 TMG</h2>
-                <p>
-                    Maertens Immobilien GmbH<br>
-                    Aegidienmarkt 14<br>
-                    38100 Braunschweig
-                </p>
+                <h2>Anbieterkennzeichnung (§5 TMG / DDG)</h2>
+                <p>Maertens Immobilien GmbH<br>Aegidienmarkt 14<br>38100 Braunschweig</p>
 
-                <h2>Vertreten durch:</h2>
-                <p>Dieter Maertens</p>
+                <h2>Vertreten durch</h2>
+                <p>Bitte ergänzen: [Geschäftsführer]</p>
 
                 <h2>Kontakt</h2>
-                <p>
-                    Telefon: +49 170 5224355<br>
-                    E-Mail: paul@ainemix.com
-                </p>
+                <p>E-Mail: paul@ainemix.com<br>Telefon: +49 170 5224355</p>
 
-                <h2>Registereintrag</h2>
-                <p>
-                    Eintragung im Handelsregister.<br>
-                    Registergericht: Amtsgericht Braunschweig<br>
-                    Registernummer: HRB205708
-                </p>
+                <h2>Registerangaben</h2>
+                <p>Bitte ergänzen oder entfernen: [Registergericht, Registernummer]</p>
 
-                <h2>Umsatzsteuer-ID</h2>
-                <p>Bitte ergänzen: Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz</p>
+                <h2>USt-ID</h2>
+                <p>Bitte ergänzen: [Umsatzsteuer-Identifikationsnummer]</p>
 
-                <h2>Aufsichtsbehörde</h2>
-                <p>Bitte ergänzen: Name und Anschrift der zuständigen Aufsichtsbehörde</p>
-                
-                <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-                <p>
-                    Dieter Maertens<br>
-                    Aegidienmarkt 14<br>
-                    38100 Braunschweig
-                </p>
+                <h2>Verantwortlich i.S.d. §18 MStV</h2>
+                <p>Bitte ergänzen: [Name und Anschrift des Verantwortlichen]</p>
 
-                <h3>Haftungsausschluss (Disclaimer)</h3>
-                <p>Bitte ergänzen: Haftungsausschluss-Texte</p>
+                <h2>Haftung/Links/Urheberrecht</h2>
+                <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+                <p>Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
             </div>
         </section>
     </main>
@@ -101,11 +86,18 @@
     <footer class='site-footer-main'>
         <div class='container'>
             <div class='footer-grid'>
-                <div class='footer-col about'>
+                <div class='footer-col'>
                     <h4>Maertens Immobilien GmbH</h4>
-                    <p>Ihr lokaler Experte für den Immobilienverkauf in Braunschweig. Persönlich, kompetent und engagiert.</p>
+                    <p>Aegidienmarkt 14<br>38100 Braunschweig</p>
                 </div>
-                <div class='footer-col links'>
+                <div class='footer-col'>
+                    <h4>Kontakt</h4>
+                    <p>
+                        <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a><br>
+                        <a href='tel:+491705224355'>+49 170 5224355</a>
+                    </p>
+                </div>
+                <div class='footer-col'>
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href='../'>Startseite</a></li>
@@ -115,25 +107,20 @@
                         <li><a href='../kontakt/'>Kontakt</a></li>
                     </ul>
                 </div>
-                <div class='footer-col contact'>
-                    <h4>Kontakt</h4>
-                    <address>
-                        Maertens Immobilien GmbH<br>
-                        Aegidienmarkt 14<br>
-                        38100 Braunschweig
-                    </address>
-                    <p><a href='tel:+491705224355'>+49 170 5224355</a><br><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
+                <div class='footer-col'>
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href=''>Impressum</a></li>
+                        <li><a href='../datenschutz/'>Datenschutz</a></li>
+                    </ul>
                 </div>
             </div>
             <div class='footer-bottom'>
-                <p>&copy; 2024 Maertens Immobilien GmbH</p>
-                <ul>
-                    <li><a href=''>Impressum</a></li>
-                    <li><a href='../datenschutz/'>Datenschutz</a></li>
-                </ul>
+                <p>&copy; 2024 Maertens Immobilien GmbH. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
+    
     <script src='../assets/js/main.js'></script>
 
 

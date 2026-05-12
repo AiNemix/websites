@@ -1,8 +1,10 @@
-/* Maertens Fix v3 */
+/* Maertens Fix v4 — eigene Property Cards */
 (function(){
   'use strict';
   var REAL_EMAIL='maertens-immobilien@t-online.de';
   var WRONG_EMAILS=['paul@ainemix.com','vanessa@ainemix.com','test@example.com'];
+  var MAERTENS_BASE='https://www.maertens-immobilien.com';
+  var MAERTENS_LISTINGS = [{"title":"Hannover: Und am Ende der Straße steht ein Bungalow...","link":"/de/0__219_2_3_/hannover-und-am-ende-der-strasse-steht-ein-bungalow.html","image":"/de/upload/4745-219-7-g.jpg","status":"VERKAUFT","price":"399.000 €","location":"30539 Hannover · Bemerode","wohnflaeche":"102 m²","grundstueck":"327 m²","zimmer":"4"},{"title":"Wolfsburg: - RESERVIERT - Bungalow in Wolfsburg - Mörse#verkaufen wir","link":"/de/0__220_2_3_/wolfsburg-reserviert-bungalow-in-wolfsburg-moerseverkaufen-wir.html","image":"/de/upload/4762-220-5-g.jpg","status":"VERKAUFT","price":"299.000 €","location":"38442 Wolfsburg · Mörse","wohnflaeche":"125 m²","grundstueck":"713 m²","zimmer":"4"},{"title":"Weddel: - RESERVIERT - Ein- bis Zweifamilienwohnhaus mit tollem Garten#verkaufen wir","link":"/de/0__221_2_3_/weddel-reserviert-ein-bis-zweifamilienwohnhaus-mit-tollem-gartenverkaufen-wir.html","image":"/de/upload/4789-221-13-g.jpg","status":"VERKAUFT","price":"269.000 €","location":"38162 Weddel · Weddel","wohnflaeche":"145 m²","grundstueck":"1.250 m²","zimmer":"6"},{"title":"Gifhorn: Ein- / Zweifamilienhaus in GF - Gamsen","link":"/de/0__222_2_3_/gifhorn-ein-zweifamilienhaus-in-gf-gamsen.html","image":"/de/upload/4804-222-8-g.jpg","status":"VERKAUFT","price":"299.000 €","location":"38518 Gifhorn · Gamsen","wohnflaeche":"175 m²","grundstueck":"640 m²","zimmer":"7"},{"title":"Braunschweig: Ein Zuhause mit Geschichte - bereit für neue Ideen","link":"/de/0__227_2_3_/braunschweig-ein-zuhause-mit-geschichte-bereit-fuer-neue-ideen.html","image":"/de/upload/immobilie4875-ansicht-g.jpg","status":"#verkaufenwir","price":"350.000 €","location":"38124 Braunschweig · Leiferde","wohnflaeche":"162 m²","grundstueck":"603 m²","zimmer":"6"},{"title":"Und am Ende der Straße steht ein Bungalow...","link":"/de/0__219_2_3_/hannover-und-am-ende-der-strasse-steht-ein-bungalow.html","image":"/de/upload/4745-219-7-g.jpg","status":"VERKAUFT","price":"399.000 €","location":null,"wohnflaeche":"102 m²","grundstueck":"327 m²","zimmer":"4"},{"title":"- RESERVIERT - Bungalow in Wolfsburg - Mörse#verkaufen wir","link":"/de/0__220_2_3_/wolfsburg-reserviert-bungalow-in-wolfsburg-moerseverkaufen-wir.html","image":"/de/upload/4762-220-5-g.jpg","status":"VERKAUFT","price":"299.000 €","location":null,"wohnflaeche":"125 m²","grundstueck":"713 m²","zimmer":"4"},{"title":"- RESERVIERT - Ein- bis Zweifamilienwohnhaus mit tollem Garten#verkaufen wir","link":"/de/0__221_2_3_/weddel-reserviert-ein-bis-zweifamilienwohnhaus-mit-tollem-gartenverkaufen-wir.html","image":"/de/upload/4789-221-13-g.jpg","status":"VERKAUFT","price":"269.000 €","location":null,"wohnflaeche":"145 m²","grundstueck":"1.250 m²","zimmer":"6"},{"title":"Ein- / Zweifamilienhaus in GF - Gamsen","link":"/de/0__222_2_3_/gifhorn-ein-zweifamilienhaus-in-gf-gamsen.html","image":"/de/upload/4804-222-8-g.jpg","status":"VERKAUFT","price":"299.000 €","location":null,"wohnflaeche":"175 m²","grundstueck":"640 m²","zimmer":"7"},{"title":"Ein Zuhause mit Geschichte - bereit für neue Ideen","link":"/de/0__227_2_3_/braunschweig-ein-zuhause-mit-geschichte-bereit-fuer-neue-ideen.html","image":"/de/upload/immobilie4875-ansicht-g.jpg","status":"#verkaufenwir","price":"350.000 €","location":null,"wohnflaeche":"162 m²","grundstueck":"603 m²","zimmer":"6"}];
 
   function fixEmails(){
     var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null);
@@ -46,14 +48,42 @@
     });
   }
 
+  function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });}
+  function renderCard(p){
+    var img = p.image ? (p.image.indexOf('http')===0 ? p.image : MAERTENS_BASE + p.image) : '';
+    var link = p.link ? (p.link.indexOf('http')===0 ? p.link : MAERTENS_BASE + p.link) : '#';
+    var badgeCls = (p.status||'').toLowerCase().indexOf('verkauft')>-1 ? 'verkauft'
+                 : (p.status||'').toLowerCase().indexOf('reserv')>-1 ? 'reserviert' : '';
+    var meta = [];
+    if (p.wohnflaeche) meta.push('<span><strong>'+escapeHtml(p.wohnflaeche)+'</strong> Wohnfläche</span>');
+    if (p.grundstueck) meta.push('<span><strong>'+escapeHtml(p.grundstueck)+'</strong> Grundstück</span>');
+    if (p.zimmer)      meta.push('<span><strong>'+escapeHtml(p.zimmer)+'</strong> Zimmer</span>');
+    return '<a href="'+escapeHtml(link)+'" target="_blank" rel="noopener" class="ml-card">'
+      + '<div class="ml-card-img">'
+      +   (img ? '<img loading="lazy" src="'+escapeHtml(img)+'" alt="'+escapeHtml(p.title||'')+'">' : '')
+      +   (p.status ? '<span class="ml-card-badge '+badgeCls+'">'+escapeHtml(p.status)+'</span>' : '')
+      + '</div>'
+      + '<div class="ml-card-body">'
+      +   '<div class="ml-card-title">'+escapeHtml(p.title||'Objekt')+'</div>'
+      +   (p.location ? '<div class="ml-card-loc">📍 '+escapeHtml(p.location)+'</div>' : '')
+      +   (meta.length ? '<div class="ml-card-meta">'+meta.join('')+'</div>' : '')
+      +   (p.price ? '<div class="ml-card-price">'+escapeHtml(p.price)+'</div>' : '')
+      +   '<div class="ml-card-cta">Details ansehen</div>'
+      + '</div>'
+      + '</a>';
+  }
   function buildImmoSection(){
     var s=document.createElement('section');
     s.id='ml-immo-embed';
     s.className='ml-reveal';
+    var cards = MAERTENS_LISTINGS && MAERTENS_LISTINGS.length
+      ? '<div id="ml-immo-grid">' + MAERTENS_LISTINGS.map(renderCard).join('') + '</div>'
+      : '<div class="ml-immo-empty">Aktuell keine Objekte verfügbar. Sprechen Sie uns gerne an.</div>';
     s.innerHTML='<h2>Aktuelle Objekte</h2>'
-      +'<p class="ml-sub">Live aus unserem Bestand &mdash; direkt von maertens-immobilien.com</p>'
-      +'<iframe src="https://www.maertens-immobilien.com/de/0__2_1_0__/immobilien-haeuser.html" '
-      +'loading="lazy" referrerpolicy="no-referrer" title="Aktuelle Immobilien Maertens"></iframe>';
+      +'<p class="ml-sub">Direkt aus unserem Bestand &mdash; immer aktuell</p>'
+      + cards;
     return s;
   }
 
@@ -64,7 +94,6 @@
     var isImmoPage=/\/immobilien\/?/.test(path);
 
     if(isImmoPage){
-      // Replace any "Vorbereitung"/"in Kürze" placeholder section with iframe
       var sections=document.querySelectorAll('main section, main > div, section');
       var replaced=false;
       sections.forEach(function(sec){
@@ -159,7 +188,6 @@
     },{threshold:.1,rootMargin:'0px 0px -50px 0px'});
     document.querySelectorAll('.ml-reveal').forEach(function(el){io.observe(el);});
   }
-
   function setupCounters(){
     if(!('IntersectionObserver' in window))return;
     document.querySelectorAll('h2,h3,h4,strong,.stat,.stat-number,[class*="number"],[class*="counter"]').forEach(function(el){
@@ -169,30 +197,20 @@
       var target=parseInt(m[1],10);
       if(target<5||target>100000)return;
       var suffix=m[2]||'';
-      el.dataset.mlCount=target;
-      el.dataset.mlSuffix=suffix;
-      el.textContent='0'+suffix;
+      el.dataset.mlCount=target;el.dataset.mlSuffix=suffix;el.textContent='0'+suffix;
     });
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(!e.isIntersecting)return;
-        var el=e.target;
-        var target=parseInt(el.dataset.mlCount,10);
-        var suffix=el.dataset.mlSuffix||'';
-        var dur=1400,start=performance.now();
-        function step(now){
-          var p=Math.min(1,(now-start)/dur);
-          var eased=1-Math.pow(1-p,3);
-          el.textContent=Math.round(target*eased)+suffix;
-          if(p<1)requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-        io.unobserve(el);
+        var el=e.target;var target=parseInt(el.dataset.mlCount,10);
+        var suffix=el.dataset.mlSuffix||'';var dur=1400,start=performance.now();
+        function step(now){var p=Math.min(1,(now-start)/dur);var eased=1-Math.pow(1-p,3);
+          el.textContent=Math.round(target*eased)+suffix;if(p<1)requestAnimationFrame(step);}
+        requestAnimationFrame(step);io.unobserve(el);
       });
     },{threshold:.6});
     document.querySelectorAll('[data-ml-count]').forEach(function(el){io.observe(el);});
   }
-
   function setupSmoothScroll(){
     document.addEventListener('click',function(e){
       var a=e.target.closest('a[href^="#"]');
@@ -201,18 +219,15 @@
       if(href.length<2)return;
       var t=document.querySelector(href);
       if(!t)return;
-      e.preventDefault();
-      t.scrollIntoView({behavior:'smooth',block:'start'});
+      e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});
     });
   }
-
   function fixBrokenImages(){
     document.querySelectorAll('img').forEach(function(img){
       img.addEventListener('error',function(){img.classList.add('ml-broken');});
       if(!img.getAttribute('src')||img.getAttribute('src').trim()==='')img.classList.add('ml-broken');
     });
   }
-
   function init(){
     try{fixEmails();}catch(e){}
     try{injectCookieBanner();}catch(e){}
