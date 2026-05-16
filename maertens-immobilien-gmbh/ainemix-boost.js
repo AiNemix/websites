@@ -1,7 +1,7 @@
-/* AiNemix Design Boost v3 - generic, self-contained (no external deps) */
+/* AiNemix Design Boost v4 - real 3D, generic, self-contained */
 (function(){
   'use strict';
-  var CFG = {"email":"paul@ainemix.com","wrongEmails":["paul@ainemix.com","vanessa@ainemix.com","noreply@ainemix.com","test@example.com"],"isRealEstate":true,"listings":[{"title":"RESERVIERT: Wohnerlebnis in Bielefeld-Quelle: 3,5 Zimmer mit Balkon","link":"https://www.maertens-immobilien.com/de/0__225_1_3_/bielefeld-reserviert-wohnerlebnis-in-bielefeld-quelle-35-zimmer-mit-balkon.html","image":"https://www.maertens-immobilien.com/de/upload/4829-225-5-g.jpg","status":"RESERVIERT","price":"220.000 €","wohnflaeche":"88 m²","grundstueck":null,"zimmer":"3,5","location":null},{"title":"Ein Zuhause mit Geschichte - bereit für neue Ideen","link":"https://www.maertens-immobilien.com/de/0__227_2_3_/braunschweig-ein-zuhause-mit-geschichte-bereit-fuer-neue-ideen.html","image":"https://www.maertens-immobilien.com/de/upload/immobilie4875-ansicht-g.jpg","status":"#verkaufenwir","price":"350.000 €","wohnflaeche":"162 m²","grundstueck":"603 m²","zimmer":"6","location":null},{"title":"Ein- / Zweifamilienhaus in GF - Gamsen","link":"https://www.maertens-immobilien.com/de/0__222_2_3_/gifhorn-ein-zweifamilienhaus-in-gf-gamsen.html","image":"https://www.maertens-immobilien.com/de/upload/4804-222-8-g.jpg","status":"VERKAUFT","price":"299.000 €","wohnflaeche":"175 m²","grundstueck":"640 m²","zimmer":"7","location":null},{"title":"3-Zimmer-Wohnung in zentraler Citylage.","link":"https://www.maertens-immobilien.com/de/0__224_1_3_/braunschweig-3-zimmer-wohnung-in-zentraler-citylage.html","image":"https://www.maertens-immobilien.com/de/upload/4822-224-1-g.jpg","status":"#verkaufenwir","price":"175.000 €","wohnflaeche":"62 m²","grundstueck":null,"zimmer":"3","location":null},{"title":"Mittendrin statt nur dabei - aufwendig modernisiert.","link":"https://www.maertens-immobilien.com/de/0__223_1_3_/braunschweig-mittendrin-statt-nur-dabei-aufwendig-modernisiert.html","image":"https://www.maertens-immobilien.com/de/upload/4821-223-7-g.jpg","status":"#verkaufenwir","price":"300.000 €","wohnflaeche":"69 m²","grundstueck":null,"zimmer":"3","location":null},{"title":"- RESERVIERT - Ein- bis Zweifamilienwohnhaus mit tollem Garten#verkaufen wir","link":"https://www.maertens-immobilien.com/de/0__221_2_3_/weddel-reserviert-ein-bis-zweifamilienwohnhaus-mit-tollem-gartenverkaufen-wir.html","image":"https://www.maertens-immobilien.com/de/upload/4789-221-13-g.jpg","status":"VERKAUFT","price":"269.000 €","wohnflaeche":"145 m²","grundstueck":"1.250 m²","zimmer":"6","location":null}],"phone":"+49 170 5224355","company":"Maertens Immobilien GmbH"};
+  var CFG = {"email":"paul@ainemix.com","wrongEmails":["paul@ainemix.com","vanessa@ainemix.com","noreply@ainemix.com","test@example.com"],"isRealEstate":true,"listings":[{"title":"RESERVIERT: Wohnerlebnis in Bielefeld-Quelle: 3,5 Zimmer mit Balkon","link":"https://www.maertens-immobilien.com/de/0__225_1_3_/bielefeld-reserviert-wohnerlebnis-in-bielefeld-quelle-35-zimmer-mit-balkon.html","image":"https://www.maertens-immobilien.com/de/upload/4829-225-5-g.jpg","status":"RESERVIERT","price":"220.000 €","wohnflaeche":"88 m²","grundstueck":null,"zimmer":"3,5","location":null},{"title":"3-Zimmer-Wohnung in zentraler Citylage.","link":"https://www.maertens-immobilien.com/de/0__224_1_3_/braunschweig-3-zimmer-wohnung-in-zentraler-citylage.html","image":"https://www.maertens-immobilien.com/de/upload/4822-224-1-g.jpg","status":"#verkaufenwir","price":"175.000 €","wohnflaeche":"62 m²","grundstueck":null,"zimmer":"3","location":null},{"title":"- RESERVIERT - Bungalow in Wolfsburg - Mörse#verkaufen wir","link":"https://www.maertens-immobilien.com/de/0__220_2_3_/wolfsburg-reserviert-bungalow-in-wolfsburg-moerseverkaufen-wir.html","image":"https://www.maertens-immobilien.com/de/upload/4762-220-5-g.jpg","status":"VERKAUFT","price":"299.000 €","wohnflaeche":"125 m²","grundstueck":"713 m²","zimmer":"4","location":null},{"title":"Ein Zuhause mit Geschichte - bereit für neue Ideen","link":"https://www.maertens-immobilien.com/de/0__227_2_3_/braunschweig-ein-zuhause-mit-geschichte-bereit-fuer-neue-ideen.html","image":"https://www.maertens-immobilien.com/de/upload/immobilie4875-ansicht-g.jpg","status":"#verkaufenwir","price":"350.000 €","wohnflaeche":"162 m²","grundstueck":"603 m²","zimmer":"6","location":null},{"title":"Mittendrin statt nur dabei - aufwendig modernisiert.","link":"https://www.maertens-immobilien.com/de/0__223_1_3_/braunschweig-mittendrin-statt-nur-dabei-aufwendig-modernisiert.html","image":"https://www.maertens-immobilien.com/de/upload/4821-223-7-g.jpg","status":"#verkaufenwir","price":"300.000 €","wohnflaeche":"69 m²","grundstueck":null,"zimmer":"3","location":null},{"title":"Und am Ende der Straße steht ein Bungalow...","link":"https://www.maertens-immobilien.com/de/0__219_2_3_/hannover-und-am-ende-der-strasse-steht-ein-bungalow.html","image":"https://www.maertens-immobilien.com/de/upload/4745-219-7-g.jpg","status":"VERKAUFT","price":"399.000 €","wohnflaeche":"102 m²","grundstueck":"327 m²","zimmer":"4","location":null}],"phone":"+49 170 5224355","company":"Maertens Immobilien GmbH"};
   var doc = document;
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -63,6 +63,19 @@
     _hero=doc.querySelector('.hero,[class*="hero"],header+section,main>section:first-child');
     return _hero;
   }
+  function heroContent(){
+    var h=heroEl(); if(!h) return null;
+    var c=h.querySelector('.container,[class*="hero-content"],[class*="hero__content"],[class*="hero__inner"],[class*="hero-inner"]');
+    if(c) return c;
+    var real=[];
+    for(var i=0;i<h.children.length;i++){
+      var ch=h.children[i];
+      if(/ml-(aurora|hero-canvas|hero-scrim|spotlight|cube-wrap)/.test(ch.className||'')) continue;
+      if(ch.tagName==='IMG') continue;
+      real.push(ch);
+    }
+    return real.length===1 ? real[0] : null;
+  }
   function siteDepth(){
     var s=doc.querySelector('script[src*="ainemix-boost.js"]');
     var src=s?(s.getAttribute('src')||''):'';
@@ -70,7 +83,6 @@
     return m?m[0].length/3:0;
   }
 
-  /* ---- hero readability: detect photo bg -> scrim + force light text ---- */
   function enhanceHeroReadability(){
     var h=heroEl(); if(!h) return;
     if(getComputedStyle(h).position==='static') h.style.position='relative';
@@ -104,6 +116,16 @@
     }
   }
 
+  function injectCube(){
+    if(reduce) return;
+    var h=heroEl(); if(!h) return;
+    if(h.querySelector('.ml-cube-wrap')) return;
+    if(h.clientWidth < 880) return;
+    var wrap=doc.createElement('div'); wrap.className='ml-cube-wrap';
+    wrap.innerHTML='<div class="ml-cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>';
+    h.insertBefore(wrap,h.firstChild);
+  }
+
   function initSpotlight(){
     if(reduce) return;
     var h=heroEl(); if(!h) return;
@@ -123,10 +145,35 @@
     h.addEventListener('mouseleave',function(){ sp.style.opacity='0'; });
   }
 
+  /* hero is a 3D stage: content plane tilts with the cursor */
+  function init3DHero(){
+    if(reduce) return;
+    var h=heroEl(); if(!h) return;
+    var c=heroContent(); if(!c) return;
+    h.style.perspective='1300px';
+    c.classList.add('ml-3d-stage');
+    var wrap=h.querySelector('.ml-cube-wrap');
+    var raf;
+    h.addEventListener('mousemove',function(e){
+      var r=h.getBoundingClientRect();
+      var px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+      cancelAnimationFrame(raf);
+      raf=requestAnimationFrame(function(){
+        c.style.transform='rotateY('+(px*6).toFixed(2)+'deg) rotateX('+(-py*4).toFixed(2)+'deg)';
+        if(wrap) wrap.style.transform='translate3d('+(-px*40).toFixed(1)+'px,'+(-py*30).toFixed(1)+'px,0)';
+      });
+    });
+    h.addEventListener('mouseleave',function(){
+      cancelAnimationFrame(raf);
+      c.style.transform='';
+      if(wrap) wrap.style.transform='';
+    });
+  }
+
   function cinematicHeroEntrance(){
     if(reduce) return;
     var h=heroEl(); if(!h) return;
-    var scope=h.querySelector('.container,.hero-content,[class*="hero-content"],[class*="hero__content"]')||h;
+    var scope=heroContent()||h;
     var kids=scope.querySelectorAll('h1,h2,p,a.btn,a[class*="btn"],.btn,[class*="eyebrow"],[class*="kicker"],[class*="badge"],ul');
     var c=0;
     kids.forEach(function(el){
@@ -173,7 +220,7 @@
     }
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target);} });
-    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    },{threshold:.1,rootMargin:'0px 0px -7% 0px'});
     doc.querySelectorAll('.ml-reveal').forEach(function(e){io.observe(e);});
   }
 
@@ -186,7 +233,7 @@
         var px=(ev.clientX-r.left)/r.width-.5, py=(ev.clientY-r.top)/r.height-.5;
         cancelAnimationFrame(raf);
         raf=requestAnimationFrame(function(){
-          card.style.transform='perspective(820px) rotateX('+(-py*9)+'deg) rotateY('+(px*9)+'deg) translateY(-8px) scale(1.02)';
+          card.style.transform='perspective(800px) rotateX('+(-py*11)+'deg) rotateY('+(px*11)+'deg) translateY(-10px) scale(1.03)';
           card.style.setProperty('--gx',((px+.5)*100)+'%');
           card.style.setProperty('--gy',((py+.5)*100)+'%');
         });
@@ -200,7 +247,7 @@
     doc.querySelectorAll('.ml-mag').forEach(function(b){
       b.addEventListener('mousemove',function(ev){
         var r=b.getBoundingClientRect();
-        b.style.transform='translate('+((ev.clientX-r.left-r.width/2)*.18)+'px,'+((ev.clientY-r.top-r.height/2)*.22)+'px)';
+        b.style.transform='translate('+((ev.clientX-r.left-r.width/2)*.2)+'px,'+((ev.clientY-r.top-r.height/2)*.24)+'px)';
       });
       b.addEventListener('mouseleave',function(){ b.style.transform=''; });
     });
@@ -227,7 +274,7 @@
         if(reduce){ el.textContent=to+sfx; io.unobserve(el); return; }
         var t0=performance.now();
         function step(now){
-          var p=Math.min(1,(now-t0)/1500);
+          var p=Math.min(1,(now-t0)/1600);
           el.textContent=Math.round(to*(1-Math.pow(1-p,3)))+sfx;
           if(p<1) requestAnimationFrame(step);
         }
@@ -342,7 +389,6 @@
     }
   }
 
-  /* ---- canvas-2D particle hero (self-contained, bounded, 30fps cap) ---- */
   function initParticleHero(rgb){
     if(reduce) return;
     var host=heroEl(); if(!host) return;
@@ -360,12 +406,12 @@
       cv.style.width=W+'px'; cv.style.height=H+'px';
     }
     function build(){
-      var n=Math.max(30,Math.min(90,Math.round(W*H/20000)));
+      var n=Math.max(34,Math.min(96,Math.round(W*H/18000)));
       parts=[];
       for(var i=0;i<n;i++){
         var z=Math.random()*0.7+0.3;
         parts.push({ x:Math.random()*W, y:Math.random()*H,
-          vx:(Math.random()-0.5)*0.26*z, vy:(Math.random()-0.5)*0.26*z, z:z });
+          vx:(Math.random()-0.5)*0.28*z, vy:(Math.random()-0.5)*0.28*z, z:z });
       }
     }
     size(); build();
@@ -389,15 +435,15 @@
         if(p.x<-24)p.x=W+24; else if(p.x>W+24)p.x=-24;
         if(p.y<-24)p.y=H+24; else if(p.y>H+24)p.y=-24;
       }
-      var ox=mx*30, oy=my*30;
+      var ox=mx*36, oy=my*36;
       ctx.lineWidth=1;
       for(i=0;i<parts.length;i++){
         p=parts[i];
         for(j=i+1;j<parts.length;j++){
           q=parts[j];
           dx=p.x-q.x; dy=p.y-q.y; d2=dx*dx+dy*dy;
-          if(d2<16000){
-            var a=(1-d2/16000)*0.26*Math.min(p.z,q.z);
+          if(d2<17000){
+            var a=(1-d2/17000)*0.30*Math.min(p.z,q.z);
             ctx.strokeStyle='rgba('+col+','+a.toFixed(3)+')';
             ctx.beginPath();
             ctx.moveTo(p.x+ox*p.z,p.y+oy*p.z);
@@ -408,9 +454,9 @@
       }
       for(i=0;i<parts.length;i++){
         p=parts[i];
-        ctx.fillStyle='rgba('+col+','+(0.38+0.46*p.z).toFixed(3)+')';
+        ctx.fillStyle='rgba('+col+','+(0.42+0.5*p.z).toFixed(3)+')';
         ctx.beginPath();
-        ctx.arc(p.x+ox*p.z,p.y+oy*p.z,1.5+2.6*p.z,0,6.2832);
+        ctx.arc(p.x+ox*p.z,p.y+oy*p.z,1.6+2.8*p.z,0,6.2832);
         ctx.fill();
       }
     }
@@ -425,12 +471,13 @@
     }
   }
 
+  /* hero scroll-recede + background parallax */
   function initScrollParallax(){
     if(reduce) return;
     var host=heroEl(); if(!host) return;
     var aur=host.querySelector('.ml-aurora');
     var cv=host.querySelector('.ml-hero-canvas');
-    if(!aur && !cv) return;
+    var content=heroContent();
     var ticking=false;
     function onScroll(){
       if(ticking) return;
@@ -439,8 +486,14 @@
         var y=window.scrollY||window.pageYOffset||0;
         var hh=host.offsetHeight||1;
         if(y<=hh){
-          if(aur) aur.style.transform='translateY('+(y*0.28).toFixed(1)+'px)';
-          if(cv)  cv.style.transform='translateY('+(y*0.15).toFixed(1)+'px)';
+          var p=y/hh;
+          if(aur) aur.style.transform='translateY('+(y*0.3).toFixed(1)+'px)';
+          if(cv)  cv.style.transform='translateY('+(y*0.16).toFixed(1)+'px)';
+          if(content){
+            content.style.opacity=(1-p*0.9).toFixed(3);
+            content.style.transform=(content.style.transform||'').replace(/translateY\([^)]*\)|scale\([^)]*\)/g,'')
+              +' translateY('+(y*0.22).toFixed(1)+'px) scale('+(1-p*0.07).toFixed(3)+')';
+          }
         }
         ticking=false;
       });
@@ -454,6 +507,7 @@
     try{ fixEmails(); }catch(e){}
     try{ enhanceHeroReadability(); }catch(e){}
     try{ injectAurora(); }catch(e){}
+    try{ injectCube(); }catch(e){}
     try{ initSpotlight(); }catch(e){}
     try{ markElements(); }catch(e){}
     try{ cinematicHeroEntrance(); }catch(e){}
@@ -468,10 +522,11 @@
     try{ initCookie(); }catch(e){}
     try{ fixBrokenImages(); }catch(e){}
     try{ initParticleHero(rgb); }catch(e){}
+    try{ init3DHero(); }catch(e){}
     try{ initScrollParallax(); }catch(e){}
     setTimeout(function(){
       doc.querySelectorAll('.ml-reveal:not(.is-visible)').forEach(function(e){e.classList.add('is-visible');});
-    },4200);
+    },4500);
   }
   if(doc.readyState==='loading') doc.addEventListener('DOMContentLoaded',init);
   else init();

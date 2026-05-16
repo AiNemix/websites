@@ -4,83 +4,89 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
     <title>Leistungen – Maertens Immobilien GmbH</title>
-    <meta name='description' content='Von der ersten Beratung bis zum erfolgreichen Verkauf – wir begleiten Sie mit Expertise und Engagement.'>
+    <meta name='description' content='Unser umfassendes Leistungsspektrum für Ihren erfolgreichen Immobilienverkauf in Braunschweig. Von der Bewertung bis zum Vertragsabschluss.'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Manrope:wght@400;700&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='../assets/css/styles.css'>
-    <script defer src='../assets/js/main.js'></script>
 
-<link rel="stylesheet" href="../maertens-skin.css">
-<script src="../maertens-fix.js" defer></script>
+<link rel="stylesheet" href="../ainemix-boost.css">
+<script src="../ainemix-boost.js" defer></script>
 </head>
 <body>
     <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
-    <header id='main-header' class='main-header'>
-        <div class='container header-container'>
+
+    <header class='site-header' id='site-header'>
+        <div class='container'>
             <a href='../' class='logo'>Maertens Immobilien</a>
             <nav class='main-nav'>
-                <ul>
-                    <li><a href='../'>Startseite</a></li>
-                    <li><a href='' class='active'>Leistungen</a></li>
-                    <li><a href='../immobilien/'>Immobilien</a></li>
-                    <li><a href='../verkaufen/'>Verkaufen</a></li>
-                    <li><a href='../ueber-uns/'>Über Uns</a></li>
-                    <li><a href='../kontakt/'>Kontakt</a></li>
+                <ul class='nav-list'>
+                    <li><a href='../' class='nav-link'>Startseite</a></li>
+                    <li><a href='' class='nav-link active'>Leistungen</a></li>
+                    <li><a href='../referenzen/' class='nav-link'>Referenzen</a></li>
+                    <li><a href='../ueber-mich/' class='nav-link'>Über Mich</a></li>
+                    <li><a href='../kontakt/' class='nav-link'>Kontakt</a></li>
                 </ul>
             </nav>
-            <button id='mobile-menu-toggle' class='mobile-menu-toggle' aria-label='Menü öffnen' aria-expanded='false'>
-                <span class='hamburger-icon'></span>
+            <a href='../kontakt/' class='btn btn-primary nav-cta'>Beratung anfragen</a>
+            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false' aria-controls='mobile-nav-menu'>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
             </button>
         </div>
     </header>
 
-    <nav id='mobile-menu' class='mobile-menu' aria-label='Mobiles Menü'>
-        <button class='close-menu-btn' aria-label='Menü schließen'>&times;</button>
-        <ul>
-            <li><a href='../'>Startseite</a></li>
-            <li><a href='' class='active'>Leistungen</a></li>
-            <li><a href='../immobilien/'>Immobilien</a></li>
-            <li><a href='../verkaufen/'>Verkaufen</a></li>
-            <li><a href='../ueber-uns/'>Über Uns</a></li>
-            <li><a href='../kontakt/'>Kontakt</a></li>
-        </ul>
-    </nav>
+    <div class='mobile-nav-menu' id='mobile-nav-menu' role='dialog' aria-modal='true' aria-hidden='true'>
+        <div class='mobile-nav-backdrop'></div>
+        <div class='mobile-nav-content'>
+            <button class='mobile-nav-close' aria-label='Menü schließen'>&times;</button>
+            <nav>
+                <ul class='mobile-nav-list'>
+                    <li><a href='../' class='nav-link'>Startseite</a></li>
+                    <li><a href='' class='nav-link active'>Leistungen</a></li>
+                    <li><a href='../referenzen/' class='nav-link'>Referenzen</a></li>
+                    <li><a href='../ueber-mich/' class='nav-link'>Über Mich</a></li>
+                    <li><a href='../kontakt/' class='nav-link'>Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href='../kontakt/' class='btn btn-primary'>Kostenlose Erstberatung</a>
+        </div>
+    </div>
 
     <main id='main-content'>
-        <section class='hero-simple'>
-            <div class='container text-center reveal-on-scroll'>
-                <h1>Unsere Leistungen für Ihren Erfolg</h1>
-                <p class='subline'>Von der ersten Beratung bis zum erfolgreichen Verkauf – wir begleiten Sie mit Expertise und Engagement.</p>
+        <section class='page-hero'>
+            <!-- KM_IMAGE_REF: assets/img/image.png -->
+            <div class='hero-bg-image' style='background-image: url(../assets/img/image.png); object-position: center 70%;' data-km-image='assets/img/image.png'></div>
+            <div class='hero-overlay'></div>
+            <div class='container hero-content'>
+                <div class='hero-text reveal-on-scroll'>
+                    <h1>Unsere Leistungen für Ihren Erfolg</h1>
+                    <p class='subline'>Wir bieten Ihnen ein umfassendes Leistungsspektrum rund um den Verkauf Ihrer Immobilie in Braunschweig. Von der ersten Bewertung bis zum erfolgreichen Vertragsabschluss – wir sind Ihr zuverlässiger Partner.</p>
+                </div>
             </div>
         </section>
 
-        <section class='section services-list'>
+        <section class='leistungen-section section-padding'>
+            <div class='container text-center reveal-on-scroll'>
+                <h2 class='section-title'>Unsere Kernleistungen im Überblick</h2>
+            </div>
             <div class='container'>
-                <div class='grid-2 reveal-on-scroll stagger-children'>
-                    <div class='card'>
-                        <h3>Immobilienverkauf</h3>
-                        <p>Wir erzielen den besten Preis für Ihre Immobilie. Vertrauen Sie auf unsere lokale Marktkenntnis und unseren transparenten Verkaufsprozess.</p>
+                <div class='value-prop-grid'>
+                    <div class='card reveal-on-scroll' data-stagger-delay='0'>
+                        <div class='card-icon'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z'/></svg></div>
+                        <h3>Professionelle Immobilienbewertung</h3>
+                        <p>Wir ermitteln den Wert Ihrer Immobilie marktgerecht und realistisch. Dabei berücksichtigen wir alle relevanten Faktoren wie Lage, Zustand und Ausstattung.</p>
                     </div>
-                    <div class='card'>
-                        <h3>Vermietung</h3>
-                        <p>Wir finden den passenden Mieter für Ihre Immobilie. Profitieren Sie von unserer Erfahrung und unserem Netzwerk.</p>
+                    <div class='card reveal-on-scroll' data-stagger-delay='100'>
+                        <div class='card-icon'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z'/></svg></div>
+                        <h3>Individuelle Vermarktungsstrategie</h3>
+                        <p>Wir entwickeln eine maßgeschneiderte Vermarktungsstrategie, die Ihre Immobilie optimal präsentiert und die richtigen Käufer anspricht.</p>
                     </div>
-                    <div class='card'>
-                        <h3>Häuser</h3>
-                        <p>Wir vermarkten Ihr Haus erfolgreich. Ob Einfamilienhaus, Mehrfamilienhaus oder Villa – wir sind Ihr kompetenter Partner.</p>
-                    </div>
-                    <div class='card'>
-                        <h3>Wohnungen</h3>
-                        <p>Wir verkaufen Ihre Wohnung zum Bestpreis. Von der Eigentumswohnung bis zum Penthouse – wir kennen den Markt.</p>
-                    </div>
-                    <div class='card'>
-                        <h3>Grundstücke</h3>
-                        <p>Wir vermitteln Ihr Grundstück an den richtigen Käufer. Ob Baugrundstück oder Gewerbefläche – wir beraten Sie umfassend.</p>
-                    </div>
-                    <div class='card'>
-                        <h3>Gewerbe-Immobilien</h3>
-                        <p>Wir vermarkten Ihre Gewerbeimmobilie erfolgreich. Ob Bürogebäude, Ladenfläche oder Lagerhalle – wir sind Ihr Spezialist.</p>
+                    <div class='card reveal-on-scroll' data-stagger-delay='200'>
+                        <div class='card-icon'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M20.59 2.59a2.07 2.07 0 0 0-2.93 0L10 10.25l-2.66-2.66a2.07 2.07 0 0 0-2.93 2.93L8.5 14.59l-1.59 1.59a2.07 2.07 0 0 0 2.93 2.93l1.59-1.59L16.09 20a2.07 2.07 0 0 0 2.93-2.93L10.75 10l7.75-7.75a2.07 2.07 0 0 0-1.91-1.66z'/></svg></div>
+                        <h3>Effektive Verkaufsabwicklung</h3>
+                        <p>Wir begleiten Sie durch den gesamten Verkaufsprozess – von der Besichtigung bis zum Notartermin. Wir kümmern uns um alle Details und sorgen für einen reibungslosen Ablauf.</p>
                     </div>
                 </div>
             </div>
@@ -88,17 +94,42 @@
 
         <div class='signature-divider'></div>
 
-        <section class='section cta-footer bg-primary'>
+        <section class='mehrwerte-section section-padding surface-alt'>
+            <div class='container'>
+                <div class='mehrwerte-grid'>
+                    <div class='mehrwerte-text reveal-on-scroll'>
+                        <h2>Zusätzliche Mehrwerte für Sie</h2>
+                        <p>Wir gehen die extra Meile, um Ihren Immobilienverkauf so einfach und erfolgreich wie möglich zu gestalten.</p>
+                    </div>
+                    <div class='mehrwerte-list reveal-on-scroll' data-stagger-delay='100'>
+                        <ul>
+                            <li>Kostenlose Erstberatung</li>
+                            <li>Persönliche Betreuung durch Dieter Maertens</li>
+                            <li>Umfassende Marktkenntnis</li>
+                            <li>Professionelle Exposé-Erstellung</li>
+                            <li>Koordination von Besichtigungsterminen</li>
+                            <li>Verhandlung mit potenziellen Käufern</li>
+                            <li>Vorbereitung des Notartermins</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class='cta-footer-section'>
             <div class='container text-center reveal-on-scroll'>
-                <h2>Haben Sie Fragen zu unseren Leistungen?</h2>
-                <p>Wir beraten Sie gerne unverbindlich und persönlich. Nehmen Sie jetzt Kontakt auf.</p>
-                <a href='../kontakt/' class='btn btn-light'>Jetzt Kontakt aufnehmen</a>
+                <h2>Starten Sie jetzt Ihren erfolgreichen Immobilienverkauf!</h2>
+                <p class='subline'>Vereinbaren Sie jetzt ein unverbindliches Beratungsgespräch mit Dieter Maertens und lassen Sie sich von unserer Expertise überzeugen.</p>
+                <div class='cta-group'>
+                    <a href='../kontakt/' class='btn btn-primary'>Kostenlose Beratung anfragen</a>
+                    <a href='tel:+491705224355' class='btn btn-ghost'>+49 170 5224355</a>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class='main-footer'>
+    <footer class='site-footer'>
         <div class='container'>
             <div class='footer-grid'>
                 <div class='footer-col'>
@@ -110,27 +141,22 @@
                     <ul>
                         <li><a href='../'>Startseite</a></li>
                         <li><a href=''>Leistungen</a></li>
-                        <li><a href='../immobilien/'>Immobilien</a></li>
-                        <li><a href='../verkaufen/'>Verkaufen</a></li>
-                        <li><a href='../ueber-uns/'>Über Uns</a></li>
+                        <li><a href='../referenzen/'>Referenzen</a></li>
+                        <li><a href='../ueber-mich/'>Über Mich</a></li>
                         <li><a href='../kontakt/'>Kontakt</a></li>
                     </ul>
                 </div>
                 <div class='footer-col'>
+                    <h4>Kontakt</h4>
+                    <p>Aegidienmarkt 14<br>38100 Braunschweig</p>
+                    <p><a href='tel:+491705224355'>+49 170 5224355</a><br><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
+                </div>
+                 <div class='footer-col'>
                     <h4>Rechtliches</h4>
                     <ul>
                         <li><a href='../impressum/'>Impressum</a></li>
                         <li><a href='../datenschutz/'>Datenschutz</a></li>
                     </ul>
-                </div>
-                <div class='footer-col'>
-                    <h4>Kontakt</h4>
-                    <address>
-                        Aegidienmarkt 14<br>
-                        38100 Braunschweig<br>
-                        <a href='tel:+491705224355'>+49 170 5224355</a><br>
-                        <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a>
-                    </address>
                 </div>
             </div>
             <div class='footer-bottom'>
@@ -139,31 +165,31 @@
         </div>
     </footer>
 
-    <div id='cookie-banner' class='cookie-banner'>
-        <div class='container cookie-container'>
+    <div id='km-cookie-banner'>
+        <div class='container'>
             <p>Wir verwenden Cookies, um die Funktionalität der Website zu gewährleisten. <a href='../datenschutz/'>Mehr erfahren</a></p>
-            <div class='cookie-buttons'>
-                <button id='accept-cookies' class='btn btn-primary'>Akzeptieren</button>
-            </div>
+            <button id='km-cookie-accept' class='btn btn-primary'>Akzeptieren</button>
         </div>
     </div>
 
-    <div id='km-lightbox' class='km-lightbox' style='display: none;'>
-        <button class='km-lightbox-close' aria-label='Galerie schließen'>&times;</button>
-        <button class='km-lightbox-prev' aria-label='Vorheriges Bild'>&#10094;</button>
-        <button class='km-lightbox-next' aria-label='Nächstes Bild'>&#10095;</button>
+    <div id='km-lightbox'>
+        <div class='km-lightbox-backdrop'></div>
         <div class='km-lightbox-content'>
-            <img src='' alt='Großansicht Bild' id='km-lightbox-img'>
-        </div>
-    </div>
-    
-    <div id='sticky-cta' class='sticky-cta'>
-        <div class='container sticky-cta-container'>
-            <p>Starten Sie jetzt den Verkauf Ihrer Immobilie.</p>
-            <a href='../kontakt/' class='btn btn-primary'>Kostenlose Beratung</a>
+            <button class='km-lightbox-close' aria-label='Galerie schließen'>&times;</button>
+            <button class='km-lightbox-prev' aria-label='Voriges Bild'>&lsaquo;</button>
+            <img src='' alt='Galeriebild'>
+            <button class='km-lightbox-next' aria-label='Nächstes Bild'>&rsaquo;</button>
         </div>
     </div>
 
+    <div id='sticky-cta'>
+        <div class='container'>
+            <p>Bereit für den nächsten Schritt?</p>
+            <a href='../kontakt/' class='btn btn-primary'>Jetzt Beratung anfragen</a>
+        </div>
+    </div>
+
+    <script src='../assets/js/main.js'></script>
 
 
 <style id='km-chat-fix'>
