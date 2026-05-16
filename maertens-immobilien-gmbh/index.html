@@ -4,11 +4,11 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
     <title>Maertens Immobilien GmbH – Premium Immobilienmakler in Braunschweig</title>
-    <meta name='description' content='Ihr Spezialist für den erfolgreichen Immobilienverkauf in Braunschweig. Persönliche Betreuung, lokale Expertise und zielgerichtete Vermarktung für Ihr bestmögliches Verkaufsergebnis.'>
+    <meta name='description' content='Ihr Spezialist für den erfolgreichen Immobilienverkauf im Herzen von Braunschweig. Persönliche Betreuung, transparente Bewertung und professionelle Vermarktung.'>
+    <link rel='stylesheet' href='assets/css/styles.css'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' href='assets/css/styles.css'>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
 
 <link rel="stylesheet" href="ainemix-boost.css">
 <script src="ainemix-boost.js" defer></script>
@@ -16,228 +16,188 @@
 <body>
     <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
 
-    <header class='site-header' id='site-header'>
+    <header class='site-header sticky-header'>
         <div class='container'>
-            <a href='' class='logo'>Maertens Immobilien</a>
-            <nav class='main-nav'>
-                <ul class='nav-list'>
-                    <li><a href='' class='nav-link active'>Startseite</a></li>
-                    <li><a href='leistungen/' class='nav-link'>Leistungen</a></li>
-                    <li><a href='referenzen/' class='nav-link'>Referenzen</a></li>
-                    <li><a href='ueber-mich/' class='nav-link'>Über Mich</a></li>
-                    <li><a href='kontakt/' class='nav-link'>Kontakt</a></li>
-                </ul>
-            </nav>
-            <a href='kontakt/' class='btn btn-primary nav-cta'>Beratung anfragen</a>
-            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false' aria-controls='mobile-nav-menu'>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-            </button>
+            <div class='header-inner'>
+                <a href='' class='logo'>Maertens Immobilien</a>
+                <nav class='main-nav'>
+                    <ul class='nav-list'>
+                        <li><a href='' class='nav-link active'>Startseite</a></li>
+                        <li><a href='immobilien/' class='nav-link'>Immobilien</a></li>
+                        <li><a href='verkaufen/' class='nav-link'>Verkaufen</a></li>
+                        <li><a href='ueber-uns/' class='nav-link'>Über Uns</a></li>
+                        <li><a href='kontakt/' class='nav-link'>Kontakt</a></li>
+                    </ul>
+                </nav>
+                <a href='kontakt/' class='btn btn-primary header-cta'>Kontakt</a>
+                <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+                    <span class='icon-bar'></span>
+                    <span class='icon-bar'></span>
+                    <span class='icon-bar'></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <div class='mobile-nav-menu' id='mobile-nav-menu' role='dialog' aria-modal='true' aria-hidden='true'>
-        <div class='mobile-nav-backdrop'></div>
-        <div class='mobile-nav-content'>
+    <div class='mobile-nav-drawer'>
+        <div class='mobile-nav-header'>
+             <a href='' class='logo'>Maertens Immobilien</a>
             <button class='mobile-nav-close' aria-label='Menü schließen'>&times;</button>
-            <nav>
-                <ul class='mobile-nav-list'>
-                    <li><a href='' class='nav-link active'>Startseite</a></li>
-                    <li><a href='leistungen/' class='nav-link'>Leistungen</a></li>
-                    <li><a href='referenzen/' class='nav-link'>Referenzen</a></li>
-                    <li><a href='ueber-mich/' class='nav-link'>Über Mich</a></li>
-                    <li><a href='kontakt/' class='nav-link'>Kontakt</a></li>
-                </ul>
-            </nav>
-            <a href='kontakt/' class='btn btn-primary'>Kostenlose Erstberatung</a>
         </div>
+        <nav>
+            <ul class='mobile-nav-list'>
+                <li><a href='' class='nav-link active'>Startseite</a></li>
+                <li><a href='immobilien/' class='nav-link'>Immobilien</a></li>
+                <li><a href='verkaufen/' class='nav-link'>Verkaufen</a></li>
+                <li><a href='ueber-uns/' class='nav-link'>Über Uns</a></li>
+                <li><a href='kontakt/' class='nav-link'>Kontakt</a></li>
+            </ul>
+        </nav>
     </div>
 
     <main id='main-content'>
+        <!-- HERO SECTION -->
         <section class='hero'>
             <!-- KM_IMAGE_REF: assets/img/image.png -->
-            <div class='hero-bg-image' style='background-image: url(assets/img/image.png);' data-km-image='assets/img/image.png'></div>
+            <div class='hero-bg-image' style='background-image: url(assets/img/image.png);'></div>
             <div class='hero-overlay'></div>
-            <div class='container hero-content'>
-                <div class='hero-text reveal-on-scroll'>
-                    <span class='kicker'>Immobilienverkauf in Braunschweig</span>
-                    <h1>Sicher. Erfolgreich. Persönlich.</h1>
-                    <p class='subline'>Sie wollen Ihre Immobilie in Braunschweig zum bestmöglichen Preis verkaufen? Als Ihr lokaler Spezialist begleite ich Sie persönlich zum erfolgreichen Abschluss.</p>
-                    <div class='cta-group'>
-                        <a href='#wert-rechner' class='btn btn-primary'>Immobilie jetzt bewerten</a>
-                        <a href='referenzen/' class='btn btn-outline'>Unsere Referenzen</a>
-                    </div>
+            <div class='container hero-content text-center reveal-on-scroll'>
+                <span class='kicker'>Immobilienverkauf leicht gemacht</span>
+                <h1>Immobilienverkauf in Braunschweig. Persönlich. Erfolgreich.</h1>
+                <p class='subline'>Sie wollen Ihre Immobilie in Braunschweig verkaufen? Wir sind Ihr lokaler Partner für Häuser, Wohnungen und Grundstücke – mit persönlicher Betreuung und marktgerechter Bewertung.</p>
+                <div class='cta-group'>
+                    <a href='verkaufen/' class='btn btn-primary'>Immobilie jetzt bewerten</a>
+                    <a href='immobilien/' class='btn btn-outline'>Aktuelle Angebote</a>
                 </div>
-            </div>
-            <div class='hero-trust-chips'>
-                <div class='container'>
-                   <span>Über 15 Jahre Erfahrung</span>
-                   <span>Fokus Innenstadt</span>
-                   <span>Persönliche Betreuung</span>
-                </div>
-            </div>
-        </section>
-
-        <section class='intro-section section-padding'>
-            <div class='container'>
-                <div class='intro-grid'>
-                    <div class='intro-text reveal-on-scroll'>
-                        <h2>Ihr Partner für den erfolgreichen Immobilienverkauf in Braunschweig</h2>
-                        <p>Der Verkauf einer Immobilie ist eine wichtige Entscheidung. Sie wollen den besten Preis erzielen, ohne unnötigen Stress und Zeitaufwand? Als Maertens Immobilien GmbH sind wir Ihr erfahrener Partner vor Ort. Wir kennen den Braunschweiger Markt genau und begleiten Sie persönlich durch den gesamten Verkaufsprozess – von der ersten Bewertung bis zum erfolgreichen Vertragsabschluss.</p>
-                    </div>
-                    <div class='intro-benefits reveal-on-scroll' data-stagger-delay='100'>
-                        <ul>
-                            <li><strong>Lokale Expertise:</strong> Tiefgehende Kenntnis des Braunschweiger Immobilienmarktes.</li>
-                            <li><strong>Persönliche Betreuung:</strong> Ein fester Ansprechpartner für alle Ihre Fragen.</li>
-                            <li><strong>Zielgerichtete Vermarktung:</strong> Strategien, die den passenden Käufer finden.</li>
-                        </ul>
-                    </div>
+                <div class='trust-chips'>
+                    <span class='chip'>Lokale Expertise</span>
+                    <span class='chip'>Unverbindliche Beratung</span>
                 </div>
             </div>
         </section>
 
         <div class='signature-divider'></div>
 
-        <section class='value-prop-section section-padding surface-alt'>
-            <div class='container text-center reveal-on-scroll'>
-                <h2 class='section-title'>Darum Maertens Immobilien</h2>
-            </div>
+        <!-- VALUE PROP SECTION -->
+        <section class='value-prop-section section-padding'>
             <div class='container'>
-                <div class='value-prop-grid'>
-                    <div class='card reveal-on-scroll' data-stagger-delay='0'>
-                        <div class='card-icon'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/></svg></div>
-                        <h3>Lokale Expertise</h3>
-                        <p>Wir sind in Braunschweig zu Hause und kennen jeden Stadtteil. Profitieren Sie von unserer detaillierten Marktkenntnis und unserer Fähigkeit, den Wert Ihrer Immobilie realistisch einzuschätzen.</p>
+                <div class='section-header text-center reveal-on-scroll'>
+                    <h2>Ihre Vorteile mit Maertens Immobilien</h2>
+                </div>
+                <div class='grid-3 reveal-on-scroll stagger-group'>
+                    <div class='value-card'>
+                        <div class='card-icon'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z'/></svg></div>
+                        <h3>Marktwertanalyse</h3>
+                        <p>Wir ermitteln den optimalen Verkaufspreis für Ihre Immobilie – fundiert und marktgerecht.</p>
                     </div>
-                    <div class='card reveal-on-scroll' data-stagger-delay='100'>
+                    <div class='value-card'>
+                        <div class='card-icon'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 13H6v-2h12v2zm0-3H6V6h12v6z'/></svg></div>
+                        <h3>Professionelle Vermarktung</h3>
+                        <p>Wir präsentieren Ihre Immobilie optimal – für eine schnelle und erfolgreiche Vermittlung.</p>
+                    </div>
+                    <div class='value-card'>
                         <div class='card-icon'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/></svg></div>
                         <h3>Persönliche Betreuung</h3>
-                        <p>Bei uns sind Sie keine Nummer. Dieter Maertens persönlich betreut Sie vom ersten Gespräch bis zum Notartermin. Wir nehmen uns Zeit für Ihre Fragen und Wünsche.</p>
-                    </div>
-                    <div class='card reveal-on-scroll' data-stagger-delay='200'>
-                        <div class='card-icon'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/></svg></div>
-                        <h3>Zielgerichtete Vermarktung</h3>
-                        <p>Wir setzen auf eine individuelle Vermarktungsstrategie, die Ihre Immobilie optimal präsentiert und die richtigen Käufer anspricht. Von professionellen Fotos bis zu gezielten Online-Anzeigen.</p>
+                        <p>Von der ersten Beratung bis zum Notartermin – wir sind Ihr persönlicher Ansprechpartner.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id='wert-rechner' class='signature-interaction-section section-padding'>
-            <div class='container reveal-on-scroll'>
-                <div class='signature-interaction-content'>
-                    <h2>Was ist Ihre Immobilie wert?</h2>
-                    <p>Finden Sie es heraus – mit unserer kostenlosen Online-Bewertung. Beantworten Sie einfach ein paar kurze Fragen und erhalten Sie eine erste Einschätzung. Für eine detaillierte Bewertung vereinbaren Sie bitte einen persönlichen Termin.</p>
-                    <div class='form-container' id='value-calculator'>
-                        <div class='form-step active' data-step='1'>
-                            <p class='question'>Welche Art von Immobilie möchten Sie verkaufen?</p>
-                            <div class='options-grid'>
-                                <button class='option-btn' data-next-step='2'>Haus</button>
-                                <button class='option-btn' data-next-step='2'>Wohnung</button>
-                                <button class='option-btn' data-next-step='2'>Grundstück</button>
-                                <button class='option-btn' data-next-step='2'>Gewerbeobjekt</button>
-                            </div>
-                        </div>
-                        <div class='form-step' data-step='2'>
-                            <p class='question'>Wie groß ist die Wohnfläche?</p>
-                            <input type='number' placeholder='Quadratmeter' class='form-input'>
-                            <button class='btn btn-primary' data-next-step='3'>Weiter</button>
-                        </div>
-                        <div class='form-step' data-step='3'>
-                            <p class='question'>In welchem Zustand befindet sich die Immobilie?</p>
-                             <div class='options-grid'>
-                                <button class='option-btn' data-next-step='result'>Renovierungsbedürftig</button>
-                                <button class='option-btn' data-next-step='result'>Gepflegt</button>
-                                <button class='option-btn' data-next-step='result'>Modernisiert</button>
-                                <button class='option-btn' data-next-step='result'>Neubau</button>
-                            </div>
-                        </div>
-                        <div class='form-step result-step' data-step='result'>
-                            <h3>Ihre erste Einschätzung ist da!</h3>
-                            <p>Für eine detaillierte und marktgerechte Bewertung Ihrer Immobilie vereinbaren Sie jetzt ein unverbindliches Beratungsgespräch mit Dieter Maertens.</p>
-                            <a href='kontakt/' class='btn btn-primary'>Persönliche Bewertung anfordern</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class='signature-divider'></div>
-
-        <section class='references-section section-padding surface-alt'>
-            <div class='container text-center reveal-on-scroll'>
-                <h2 class='section-title'>Aktuelle Referenzen aus Braunschweig</h2>
-                <p class='section-subtitle'>Überzeugen Sie sich selbst von unserer erfolgreichen Arbeit. Hier finden Sie eine Auswahl unserer aktuellen Verkaufsobjekte in Braunschweig und Umgebung.</p>
-            </div>
+        <!-- PROPERTIES TEASER -->
+        <section class='properties-teaser-section section-padding surface-bg'>
             <div class='container'>
-                <div class='gallery-grid' id='home-gallery'>
-                    <!-- KM_IMAGE_REF: assets/img/image_2.png -->
-                    <a href='#' class='gallery-item reveal-on-scroll' data-km-gallery-item data-stagger-delay='0'>
-                        <img src='assets/img/image_2.png' data-km-image='assets/img/image_2.png' alt='Verkauftes Einfamilienhaus in Stöckheim' loading='lazy' sizes='(max-width: 768px) 100vw, 50vw'>
-                        <div class='gallery-item-overlay'>
-                            <h4>Verkauft in Stöckheim</h4>
-                            <p>Einfamilienhaus</p>
-                        </div>
-                    </a>
-                    <!-- KM_IMAGE_REF: assets/img/image_3.png -->
-                    <a href='#' class='gallery-item reveal-on-scroll' data-km-gallery-item data-stagger-delay='100'>
-                        <img src='assets/img/image_3.png' data-km-image='assets/img/image_3.png' alt='Verkaufte Altbauwohnung in der Innenstadt' loading='lazy' sizes='(max-width: 768px) 100vw, 50vw'>
-                        <div class='gallery-item-overlay'>
-                            <h4>Verkauft in der Innenstadt</h4>
-                            <p>Altbauwohnung</p>
-                        </div>
-                    </a>
-                    <!-- KM_IMAGE_REF: assets/img/image.png -->
-                    <a href='#' class='gallery-item reveal-on-scroll' data-km-gallery-item data-stagger-delay='200'>
-                        <img src='assets/img/image.png' data-km-image='assets/img/image.png' alt='Verkauftes Reihenhaus in Broitzem' loading='lazy' sizes='(max-width: 768px) 100vw, 50vw'>
-                        <div class='gallery-item-overlay'>
-                            <h4>Verkauft in Broitzem</h4>
-                            <p>Reihenhaus</p>
-                        </div>
-                    </a>
-                    <!-- KM_IMAGE_REF: assets/img/image_1.png -->
-                    <a href='#' class='gallery-item reveal-on-scroll' data-km-gallery-item data-stagger-delay='300'>
-                        <img src='assets/img/image_1.png' data-km-image='assets/img/image_1.png' alt='Verkaufte Doppelhaushälfte in Lehndorf' loading='lazy' sizes='(max-width: 768px) 100vw, 50vw'>
-                        <div class='gallery-item-overlay'>
-                            <h4>Verkauft in Lehndorf</h4>
-                            <p>Doppelhaushälfte</p>
-                        </div>
-                    </a>
+                <div class='section-header text-center reveal-on-scroll'>
+                    <h2>Aktuelle Immobilienangebote</h2>
                 </div>
-                <div class='text-center reveal-on-scroll' style='margin-top: 40px;'>
-                    <a href='referenzen/' class='btn btn-primary'>Alle Referenzen entdecken</a>
+                <div class='grid-2 reveal-on-scroll stagger-group'>
+                    <div class='property-card'>
+                        <!-- KM_IMAGE_REF: assets/img/image_2.png -->
+                        <img src='assets/img/image_2.png' data-km-image='assets/img/image_2.png' alt='Exklusives Einfamilienhaus in Braunschweig' class='property-card-img' loading='lazy' sizes='(max-width: 768px) 100vw, 580px'>
+                        <div class='property-card-content'>
+                            <span class='property-type'>Einfamilienhaus</span>
+                            <p class='property-description'>Exklusives Einfamilienhaus in Braunschweig – modern und stilvoll.</p>
+                            <span class='property-price'>auf Anfrage</span>
+                        </div>
+                    </div>
+                    <div class='property-card'>
+                        <!-- KM_IMAGE_REF: assets/img/image_3.png -->
+                        <img src='assets/img/image_3.png' data-km-image='assets/img/image_3.png' alt='Helle Eigentumswohnung in zentraler Lage' class='property-card-img' loading='lazy' sizes='(max-width: 768px) 100vw, 580px'>
+                        <div class='property-card-content'>
+                            <span class='property-type'>Eigentumswohnung</span>
+                            <p class='property-description'>Helle und einladende Eigentumswohnung in zentraler Lage.</p>
+                            <span class='property-price'>auf Anfrage</span>
+                        </div>
+                    </div>
+                </div>
+                <div class='text-center reveal-on-scroll' style='margin-top: 2rem;'>
+                    <a href='immobilien/' class='btn btn-primary'>Alle Angebote anzeigen</a>
                 </div>
             </div>
         </section>
 
-        <section class='about-teaser-section section-padding'>
+        <!-- SELLING PROCESS -->
+        <section class='selling-process-section section-padding'>
             <div class='container'>
-                <div class='about-teaser-grid'>
-                    <div class='about-teaser-image reveal-on-scroll'>
+                <div class='section-header text-center reveal-on-scroll'>
+                    <h2>In 4 Schritten zum erfolgreichen Verkauf</h2>
+                </div>
+                <div class='process-timeline reveal-on-scroll stagger-group'>
+                    <div class='process-step'>
+                        <div class='step-number'>1</div>
+                        <div class='step-content'>
+                            <h3>Kostenlose Bewertung & Beratung</h3>
+                            <p>Wir bewerten Ihre Immobilie und beraten Sie umfassend – kostenlos und unverbindlich.</p>
+                        </div>
+                    </div>
+                    <div class='process-step'>
+                        <div class='step-number'>2</div>
+                        <div class='step-content'>
+                            <h3>Gezielte Vermarktung & Exposé</h3>
+                            <p>Wir erstellen ein hochwertiges Exposé und vermarkten Ihre Immobilie gezielt.</p>
+                        </div>
+                    </div>
+                    <div class='process-step'>
+                        <div class='step-number'>3</div>
+                        <div class='step-content'>
+                            <h3>Besichtigungsmanagement</h3>
+                            <p>Wir koordinieren und führen Besichtigungen professionell durch.</p>
+                        </div>
+                    </div>
+                    <div class='process-step'>
+                        <div class='step-number'>4</div>
+                        <div class='step-content'>
+                            <h3>Notartermin & Übergabe</h3>
+                            <p>Wir begleiten Sie zum Notartermin und unterstützen Sie bei der Übergabe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT TEASER -->
+        <section class='about-teaser-section section-padding surface-bg'>
+            <div class='container'>
+                <div class='split-layout reveal-on-scroll'>
+                    <div class='split-image'>
                         <!-- KM_IMAGE_REF: assets/img/image_1.png -->
-                        <img src='assets/img/image_1.png' data-km-image='assets/img/image_1.png' alt='Symbolbild: Expertise in der Immobilienberatung' loading='lazy' sizes='(max-width: 768px) 100vw, 50vw'>
+                        <img src='assets/img/image_1.png' data-km-image='assets/img/image_1.png' alt='Symbolbild: Immobilienexperte bei der Planung' class='about-teaser-img' loading='lazy' sizes='(max-width: 768px) 100vw, 500px'>
                     </div>
-                    <div class='about-teaser-text reveal-on-scroll' data-stagger-delay='100'>
-                        <h2>Ihr Experte für Braunschweig</h2>
-                        <p>Dieter Maertens ist Ihr persönlicher Ansprechpartner für den erfolgreichen Verkauf Ihrer Immobilie in Braunschweig. Mit über 15 Jahren Erfahrung und tiefgehender Marktkenntnis begleite ich Sie zum bestmöglichen Ergebnis.</p>
-                        <blockquote class='quote'>
-                            <p>„Mir ist es wichtig, dass Sie sich während des gesamten Verkaufsprozesses gut aufgehoben fühlen. Ich nehme mir Zeit für Ihre Fragen und Wünsche und stehe Ihnen jederzeit mit Rat und Tat zur Seite.“</p>
-                        </blockquote>
-                        <a href='ueber-mich/' class='btn btn-outline'>Mehr über Dieter Maertens</a>
+                    <div class='split-content'>
+                        <h2>Ihr persönlicher Ansprechpartner</h2>
+                        <p>Dieter Maertens – Ihr erfahrener Immobilienexperte in Braunschweig. Mit lokaler Verbundenheit und persönlichem Engagement führen wir Sie sicher durch den gesamten Verkaufsprozess.</p>
+                        <a href='ueber-uns/' class='btn btn-primary'>Mehr über uns erfahren</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class='cta-footer-section'>
+        <!-- CTA FOOTER -->
+        <section class='cta-footer-section section-padding'>
             <div class='container text-center reveal-on-scroll'>
-                <h2>Bereit für den erfolgreichen Verkauf Ihrer Immobilie?</h2>
-                <p class='subline'>Vereinbaren Sie jetzt ein unverbindliches Erstgespräch.</p>
-                <div class='cta-group'>
-                    <a href='kontakt/' class='btn btn-primary'>Kostenlose Erstberatung anfragen</a>
-                    <a href='tel:+491705224355' class='btn btn-ghost'>+49 170 5224355</a>
-                </div>
+                <h2>Starten Sie jetzt den Verkauf Ihrer Immobilie.</h2>
+                <p class='subline'>Kontaktieren Sie uns für eine unverbindliche und kostenlose Erstberatung.</p>
+                <a href='kontakt/' class='btn btn-primary btn-large'>Jetzt Kontakt aufnehmen</a>
             </div>
         </section>
 
@@ -248,24 +208,25 @@
             <div class='footer-grid'>
                 <div class='footer-col'>
                     <h4>Maertens Immobilien GmbH</h4>
-                    <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig.</p>
+                    <p>Ihr Premium-Makler für den Immobilienverkauf in Braunschweig.</p>
                 </div>
                 <div class='footer-col'>
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href=''>Startseite</a></li>
-                        <li><a href='leistungen/'>Leistungen</a></li>
-                        <li><a href='referenzen/'>Referenzen</a></li>
-                        <li><a href='ueber-mich/'>Über Mich</a></li>
+                        <li><a href='immobilien/'>Immobilien</a></li>
+                        <li><a href='verkaufen/'>Verkaufen</a></li>
+                        <li><a href='ueber-uns/'>Über Uns</a></li>
                         <li><a href='kontakt/'>Kontakt</a></li>
                     </ul>
                 </div>
                 <div class='footer-col'>
                     <h4>Kontakt</h4>
-                    <p>Aegidienmarkt 14<br>38100 Braunschweig</p>
-                    <p><a href='tel:+491705224355'>+49 170 5224355</a><br><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
+                    <p>Dieter Maertens</p>
+                    <p><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
+                    <p><a href='tel:+491705224355'>+49 170 5224355</a></p>
                 </div>
-                 <div class='footer-col'>
+                <div class='footer-col'>
                     <h4>Rechtliches</h4>
                     <ul>
                         <li><a href='impressum/'>Impressum</a></li>
@@ -279,27 +240,22 @@
         </div>
     </footer>
 
-    <div id='km-cookie-banner'>
+    <div id='cookie-banner'>
         <div class='container'>
-            <p>Wir verwenden Cookies, um die Funktionalität der Website zu gewährleisten. <a href='datenschutz/'>Mehr erfahren</a></p>
-            <button id='km-cookie-accept' class='btn btn-primary'>Akzeptieren</button>
+            <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. <a href='datenschutz/'>Mehr erfahren</a></p>
+            <div class='cookie-buttons'>
+                <button id='cookie-accept' class='btn btn-primary'>Akzeptieren</button>
+                <button id='cookie-decline' class='btn btn-outline'>Ablehnen</button>
+            </div>
         </div>
     </div>
-
-    <div id='km-lightbox'>
-        <div class='km-lightbox-backdrop'></div>
+    
+    <div id='km-lightbox' class='km-lightbox' style='display: none;'>
+        <button class='km-lightbox-close'>&times;</button>
+        <button class='km-lightbox-prev'>&#10094;</button>
+        <button class='km-lightbox-next'>&#10095;</button>
         <div class='km-lightbox-content'>
-            <button class='km-lightbox-close' aria-label='Galerie schließen'>&times;</button>
-            <button class='km-lightbox-prev' aria-label='Voriges Bild'>&lsaquo;</button>
-            <img src='' alt='Galeriebild'>
-            <button class='km-lightbox-next' aria-label='Nächstes Bild'>&rsaquo;</button>
-        </div>
-    </div>
-
-    <div id='sticky-cta'>
-        <div class='container'>
-            <p>Bereit für den nächsten Schritt?</p>
-            <a href='kontakt/' class='btn btn-primary'>Jetzt Beratung anfragen</a>
+            <img src='' alt='Großansicht des Bildes' class='km-lightbox-image'>
         </div>
     </div>
 

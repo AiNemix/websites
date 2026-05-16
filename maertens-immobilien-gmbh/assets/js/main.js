@@ -1,37 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- Mobile Navigation --- //
-    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-    const mobileNavMenu = document.querySelector('.mobile-nav-menu');
-    const mobileNavClose = document.querySelector('.mobile-nav-close');
-    const mobileNavBackdrop = document.querySelector('.mobile-nav-backdrop');
-
-    function openMobileMenu() {
-        mobileNavMenu.classList.add('open');
-        mobileNavToggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('scroll-locked');
-    }
-
-    function closeMobileMenu() {
-        mobileNavMenu.classList.remove('open');
-        mobileNavToggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('scroll-locked');
-    }
-
-    if (mobileNavToggle && mobileNavMenu) {
-        mobileNavToggle.addEventListener('click', openMobileMenu);
-        mobileNavClose.addEventListener('click', closeMobileMenu);
-        mobileNavBackdrop.addEventListener('click', closeMobileMenu);
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileNavMenu.classList.contains('open')) {
-                closeMobileMenu();
-            }
-        });
-    }
-
-    // --- Sticky Header --- //
-    const header = document.getElementById('site-header');
+    // --- Sticky Header ---
+    const header = document.querySelector('.sticky-header');
     if (header) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
@@ -42,135 +12,167 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Scroll Reveal Animation --- //
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = parseInt(entry.target.dataset.staggerDelay) || 0;
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, delay);
-                observer.unobserve(entry.target);
+    // --- Mobile Navigation ---
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileNavDrawer = document.querySelector('.mobile-nav-drawer');
+    const mobileNavClose = document.querySelector('.mobile-nav-close');
+
+    if (mobileNavToggle && mobileNavDrawer) {
+        const openMenu = () => {
+            mobileNavDrawer.classList.add('open');
+            mobileNavToggle.setAttribute('aria-expanded', 'true');
+            document.body.classList.add('body-no-scroll');
+            document.addEventListener('keydown', handleEscKey);
+            mobileNavDrawer.addEventListener('click', handleBackdropClick);
+        };
+
+        const closeMenu = () => {
+            mobileNavDrawer.classList.remove('open');
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('body-no-scroll');
+            document.removeEventListener('keydown', handleEscKey);
+            mobileNavDrawer.removeEventListener('click', handleBackdropClick);
+        };
+
+        const handleEscKey = (e) => {
+            if (e.key === 'Escape') {
+                closeMenu();
             }
-        });
-    }, { threshold: 0.1 });
+        };
+        
+        const handleBackdropClick = (e) => {
+            if (e.target === mobileNavDrawer) {
+                closeMenu();
+            }
+        };
 
-    revealElements.forEach(el => observer.observe(el));
-
-    // --- Cookie Banner --- //
-    const cookieBanner = document.getElementById('km-cookie-banner');
-    const cookieAcceptBtn = document.getElementById('km-cookie-accept');
-
-    if (cookieBanner && cookieAcceptBtn) {
-        if (!localStorage.getItem('cookieConsent')) {
-            cookieBanner.style.display = 'block';
+        mobileNavToggle.addEventListener('click', openMenu);
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', closeMenu);
         }
-        cookieAcceptBtn.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'true');
-            cookieBanner.style.display = 'none';
-        });
     }
 
-    // --- Value Calculator Teaser --- //
-    const valueCalculator = document.getElementById('value-calculator');
-    if (valueCalculator) {
-        const steps = valueCalculator.querySelectorAll('.form-step');
-        const triggers = valueCalculator.querySelectorAll('[data-next-step]');
-
-        triggers.forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                const currentStep = trigger.closest('.form-step');
-                const nextStepId = trigger.dataset.nextStep;
-                const nextStep = valueCalculator.querySelector(`[data-step='${nextStepId}']`);
-
-                if (currentStep && nextStep) {
-                    currentStep.classList.remove('active');
-                    nextStep.classList.add('active');
+    // --- Scroll Reveal Animation ---
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    if (revealElements.length > 0) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Stagger animation for child elements
+                    const staggerGroup = entry.target.querySelector('.stagger-group');
+                    if (staggerGroup) {
+                        Array.from(staggerGroup.children).forEach((child, index) => {
+                            child.style.setProperty('--stagger-index', index);
+                        });
+                    }
+                    observer.unobserve(entry.target);
                 }
             });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+            observer.observe(el);
         });
     }
 
-    // --- Global Lightbox --- //
+    // --- Cookie Banner ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+
+    if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    }
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.remove('show');
+        });
+    }
+
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.classList.remove('show');
+        });
+    }
+
+    // --- Global Lightbox ---
     const lightbox = document.getElementById('km-lightbox');
-    if (lightbox) {
-        const lightboxImg = lightbox.querySelector('img');
-        const closeBtn = lightbox.querySelector('.km-lightbox-close');
-        const prevBtn = lightbox.querySelector('.km-lightbox-prev');
-        const nextBtn = lightbox.querySelector('.km-lightbox-next');
-        const backdrop = lightbox.querySelector('.km-lightbox-backdrop');
-        let currentIndex = 0;
-        let imageSources = [];
+    const lightboxImg = lightbox ? lightbox.querySelector('.km-lightbox-image') : null;
+    const lightboxClose = lightbox ? lightbox.querySelector('.km-lightbox-close') : null;
+    const lightboxPrev = lightbox ? lightbox.querySelector('.km-lightbox-prev') : null;
+    const lightboxNext = lightbox ? lightbox.querySelector('.km-lightbox-next') : null;
 
-        const galleryItems = document.querySelectorAll('[data-km-gallery-item]');
+    let currentImageIndex = 0;
+    let imageSources = [];
 
-        function openLightbox(index) {
-            currentIndex = index;
-            lightbox.style.display = 'flex';
-            document.body.classList.add('scroll-locked');
-            updateLightboxImage();
+    const openLightbox = (index) => {
+        currentImageIndex = index;
+        lightboxImg.src = imageSources[currentImageIndex];
+        lightbox.classList.add('open');
+        document.body.classList.add('body-no-scroll');
+        addLightboxEventListeners();
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('open');
+        document.body.classList.remove('body-no-scroll');
+        removeLightboxEventListeners();
+    };
+
+    const showPrevImage = () => {
+        currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
+        lightboxImg.src = imageSources[currentImageIndex];
+    };
+
+    const showNextImage = () => {
+        currentImageIndex = (currentImageIndex + 1) % imageSources.length;
+        lightboxImg.src = imageSources[currentImageIndex];
+    };
+
+    const handleLightboxKeydown = (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrevImage();
+        if (e.key === 'ArrowRight') showNextImage();
+    };
+    
+    const handleLightboxBackdropClick = (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
         }
+    };
 
-        function closeLightbox() {
-            lightbox.style.display = 'none';
-            document.body.classList.remove('scroll-locked');
-        }
+    function addLightboxEventListeners() {
+        document.addEventListener('keydown', handleLightboxKeydown);
+        lightbox.addEventListener('click', handleLightboxBackdropClick);
+    }
 
-        function updateLightboxImage() {
-            lightboxImg.src = imageSources[currentIndex];
-            lightboxImg.alt = galleryItems[currentIndex].querySelector('img').alt;
-        }
+    function removeLightboxEventListeners() {
+        document.removeEventListener('keydown', handleLightboxKeydown);
+        lightbox.removeEventListener('click', handleLightboxBackdropClick);
+    }
 
-        function showPrev() {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : imageSources.length - 1;
-            updateLightboxImage();
-        }
+    const galleries = document.querySelectorAll('.lightbox-gallery');
+    if (galleries.length > 0 && lightbox) {
+        galleries.forEach(gallery => {
+            const galleryImages = gallery.querySelectorAll('img.gallery-item');
+            imageSources = Array.from(galleryImages).map(img => img.src); // Use absolute src
 
-        function showNext() {
-            currentIndex = (currentIndex < imageSources.length - 1) ? currentIndex + 1 : 0;
-            updateLightboxImage();
-        }
-
-        if (galleryItems.length > 0) {
-            // IMPORTANT: Use the full `src` attribute which is an absolute URL.
-            imageSources = Array.from(galleryItems).map(item => item.querySelector('img').src);
-
-            galleryItems.forEach((item, index) => {
-                item.addEventListener('click', (e) => {
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', (e) => {
                     e.preventDefault();
                     openLightbox(index);
                 });
             });
-
-            closeBtn.addEventListener('click', closeLightbox);
-            backdrop.addEventListener('click', closeLightbox);
-            prevBtn.addEventListener('click', showPrev);
-            nextBtn.addEventListener('click', showNext);
-
-            document.addEventListener('keydown', (e) => {
-                if (lightbox.style.display === 'flex') {
-                    if (e.key === 'Escape') closeLightbox();
-                    if (e.key === 'ArrowLeft') showPrev();
-                    if (e.key === 'ArrowRight') showNext();
-                }
-            });
-        }
-    }
-
-    // --- Sticky CTA --- //
-    const stickyCTA = document.getElementById('sticky-cta');
-    if (stickyCTA) {
-        const heroSection = document.querySelector('.hero');
-        const showThreshold = heroSection ? heroSection.offsetHeight : 600;
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > showThreshold) {
-                stickyCTA.classList.add('visible');
-            } else {
-                stickyCTA.classList.remove('visible');
-            }
         });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', showPrevImage);
+        lightboxNext.addEventListener('click', showNextImage);
     }
 });

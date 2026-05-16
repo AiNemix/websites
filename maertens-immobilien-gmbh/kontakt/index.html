@@ -4,11 +4,11 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
     <title>Kontakt – Maertens Immobilien GmbH</title>
-    <meta name='description' content='Nehmen Sie Kontakt auf für eine persönliche Beratung. Wir freuen uns auf Ihre Anfrage per Telefon, E-Mail oder Kontaktformular.'>
+    <meta name='description' content='Nehmen Sie Kontakt mit uns auf. Wir freuen uns auf Ihre Anfrage rund um den Immobilienverkauf in Braunschweig.'>
+    <link rel='stylesheet' href='../assets/css/styles.css'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' href='../assets/css/styles.css'>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
 
 <link rel="stylesheet" href="../ainemix-boost.css">
 <script src="../ainemix-boost.js" defer></script>
@@ -16,62 +16,67 @@
 <body>
     <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
 
-    <header class='site-header' id='site-header'>
+    <header class='site-header sticky-header'>
         <div class='container'>
-            <a href='../' class='logo'>Maertens Immobilien</a>
-            <nav class='main-nav'>
-                <ul class='nav-list'>
-                    <li><a href='../' class='nav-link'>Startseite</a></li>
-                    <li><a href='../leistungen/' class='nav-link'>Leistungen</a></li>
-                    <li><a href='../referenzen/' class='nav-link'>Referenzen</a></li>
-                    <li><a href='../ueber-mich/' class='nav-link'>Über Mich</a></li>
-                    <li><a href='' class='nav-link active'>Kontakt</a></li>
-                </ul>
-            </nav>
-            <a href='../kontakt/' class='btn btn-primary nav-cta'>Beratung anfragen</a>
-            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false' aria-controls='mobile-nav-menu'>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-            </button>
+            <div class='header-inner'>
+                <a href='../' class='logo'>Maertens Immobilien</a>
+                <nav class='main-nav'>
+                    <ul class='nav-list'>
+                        <li><a href='../' class='nav-link'>Startseite</a></li>
+                        <li><a href='../immobilien/' class='nav-link'>Immobilien</a></li>
+                        <li><a href='../verkaufen/' class='nav-link'>Verkaufen</a></li>
+                        <li><a href='../ueber-uns/' class='nav-link'>Über Uns</a></li>
+                        <li><a href='' class='nav-link active'>Kontakt</a></li>
+                    </ul>
+                </nav>
+                <a href='' class='btn btn-primary header-cta'>Kontakt</a>
+                <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+                    <span class='icon-bar'></span>
+                    <span class='icon-bar'></span>
+                    <span class='icon-bar'></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <div class='mobile-nav-menu' id='mobile-nav-menu' role='dialog' aria-modal='true' aria-hidden='true'>
-        <div class='mobile-nav-backdrop'></div>
-        <div class='mobile-nav-content'>
+    <div class='mobile-nav-drawer'>
+        <div class='mobile-nav-header'>
+             <a href='../' class='logo'>Maertens Immobilien</a>
             <button class='mobile-nav-close' aria-label='Menü schließen'>&times;</button>
-            <nav>
-                <ul class='mobile-nav-list'>
-                    <li><a href='../' class='nav-link'>Startseite</a></li>
-                    <li><a href='../leistungen/' class='nav-link'>Leistungen</a></li>
-                    <li><a href='../referenzen/' class='nav-link'>Referenzen</a></li>
-                    <li><a href='../ueber-mich/' class='nav-link'>Über Mich</a></li>
-                    <li><a href='' class='nav-link active'>Kontakt</a></li>
-                </ul>
-            </nav>
-            <a href='../kontakt/' class='btn btn-primary'>Kostenlose Erstberatung</a>
         </div>
+        <nav>
+            <ul class='mobile-nav-list'>
+                <li><a href='../' class='nav-link'>Startseite</a></li>
+                <li><a href='../immobilien/' class='nav-link'>Immobilien</a></li>
+                <li><a href='../verkaufen/' class='nav-link'>Verkaufen</a></li>
+                <li><a href='../ueber-uns/' class='nav-link'>Über Uns</a></li>
+                <li><a href='' class='nav-link active'>Kontakt</a></li>
+            </ul>
+        </nav>
     </div>
 
     <main id='main-content'>
-        <section class='page-hero'>
-            <!-- KM_IMAGE_REF: assets/img/image_1.png -->
-            <div class='hero-bg-image' style='background-image: url(../assets/img/image_1.png); object-position: center 20%;' data-km-image='assets/img/image_1.png'></div>
-            <div class='hero-overlay'></div>
-            <div class='container hero-content'>
-                <div class='hero-text reveal-on-scroll'>
-                    <h1>Nehmen Sie Kontakt auf</h1>
-                    <p class='subline'>Sie haben Fragen oder wünschen eine persönliche Beratung? Kontaktieren Sie mich gerne telefonisch, per E-Mail oder über das Kontaktformular.</p>
-                </div>
+        <section class='page-header section-padding'>
+            <div class='container text-center'>
+                <h1>Kontaktieren Sie uns</h1>
+                <p class='subline'>Wir sind für Sie da. Schildern Sie uns Ihr Anliegen und wir melden uns umgehend bei Ihnen.</p>
             </div>
         </section>
 
-        <section class='contact-section section-padding'>
+        <section class='contact-section section-padding surface-bg'>
             <div class='container'>
-                <div class='contact-grid'>
-                    <div class='contact-form-wrapper reveal-on-scroll'>
-                        <h2>Kontaktformular</h2>
+                <div class='split-layout'>
+                    <div class='split-content contact-details'>
+                        <h3>Direkter Kontakt</h3>
+                        <p><strong>Ansprechpartner:</strong> Dieter Maertens</p>
+                        <p><strong>E-Mail:</strong> <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
+                        <p><strong>Telefon:</strong> <a href='tel:+491705224355'>+49 170 5224355</a></p>
+                        
+                        <h4>Maertens Immobilien GmbH</h4>
+                        <p>Ihr Partner für Immobilien in Braunschweig.</p>
+                    </div>
+                    <div class='split-content'>
+                        <h3>Schreiben Sie uns eine Nachricht</h3>
                         <form class='contact-form' action='#' method='POST'>
                             <div class='form-group'>
                                 <label for='name'>Name</label>
@@ -82,57 +87,15 @@
                                 <input type='email' id='email' name='email' required>
                             </div>
                             <div class='form-group'>
-                                <label for='telefon'>Telefon (optional)</label>
-                                <input type='tel' id='telefon' name='telefon'>
+                                <label for='message'>Ihre Nachricht</label>
+                                <textarea id='message' name='message' rows='5' required></textarea>
                             </div>
-                            <div class='form-group'>
-                                <label for='nachricht'>Nachricht</label>
-                                <textarea id='nachricht' name='nachricht' rows='5' required></textarea>
-                            </div>
-                            <div class='form-group-checkbox'>
-                                <input type='checkbox' id='datenschutz' name='datenschutz' required>
-                                <label for='datenschutz'>Ich stimme der <a href='../datenschutz/'>Datenschutzerklärung</a> zu.</label>
-                            </div>
-                            <button type='submit' class='btn btn-primary'>Senden</button>
+                            <button type='submit' class='btn btn-primary'>Nachricht senden</button>
                         </form>
                     </div>
-                    <div class='contact-info-wrapper reveal-on-scroll' data-stagger-delay='100'>
-                        <h2>Kontaktinformationen</h2>
-                        <div class='contact-info-item'>
-                            <h3>Dieter Maertens</h3>
-                            <p>Maertens Immobilien GmbH</p>
-                        </div>
-                        <div class='contact-info-item'>
-                            <h3>Adresse</h3>
-                            <p>Aegidienmarkt 14<br>38100 Braunschweig</p>
-                        </div>
-                        <div class='contact-info-item'>
-                            <h3>Kontakt</h3>
-                            <p><a href='tel:+491705224355'>+49 170 5224355</a></p>
-                            <p><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
-
-        <section class='map-section'>
-             <div class='container reveal-on-scroll'>
-                <div class='map-container'>
-                    <iframe 
-                        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.653457002018!2d10.52285161579257!3d52.26002997976587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a1e3e1b8a531f1%3A0x2f641a029c5a1532!2sAegidienmarkt%2014%2C%2038100%20Braunschweig!5e0!3m2!1sde!2sde!4v1684234567890!5m2!1sde!2sde' 
-                        width='100%' 
-                        height='450' 
-                        style='border:0;' 
-                        allowfullscreen='' 
-                        loading='lazy' 
-                        referrerpolicy='no-referrer-when-downgrade'
-                        title='Karte von Braunschweig mit Standort Aegidienmarkt 14'>
-                    </iframe>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <footer class='site-footer'>
@@ -140,24 +103,25 @@
             <div class='footer-grid'>
                 <div class='footer-col'>
                     <h4>Maertens Immobilien GmbH</h4>
-                    <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig.</p>
+                    <p>Ihr Premium-Makler für den Immobilienverkauf in Braunschweig.</p>
                 </div>
                 <div class='footer-col'>
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href='../'>Startseite</a></li>
-                        <li><a href='../leistungen/'>Leistungen</a></li>
-                        <li><a href='../referenzen/'>Referenzen</a></li>
-                        <li><a href='../ueber-mich/'>Über Mich</a></li>
+                        <li><a href='../immobilien/'>Immobilien</a></li>
+                        <li><a href='../verkaufen/'>Verkaufen</a></li>
+                        <li><a href='../ueber-uns/'>Über Uns</a></li>
                         <li><a href=''>Kontakt</a></li>
                     </ul>
                 </div>
                 <div class='footer-col'>
                     <h4>Kontakt</h4>
-                    <p>Aegidienmarkt 14<br>38100 Braunschweig</p>
-                    <p><a href='tel:+491705224355'>+49 170 5224355</a><br><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
+                    <p>Dieter Maertens</p>
+                    <p><a href='mailto:paul@ainemix.com'>paul@ainemix.com</a></p>
+                    <p><a href='tel:+491705224355'>+49 170 5224355</a></p>
                 </div>
-                 <div class='footer-col'>
+                <div class='footer-col'>
                     <h4>Rechtliches</h4>
                     <ul>
                         <li><a href='../impressum/'>Impressum</a></li>
@@ -171,27 +135,22 @@
         </div>
     </footer>
 
-    <div id='km-cookie-banner'>
+    <div id='cookie-banner'>
         <div class='container'>
-            <p>Wir verwenden Cookies, um die Funktionalität der Website zu gewährleisten. <a href='../datenschutz/'>Mehr erfahren</a></p>
-            <button id='km-cookie-accept' class='btn btn-primary'>Akzeptieren</button>
+            <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. <a href='../datenschutz/'>Mehr erfahren</a></p>
+            <div class='cookie-buttons'>
+                <button id='cookie-accept' class='btn btn-primary'>Akzeptieren</button>
+                <button id='cookie-decline' class='btn btn-outline'>Ablehnen</button>
+            </div>
         </div>
     </div>
-
-    <div id='km-lightbox'>
-        <div class='km-lightbox-backdrop'></div>
+    
+    <div id='km-lightbox' class='km-lightbox' style='display: none;'>
+        <button class='km-lightbox-close'>&times;</button>
+        <button class='km-lightbox-prev'>&#10094;</button>
+        <button class='km-lightbox-next'>&#10095;</button>
         <div class='km-lightbox-content'>
-            <button class='km-lightbox-close' aria-label='Galerie schließen'>&times;</button>
-            <button class='km-lightbox-prev' aria-label='Voriges Bild'>&lsaquo;</button>
-            <img src='' alt='Galeriebild'>
-            <button class='km-lightbox-next' aria-label='Nächstes Bild'>&rsaquo;</button>
-        </div>
-    </div>
-
-    <div id='sticky-cta'>
-        <div class='container'>
-            <p>Bereit für den nächsten Schritt?</p>
-            <a href='../kontakt/' class='btn btn-primary'>Jetzt Beratung anfragen</a>
+            <img src='' alt='Großansicht des Bildes' class='km-lightbox-image'>
         </div>
     </div>
 

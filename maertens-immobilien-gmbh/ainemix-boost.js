@@ -1,7 +1,7 @@
-/* AiNemix Design Boost v4 - real 3D, generic, self-contained */
+/* AiNemix Design Boost v5 - real 3D, generic, self-contained */
 (function(){
   'use strict';
-  var CFG = {"email":"paul@ainemix.com","wrongEmails":["paul@ainemix.com","vanessa@ainemix.com","noreply@ainemix.com","test@example.com"],"isRealEstate":true,"listings":[{"title":"RESERVIERT: Wohnerlebnis in Bielefeld-Quelle: 3,5 Zimmer mit Balkon","link":"https://www.maertens-immobilien.com/de/0__225_1_3_/bielefeld-reserviert-wohnerlebnis-in-bielefeld-quelle-35-zimmer-mit-balkon.html","image":"https://www.maertens-immobilien.com/de/upload/4829-225-5-g.jpg","status":"RESERVIERT","price":"220.000 €","wohnflaeche":"88 m²","grundstueck":null,"zimmer":"3,5","location":null},{"title":"3-Zimmer-Wohnung in zentraler Citylage.","link":"https://www.maertens-immobilien.com/de/0__224_1_3_/braunschweig-3-zimmer-wohnung-in-zentraler-citylage.html","image":"https://www.maertens-immobilien.com/de/upload/4822-224-1-g.jpg","status":"#verkaufenwir","price":"175.000 €","wohnflaeche":"62 m²","grundstueck":null,"zimmer":"3","location":null},{"title":"- RESERVIERT - Bungalow in Wolfsburg - Mörse#verkaufen wir","link":"https://www.maertens-immobilien.com/de/0__220_2_3_/wolfsburg-reserviert-bungalow-in-wolfsburg-moerseverkaufen-wir.html","image":"https://www.maertens-immobilien.com/de/upload/4762-220-5-g.jpg","status":"VERKAUFT","price":"299.000 €","wohnflaeche":"125 m²","grundstueck":"713 m²","zimmer":"4","location":null},{"title":"Ein Zuhause mit Geschichte - bereit für neue Ideen","link":"https://www.maertens-immobilien.com/de/0__227_2_3_/braunschweig-ein-zuhause-mit-geschichte-bereit-fuer-neue-ideen.html","image":"https://www.maertens-immobilien.com/de/upload/immobilie4875-ansicht-g.jpg","status":"#verkaufenwir","price":"350.000 €","wohnflaeche":"162 m²","grundstueck":"603 m²","zimmer":"6","location":null},{"title":"Mittendrin statt nur dabei - aufwendig modernisiert.","link":"https://www.maertens-immobilien.com/de/0__223_1_3_/braunschweig-mittendrin-statt-nur-dabei-aufwendig-modernisiert.html","image":"https://www.maertens-immobilien.com/de/upload/4821-223-7-g.jpg","status":"#verkaufenwir","price":"300.000 €","wohnflaeche":"69 m²","grundstueck":null,"zimmer":"3","location":null},{"title":"Und am Ende der Straße steht ein Bungalow...","link":"https://www.maertens-immobilien.com/de/0__219_2_3_/hannover-und-am-ende-der-strasse-steht-ein-bungalow.html","image":"https://www.maertens-immobilien.com/de/upload/4745-219-7-g.jpg","status":"VERKAUFT","price":"399.000 €","wohnflaeche":"102 m²","grundstueck":"327 m²","zimmer":"4","location":null}],"phone":"+49 170 5224355","company":"Maertens Immobilien GmbH"};
+  var CFG = {"email":"paul@ainemix.com","wrongEmails":["paul@ainemix.com","vanessa@ainemix.com","noreply@ainemix.com","test@example.com"],"isRealEstate":true,"listings":[{"title":"RESERVIERT: Wohnerlebnis in Bielefeld-Quelle: 3,5 Zimmer mit Balkon","link":"https://www.maertens-immobilien.com/de/0__225_1_3_/bielefeld-reserviert-wohnerlebnis-in-bielefeld-quelle-35-zimmer-mit-balkon.html","image":"https://www.maertens-immobilien.com/de/upload/4829-225-5-g.jpg","status":"RESERVIERT","price":"220.000 €","wohnflaeche":"88 m²","grundstueck":null,"zimmer":"3,5","location":null},{"title":"Und am Ende der Straße steht ein Bungalow...","link":"https://www.maertens-immobilien.com/de/0__219_2_3_/hannover-und-am-ende-der-strasse-steht-ein-bungalow.html","image":"https://www.maertens-immobilien.com/de/upload/4745-219-7-g.jpg","status":"VERKAUFT","price":"399.000 €","wohnflaeche":"102 m²","grundstueck":"327 m²","zimmer":"4","location":null},{"title":"- RESERVIERT - Bungalow in Wolfsburg - Mörse#verkaufen wir","link":"https://www.maertens-immobilien.com/de/0__220_2_3_/wolfsburg-reserviert-bungalow-in-wolfsburg-moerseverkaufen-wir.html","image":"https://www.maertens-immobilien.com/de/upload/4762-220-5-g.jpg","status":"VERKAUFT","price":"299.000 €","wohnflaeche":"125 m²","grundstueck":"713 m²","zimmer":"4","location":null},{"title":"Ein Zuhause mit Geschichte - bereit für neue Ideen","link":"https://www.maertens-immobilien.com/de/0__227_2_3_/braunschweig-ein-zuhause-mit-geschichte-bereit-fuer-neue-ideen.html","image":"https://www.maertens-immobilien.com/de/upload/immobilie4875-ansicht-g.jpg","status":"#verkaufenwir","price":"350.000 €","wohnflaeche":"162 m²","grundstueck":"603 m²","zimmer":"6","location":null},{"title":"Ein- / Zweifamilienhaus in GF - Gamsen","link":"https://www.maertens-immobilien.com/de/0__222_2_3_/gifhorn-ein-zweifamilienhaus-in-gf-gamsen.html","image":"https://www.maertens-immobilien.com/de/upload/4804-222-8-g.jpg","status":"VERKAUFT","price":"299.000 €","wohnflaeche":"175 m²","grundstueck":"640 m²","zimmer":"7","location":null},{"title":"3-Zimmer-Wohnung in zentraler Citylage.","link":"https://www.maertens-immobilien.com/de/0__224_1_3_/braunschweig-3-zimmer-wohnung-in-zentraler-citylage.html","image":"https://www.maertens-immobilien.com/de/upload/4822-224-1-g.jpg","status":"#verkaufenwir","price":"175.000 €","wohnflaeche":"62 m²","grundstueck":null,"zimmer":"3","location":null}],"phone":"+49 170 5224355","company":"Maertens Immobilien GmbH"};
   var doc = document;
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -183,7 +183,16 @@
     });
   }
 
-  function gradientHeadline(){
+  function heroIsDark(){
+    var h=heroEl(); if(!h) return false;
+    var t=h.querySelector('h1,h2,.subline,p');
+    if(t){ var c=parseRgb(getComputedStyle(t).color); if(c) return luma(c)>135; }
+    var bg=parseRgb(getComputedStyle(h).backgroundColor);
+    if(bg && (bg[0]+bg[1]+bg[2])>0) return luma(bg)<120;
+    return false;
+  }
+  function gradientHeadline(dark){
+    if(!dark) return;
     var h=heroEl(); if(!h) return;
     var h1=h.querySelector('h1'); if(!h1) return;
     h1.classList.add('ml-grad-head');
@@ -471,13 +480,13 @@
     }
   }
 
-  /* hero scroll-recede + background parallax */
+  /* background-layer parallax only (no content recede) */
   function initScrollParallax(){
     if(reduce) return;
     var host=heroEl(); if(!host) return;
     var aur=host.querySelector('.ml-aurora');
     var cv=host.querySelector('.ml-hero-canvas');
-    var content=heroContent();
+    if(!aur && !cv) return;
     var ticking=false;
     function onScroll(){
       if(ticking) return;
@@ -486,14 +495,8 @@
         var y=window.scrollY||window.pageYOffset||0;
         var hh=host.offsetHeight||1;
         if(y<=hh){
-          var p=y/hh;
           if(aur) aur.style.transform='translateY('+(y*0.3).toFixed(1)+'px)';
           if(cv)  cv.style.transform='translateY('+(y*0.16).toFixed(1)+'px)';
-          if(content){
-            content.style.opacity=(1-p*0.9).toFixed(3);
-            content.style.transform=(content.style.transform||'').replace(/translateY\([^)]*\)|scale\([^)]*\)/g,'')
-              +' translateY('+(y*0.22).toFixed(1)+'px) scale('+(1-p*0.07).toFixed(3)+')';
-          }
         }
         ticking=false;
       });
@@ -504,6 +507,8 @@
   function init(){
     var rgb;
     try{ rgb=detectTheme(); }catch(e){ rgb=[59,108,255]; }
+    var heroDark=false;
+    try{ heroDark=heroIsDark(); }catch(e){}
     try{ fixEmails(); }catch(e){}
     try{ enhanceHeroReadability(); }catch(e){}
     try{ injectAurora(); }catch(e){}
@@ -511,7 +516,7 @@
     try{ initSpotlight(); }catch(e){}
     try{ markElements(); }catch(e){}
     try{ cinematicHeroEntrance(); }catch(e){}
-    try{ gradientHeadline(); }catch(e){}
+    try{ gradientHeadline(heroDark); }catch(e){}
     try{ injectImmo(); }catch(e){}
     try{ initReveal(); }catch(e){}
     try{ initTilt(); }catch(e){}
