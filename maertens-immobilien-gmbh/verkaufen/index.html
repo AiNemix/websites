@@ -1,195 +1,218 @@
 <!DOCTYPE html>
 <html lang='de'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
-    <title>Immobilie verkaufen in Braunschweig – Maertens Immobilien GmbH</title>
-    <meta name='description' content='Wir begleiten Sie von der Wertermittlung bis zum erfolgreichen Verkauf. Vertrauen Sie auf unsere Expertise und lokale Marktkenntnis.'>
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' href='../assets/css/styles.css'>
-    <script src='../assets/js/main.js' defer></script>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
+  <title>Immobilie verkaufen - Maertens Immobilien GmbH</title>
+  <meta name='description' content='Verkaufen Sie Ihre Immobilie in Braunschweig zum besten Preis. Unser strukturierter Prozess sorgt für maximale Sicherheit und einen reibungslosen Ablauf.'>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='../assets/css/styles.css'>
 
 <link rel="stylesheet" href="../ainemix-boost.css">
 <script src="../ainemix-boost.js" defer></script>
 </head>
 <body>
-    <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
-    <header id='main-header' class='main-header'>
-        <div class='container header-container'>
-            <a href='../' class='logo'>Maertens Immobilien</a>
-            <nav class='main-nav'>
+  <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
+
+  <header class='site-header'>
+    <div class='container'>
+      <a href='../' class='logo'>Maertens Immobilien</a>
+      <nav class='main-nav'>
+        <ul>
+          <li><a href='../'>Startseite</a></li>
+          <li><a href='./' class='active'>Verkaufen</a></li>
+          <li><a href='../immobilien/'>Immobilien</a></li>
+          <li><a href='../ueber-uns/'>Über Uns</a></li>
+          <li><a href='../kontakt/'>Kontakt</a></li>
+        </ul>
+      </nav>
+      <a href='../kontakt/' class='btn btn-secondary cta-header-desktop'>Kontakt</a>
+      <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class='mobile-nav-drawer'>
+    <nav>
+        <ul>
+          <li><a href='../'>Startseite</a></li>
+          <li><a href='./'>Verkaufen</a></li>
+          <li><a href='../immobilien/'>Immobilien</a></li>
+          <li><a href='../ueber-uns/'>Über Uns</a></li>
+          <li><a href='../kontakt/'>Kontakt</a></li>
+        </ul>
+    </nav>
+  </div>
+
+  <main id='main-content'>
+
+    <section class='hero-subpage'>
+      <div class='container reveal'>
+        <h1>Verkaufen Sie Ihre Immobilie in Braunschweig. Zum besten Preis.</h1>
+        <p class='subline'>Unser strukturierter Prozess sorgt für maximale Sicherheit und einen reibungslosen Ablauf. Vertrauen Sie auf unsere Expertise und unseren lokalen Marktüberblick.</p>
+        <a href='#bewertung' class='btn btn-primary'>Bewertung anfordern</a>
+      </div>
+    </section>
+
+    <section class='process surface-alt'>
+      <div class='container'>
+        <div class='section-intro reveal'>
+          <h2>Unser Verkaufsprozess</h2>
+        </div>
+        <div class='process-grid'>
+          <div class='process-step reveal'>
+            <div class='step-number'>1</div>
+            <h3>Erstberatung & Bewertung</h3>
+            <p>Wir besprechen Ihre Ziele und bewerten Ihre Immobilie marktgerecht.</p>
+          </div>
+          <div class='process-step reveal'>
+            <div class='step-number'>2</div>
+            <h3>Vermarktungsstrategie</h3>
+            <p>Wir entwickeln eine individuelle Strategie für die Vermarktung Ihrer Immobilie.</p>
+          </div>
+          <div class='process-step reveal'>
+            <div class='step-number'>3</div>
+            <h3>Besichtigungen & Verhandlung</h3>
+            <p>Wir führen Besichtigungen durch und verhandeln mit potenziellen Käufern.</p>
+          </div>
+          <div class='process-step reveal'>
+            <div class='step-number'>4</div>
+            <h3>Notartermin & Übergabe</h3>
+            <p>Wir begleiten Sie zum Notartermin und sorgen für eine reibungslose Übergabe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id='bewertung' class='bewertung-form-section'>
+      <div class='container reveal'>
+        <h2>Starten Sie mit einer kostenlosen Bewertung</h2>
+        <form class='bewertung-form'>
+          <div class='form-grid'>
+            <div class='form-group'>
+              <label for='typ'>Immobilientyp</label>
+              <select id='typ' name='typ' required><option>Haus</option><option>Wohnung</option><option>Grundstück</option></select>
+            </div>
+            <div class='form-group'>
+              <label for='flaeche'>Fläche (m²)</label>
+              <input type='number' id='flaeche' name='flaeche' required>
+            </div>
+            <div class='form-group'>
+              <label for='zimmer'>Zimmer</label>
+              <input type='number' id='zimmer' name='zimmer' required>
+            </div>
+            <div class='form-group'>
+              <label for='ort'>Ort</label>
+              <input type='text' id='ort' name='ort' required>
+            </div>
+            <div class='form-group'>
+              <label for='name'>Ihr Name</label>
+              <input type='text' id='name' name='name' required>
+            </div>
+            <div class='form-group'>
+              <label for='email'>Ihre E-Mail</label>
+              <input type='email' id='email' name='email' required>
+            </div>
+            <div class='form-group form-group-full'>
+              <label for='tel'>Ihre Telefonnummer</label>
+              <input type='tel' id='tel' name='tel'>
+            </div>
+          </div>
+          <p class='datenschutzhinweis'>Ihre Daten werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage verwendet.</p>
+          <button type='submit' class='btn btn-primary'>Bewertung anfordern</button>
+          <p class='microcopy'>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class='faq surface-alt'>
+      <div class='container reveal'>
+        <h2>Häufige Fragen</h2>
+        <div class='faq-accordion'>
+          <details class='faq-item'>
+            <summary>Welche Kosten kommen auf mich zu?</summary>
+            <p>Die Kosten für den Verkauf einer Immobilie können variieren. Wir beraten Sie gerne individuell zu den anfallenden Kosten.</p>
+          </details>
+          <details class='faq-item'>
+            <summary>Wie lange dauert ein Verkauf durchschnittlich?</summary>
+            <p>Die Dauer eines Verkaufs hängt von verschiedenen Faktoren ab. Wir streben einen schnellen und effizienten Verkauf an.</p>
+          </details>
+          <details class='faq-item'>
+            <summary>Welche Unterlagen werden benötigt?</summary>
+            <p>Wir informieren Sie detailliert über die benötigten Unterlagen für den Verkauf Ihrer Immobilie.</p>
+          </details>
+          <details class='faq-item'>
+            <summary>Muss ich bei Besichtigungen anwesend sein?</summary>
+            <p>Ihre Anwesenheit bei Besichtigungen ist nicht zwingend erforderlich. Wir kümmern uns um die Organisation und Durchführung.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class='site-footer-main'>
+    <div class='container'>
+        <div class='footer-grid'>
+            <div class='footer-col'>
+                <h3>Maertens Immobilien GmbH</h3>
+                <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig.</p>
+            </div>
+            <div class='footer-col'>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href='../'>Startseite</a></li>
-                    <li><a href='' class='active'>Verkaufen</a></li>
+                    <li><a href='./'>Verkaufen</a></li>
                     <li><a href='../immobilien/'>Immobilien</a></li>
                     <li><a href='../ueber-uns/'>Über Uns</a></li>
                     <li><a href='../kontakt/'>Kontakt</a></li>
                 </ul>
-            </nav>
-            <a href='../kontakt/' class='btn btn-primary header-cta'>Termin vereinbaren</a>
-            <button id='mobile-menu-toggle' class='mobile-menu-toggle' aria-label='Menü öffnen'>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <div id='mobile-menu' class='mobile-menu'>
-        <nav>
-            <ul>
-                <li><a href='../'>Startseite</a></li>
-                <li><a href=''>Verkaufen</a></li>
-                <li><a href='../immobilien/'>Immobilien</a></li>
-                <li><a href='../ueber-uns/'>Über Uns</a></li>
-                <li><a href='../kontakt/'>Kontakt</a></li>
-            </ul>
-        </nav>
-        <a href='../kontakt/' class='btn btn-primary'>Termin vereinbaren</a>
-    </div>
-
-    <main id='main-content'>
-        <section class='hero-subpage'>
-            <div class='container'>
-                <h1 class='reveal-fade'>Ihre Immobilie verkaufen – mit uns zum besten Preis</h1>
-                <p class='subline reveal-fade'>Wir begleiten Sie von der Wertermittlung bis zum erfolgreichen Verkauf. Vertrauen Sie auf unsere Expertise und lokale Marktkenntnis.</p>
-                <div class='hero-ctas reveal-fade'>
-                    <a href='#bewertung' class='btn btn-primary'>Kostenlose Wertermittlung</a>
-                    <a href='../kontakt/' class='btn btn-secondary'>Kontakt aufnehmen</a>
-                </div>
             </div>
-        </section>
-
-        <section class='intro-section surface-light'>
-            <div class='container reveal-up'>
-                <h2>So verkaufen Sie Ihre Immobilie erfolgreich</h2>
-                <p class='lead'>Der Verkauf einer Immobilie ist ein komplexer Prozess. Wir von Maertens Immobilien GmbH unterstützen Sie in allen Phasen – von der ersten Bewertung bis zum erfolgreichen Vertragsabschluss. Profitieren Sie von unserer Erfahrung und unserem Rundum-Service.</p>
+            <div class='footer-col'>
+                <h4>Kontakt</h4>
+                <address>
+                    Maertens Immobilien GmbH<br>
+                    Aegidienmarkt 14<br>
+                    38100 Braunschweig
+                </address>
+                <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a><br>
+                <a href='tel:+491705224355'>+49 170 5224355</a>
             </div>
-        </section>
-
-        <section class='leistungen-section'>
-            <div class='container reveal-up'>
-                <div class='section-header'>
-                    <h2>Unsere Leistungen für Ihren erfolgreichen Verkauf</h2>
-                </div>
-                <ul class='leistungen-list'>
-                    <li>Professionelle Wertermittlung</li>
-                    <li>Erstellung eines hochwertigen Exposés</li>
-                    <li>Zielgerichtete Vermarktung</li>
-                    <li>Organisation von Besichtigungsterminen</li>
-                    <li>Verhandlung mit potenziellen Käufern</li>
-                    <li>Unterstützung beim Vertragsabschluss</li>
-                </ul>
-            </div>
-        </section>
-
-        <div class='signature-divider'>
-            <svg viewBox='0 0 1440 48' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 48H1440V0C1152.67 21.3333 845.333 32 720 32C594.667 32 287.333 21.3333 0 0V48Z' fill='var(--km-color-surface)'/></svg>
-        </div>
-
-        <section class='prozess-section surface-light'>
-            <div class='container'>
-                <div class='section-header reveal-up'>
-                    <h2>Unser Verkaufsprozess – Schritt für Schritt zum Erfolg</h2>
-                </div>
-                <div class='prozess-grid'>
-                    <div class='prozess-step reveal-up'>
-                        <div class='step-number'>1</div>
-                        <h3>Wertermittlung</h3>
-                        <p>Wir ermitteln den aktuellen Marktwert Ihrer Immobilie – kostenlos und unverbindlich.</p>
-                    </div>
-                    <div class='prozess-step reveal-up' style='animation-delay: 0.1s;'>
-                        <div class='step-number'>2</div>
-                        <h3>Vermarktung</h3>
-                        <p>Wir erstellen ein hochwertiges Exposé und vermarkten Ihre Immobilie zielgerichtet.</p>
-                    </div>
-                    <div class='prozess-step reveal-up' style='animation-delay: 0.2s;'>
-                        <div class='step-number'>3</div>
-                        <h3>Besichtigung</h3>
-                        <p>Wir organisieren und führen Besichtigungstermine mit potenziellen Käufern durch.</p>
-                    </div>
-                    <div class='prozess-step reveal-up' style='animation-delay: 0.3s;'>
-                        <div class='step-number'>4</div>
-                        <h3>Verhandlung</h3>
-                        <p>Wir verhandeln mit potenziellen Käufern, um den besten Preis für Ihre Immobilie zu erzielen.</p>
-                    </div>
-                    <div class='prozess-step reveal-up' style='animation-delay: 0.4s;'>
-                        <div class='step-number'>5</div>
-                        <h3>Vertragsabschluss</h3>
-                        <p>Wir unterstützen Sie beim Vertragsabschluss und begleiten Sie bis zur Schlüsselübergabe.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class='signature-divider reverse'>
-            <svg viewBox='0 0 1440 48' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 48H1440V0C1152.67 21.3333 845.333 32 720 32C594.667 32 287.333 21.3333 0 0V48Z' fill='var(--km-color-surface)'/></svg>
-        </div>
-
-        <section id='bewertung' class='bewertung-section'>
-            <div class='container reveal-up'>
-                <div class='bewertung-content'>
-                    <h2>Kostenlose Wertermittlung</h2>
-                    <p>Lassen Sie den Wert Ihrer Immobilie kostenlos und unverbindlich von uns ermitteln. Füllen Sie einfach das Formular aus und wir melden uns umgehend bei Ihnen.</p>
-                    <form class='bewertung-form' action='../kontakt/' method='get'>
-                        <div class='form-grid'>
-                            <input type='text' name='name' placeholder='Name' required>
-                            <input type='email' name='email' placeholder='E-Mail' required>
-                            <input type='tel' name='telefon' placeholder='Telefon'>
-                            <input type='text' name='immobilientyp' placeholder='Immobilientyp'>
-                            <input type='text' name='wohnflaeche' placeholder='Wohnfläche (m²)' >
-                            <input type='text' name='lage' placeholder='Lage (PLZ)'>
-                        </div>
-                        <button type='submit' class='btn btn-primary'>Jetzt Wertermittlung anfordern</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class='main-footer'>
-        <div class='container'>
-            <div class='footer-grid'>
-                <div class='footer-col footer-about'>
-                    <h4>Maertens Immobilien GmbH</h4>
-                    <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig. Persönlich, diskret und professionell.</p>
-                </div>
-                <div class='footer-col footer-links'>
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href='../'>Startseite</a></li>
-                        <li><a href=''>Verkaufen</a></li>
-                        <li><a href='../immobilien/'>Immobilien</a></li>
-                        <li><a href='../ueber-uns/'>Über Uns</a></li>
-                        <li><a href='../kontakt/'>Kontakt</a></li>
-                    </ul>
-                </div>
-                <div class='footer-col footer-contact'>
-                    <h4>Kontakt</h4>
-                    <address>
-                        Maertens Immobilien GmbH<br>
-                        Aegidienmarkt 14<br>
-                        38100 Braunschweig<br>
-                        <a href='tel:+491705224355'>+49 170 5224355</a><br>
-                        <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a>
-                    </address>
-                </div>
-            </div>
-            <div class='footer-bottom'>
-                <p>&copy; 2024 Maertens Immobilien GmbH</p>
+            <div class='footer-col'>
+                <h4>Rechtliches</h4>
                 <ul>
                     <li><a href='../impressum/'>Impressum</a></li>
                     <li><a href='../datenschutz/'>Datenschutz</a></li>
                 </ul>
             </div>
         </div>
-    </footer>
-    <div id='cookie-banner' class='cookie-banner'></div>
-    <div id='km-lightbox' class='km-lightbox'></div>
-    <div id='sticky-cta' class='sticky-cta'></div>
+        <div class='footer-bottom'>
+            <p>&copy; 2024 Maertens Immobilien GmbH. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+  </footer>
+
+  <div id='cookie-banner'>
+    <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. <a href='../datenschutz/'>Mehr erfahren</a></p>
+    <div>
+        <button id='accept-cookies' class='btn btn-primary'>Akzeptieren</button>
+        <button id='decline-cookies' class='btn btn-secondary'>Ablehnen</button>
+    </div>
+  </div>
+
+  <div id='km-lightbox' class='lightbox' style='display: none;'>
+    <button class='close-lightbox'>&times;</button>
+    <button class='prev-lightbox'>&#10094;</button>
+    <button class='next-lightbox'>&#10095;</button>
+    <img src='' alt='Großansicht des Bildes' class='lightbox-content'>
+  </div>
+
+  <script src='../assets/js/main.js' defer></script>
 
 
 <style id='km-chat-fix'>

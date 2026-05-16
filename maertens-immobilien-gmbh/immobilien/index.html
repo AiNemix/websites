@@ -1,161 +1,120 @@
 <!DOCTYPE html>
 <html lang='de'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
-    <title>Immobilienangebote in Braunschweig – Maertens Immobilien GmbH</title>
-    <meta name='description' content='Entdecken Sie unsere vielfältige Auswahl an Häusern, Wohnungen und Grundstücken in Braunschweig und Umgebung.'>
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' href='../assets/css/styles.css'>
-    <script src='../assets/js/main.js' defer></script>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
+  <title>Immobilienangebote - Maertens Immobilien GmbH</title>
+  <meta name='description' content='Entdecken Sie unsere aktuellen Immobilienangebote in Braunschweig und Umgebung.'>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='../assets/css/styles.css'>
 
 <link rel="stylesheet" href="../ainemix-boost.css">
 <script src="../ainemix-boost.js" defer></script>
 </head>
 <body>
-    <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
-    <header id='main-header' class='main-header'>
-        <div class='container header-container'>
-            <a href='../' class='logo'>Maertens Immobilien</a>
-            <nav class='main-nav'>
+  <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
+
+  <header class='site-header'>
+    <div class='container'>
+      <a href='../' class='logo'>Maertens Immobilien</a>
+      <nav class='main-nav'>
+        <ul>
+          <li><a href='../'>Startseite</a></li>
+          <li><a href='../verkaufen/'>Verkaufen</a></li>
+          <li><a href='./' class='active'>Immobilien</a></li>
+          <li><a href='../ueber-uns/'>Über Uns</a></li>
+          <li><a href='../kontakt/'>Kontakt</a></li>
+        </ul>
+      </nav>
+      <a href='../kontakt/' class='btn btn-secondary cta-header-desktop'>Kontakt</a>
+      <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class='mobile-nav-drawer'>
+    <nav>
+        <ul>
+          <li><a href='../'>Startseite</a></li>
+          <li><a href='../verkaufen/'>Verkaufen</a></li>
+          <li><a href='./'>Immobilien</a></li>
+          <li><a href='../ueber-uns/'>Über Uns</a></li>
+          <li><a href='../kontakt/'>Kontakt</a></li>
+        </ul>
+    </nav>
+  </div>
+
+  <main id='main-content'>
+    <section class='hero-subpage'>
+      <div class='container reveal'>
+        <h1>Unsere Immobilien</h1>
+        <p class='subline'>Hier finden Sie in Kürze unsere aktuellen Angebote. Schauen Sie bald wieder vorbei.</p>
+      </div>
+    </section>
+    <section class='placeholder-section'>
+        <div class='container reveal'>
+            <h2>Aktuell in Vorbereitung</h2>
+            <p>Wir bereiten derzeit neue, attraktive Immobilien für Sie auf. Bei konkreten Suchanfragen können Sie uns gerne direkt kontaktieren.</p>
+            <a href='../kontakt/' class='btn btn-primary'>Jetzt anfragen</a>
+        </div>
+    </section>
+  </main>
+
+  <footer class='site-footer-main'>
+    <div class='container'>
+        <div class='footer-grid'>
+            <div class='footer-col'>
+                <h3>Maertens Immobilien GmbH</h3>
+                <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig.</p>
+            </div>
+            <div class='footer-col'>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href='../'>Startseite</a></li>
                     <li><a href='../verkaufen/'>Verkaufen</a></li>
-                    <li><a href='' class='active'>Immobilien</a></li>
+                    <li><a href='./'>Immobilien</a></li>
                     <li><a href='../ueber-uns/'>Über Uns</a></li>
                     <li><a href='../kontakt/'>Kontakt</a></li>
                 </ul>
-            </nav>
-            <a href='../kontakt/' class='btn btn-primary header-cta'>Termin vereinbaren</a>
-            <button id='mobile-menu-toggle' class='mobile-menu-toggle' aria-label='Menü öffnen'>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <div id='mobile-menu' class='mobile-menu'>
-        <nav>
-            <ul>
-                <li><a href='../'>Startseite</a></li>
-                <li><a href='../verkaufen/'>Verkaufen</a></li>
-                <li><a href=''>Immobilien</a></li>
-                <li><a href='../ueber-uns/'>Über Uns</a></li>
-                <li><a href='../kontakt/'>Kontakt</a></li>
-            </ul>
-        </nav>
-        <a href='../kontakt/' class='btn btn-primary'>Termin vereinbaren</a>
-    </div>
-
-    <main id='main-content'>
-        <section class='hero-subpage'>
-            <div class='container'>
-                <h1 class='reveal-fade'>Unsere aktuellen Immobilienangebote in Braunschweig</h1>
-                <p class='subline reveal-fade'>Entdecken Sie unsere vielfältige Auswahl an Häusern, Wohnungen und Grundstücken in Braunschweig und Umgebung.</p>
-                <div class='hero-ctas reveal-fade'>
-                    <a href='../kontakt/' class='btn btn-primary'>Kostenlose Suchanfrage</a>
-                    <a href='../verkaufen/' class='btn btn-secondary'>Immobilie verkaufen</a>
-                </div>
             </div>
-        </section>
-
-        <section class='intro-section surface-light'>
-            <div class='container reveal-up'>
-                <h2>Finden Sie Ihr Traumobjekt</h2>
-                <p class='lead'>Wir bieten Ihnen eine große Auswahl an attraktiven Immobilien in Braunschweig und Umgebung. Ob Wohnung, Haus oder Grundstück – bei uns finden Sie Ihr neues Zuhause. Nutzen Sie unsere Suchfunktion und entdecken Sie unsere aktuellen Angebote.</p>
+            <div class='footer-col'>
+                <h4>Kontakt</h4>
+                <address>
+                    Maertens Immobilien GmbH<br>
+                    Aegidienmarkt 14<br>
+                    38100 Braunschweig
+                </address>
+                <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a><br>
+                <a href='tel:+491705224355'>+49 170 5224355</a>
             </div>
-        </section>
-
-        <section class='angebote-section'>
-            <div class='container'>
-                <div class='section-header reveal-up'>
-                    <h2>Unsere aktuellen Angebote</h2>
-                </div>
-                <div class='angebote-grid'>
-                    <div class='immobilien-card reveal-up'>
-                        <div class='card-content'>
-                            <h3>Moderne Wohnung in Braunschweig</h3>
-                            <p>4 Zimmer, Balkon, Top-Lage</p>
-                            <span class='price'>350.000 €</span>
-                            <a href='../kontakt/' class='btn btn-secondary'>Anfragen</a>
-                        </div>
-                    </div>
-                    <div class='immobilien-card reveal-up' style='animation-delay: 0.2s;'>
-                        <div class='card-content'>
-                            <h3>Exklusives Einfamilienhaus</h3>
-                            <p>Großer Garten, ruhige Lage</p>
-                            <span class='price'>750.000 €</span>
-                            <a href='../kontakt/' class='btn btn-secondary'>Anfragen</a>
-                        </div>
-                    </div>
-                    <div class='immobilien-card reveal-up' style='animation-delay: 0.4s;'>
-                        <div class='card-content'>
-                            <h3>Attraktives Reihenhaus</h3>
-                            <p>Ideal für Familien, gute Infrastruktur</p>
-                            <span class='price'>420.000 €</span>
-                            <a href='../kontakt/' class='btn btn-secondary'>Anfragen</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class='cta-footer-section surface-light'>
-            <div class='container reveal-up'>
-                <h2>Sie haben nicht das Richtige gefunden?</h2>
-                <p>Kontaktieren Sie uns und wir helfen Ihnen, Ihre Traumimmobilie zu finden. Wir freuen uns auf Ihre Anfrage!</p>
-                <div class='cta-contact-info'>
-                    <a href='../kontakt/' class='btn btn-primary'>Kontakt aufnehmen</a>
-                    <a href='tel:+491705224355' class='phone-link'>+49 170 5224355</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class='main-footer'>
-        <div class='container'>
-            <div class='footer-grid'>
-                <div class='footer-col footer-about'>
-                    <h4>Maertens Immobilien GmbH</h4>
-                    <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig. Persönlich, diskret und professionell.</p>
-                </div>
-                <div class='footer-col footer-links'>
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href='../'>Startseite</a></li>
-                        <li><a href='../verkaufen/'>Verkaufen</a></li>
-                        <li><a href=''>Immobilien</a></li>
-                        <li><a href='../ueber-uns/'>Über Uns</a></li>
-                        <li><a href='../kontakt/'>Kontakt</a></li>
-                    </ul>
-                </div>
-                <div class='footer-col footer-contact'>
-                    <h4>Kontakt</h4>
-                    <address>
-                        Maertens Immobilien GmbH<br>
-                        Aegidienmarkt 14<br>
-                        38100 Braunschweig<br>
-                        <a href='tel:+491705224355'>+49 170 5224355</a><br>
-                        <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a>
-                    </address>
-                </div>
-            </div>
-            <div class='footer-bottom'>
-                <p>&copy; 2024 Maertens Immobilien GmbH</p>
+            <div class='footer-col'>
+                <h4>Rechtliches</h4>
                 <ul>
                     <li><a href='../impressum/'>Impressum</a></li>
                     <li><a href='../datenschutz/'>Datenschutz</a></li>
                 </ul>
             </div>
         </div>
-    </footer>
-    <div id='cookie-banner' class='cookie-banner'></div>
-    <div id='km-lightbox' class='km-lightbox'></div>
-    <div id='sticky-cta' class='sticky-cta'></div>
+        <div class='footer-bottom'>
+            <p>&copy; 2024 Maertens Immobilien GmbH. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+  </footer>
+
+  <div id='cookie-banner'>
+    <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. <a href='../datenschutz/'>Mehr erfahren</a></p>
+    <div>
+        <button id='accept-cookies' class='btn btn-primary'>Akzeptieren</button>
+        <button id='decline-cookies' class='btn btn-secondary'>Ablehnen</button>
+    </div>
+  </div>
+
+  <script src='../assets/js/main.js' defer></script>
 
 
 <style id='km-chat-fix'>
