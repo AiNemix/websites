@@ -1,0 +1,119 @@
+/* AiNemix Design Boost v1 - generic, theme-adaptive, additive */
+:root{
+  --ml-accent:#3b6cff;
+  --ml-accent-rgb:59,108,255;
+  --ml-shadow-sm:0 1px 2px rgba(0,0,0,.06),0 1px 1px rgba(0,0,0,.04);
+  --ml-shadow-md:0 6px 16px rgba(0,0,0,.09),0 2px 5px rgba(0,0,0,.05);
+  --ml-shadow-lg:0 16px 40px rgba(0,0,0,.13),0 6px 14px rgba(0,0,0,.07);
+  --ml-shadow-xl:0 32px 70px rgba(0,0,0,.20),0 12px 28px rgba(0,0,0,.10);
+  --ml-ease:cubic-bezier(.2,.7,.2,1);
+}
+html{scroll-behavior:smooth;}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+
+/* depth / hover-lift on marked cards */
+.ml-lift{transition:transform .28s var(--ml-ease),box-shadow .28s var(--ml-ease);}
+.ml-lift:hover{transform:translateY(-6px);box-shadow:var(--ml-shadow-lg);}
+
+/* 3D tilt */
+.ml-tilt{will-change:transform;transform-style:preserve-3d;}
+
+/* scroll reveal */
+.ml-reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .7s var(--ml-ease),transform .7s var(--ml-ease);}
+.ml-reveal.is-visible{opacity:1;transform:none;}
+.ml-reveal.ml-d1{transition-delay:.07s}
+.ml-reveal.ml-d2{transition-delay:.14s}
+.ml-reveal.ml-d3{transition-delay:.21s}
+.ml-reveal.ml-d4{transition-delay:.28s}
+
+/* glass utility */
+.ml-glass{background:rgba(255,255,255,.62);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.5);}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .ml-glass{background:rgba(255,255,255,.93);}
+}
+
+/* aurora / gradient-mesh hero backdrop (new element, additive) */
+.ml-hero-host{position:relative;}
+.ml-hero-host>*:not(.ml-aurora):not(.ml-hero-canvas){position:relative;z-index:1;}
+.ml-aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.ml-aurora>i{content:"";position:absolute;border-radius:50%;filter:blur(64px);opacity:.5;}
+.ml-aurora>i:nth-child(1){width:46vw;height:46vw;left:-9vw;top:-13vw;
+  background:radial-gradient(circle at 30% 30%,rgba(var(--ml-accent-rgb),.85),transparent 70%);
+  animation:ml-fl1 27s var(--ml-ease) infinite alternate;}
+.ml-aurora>i:nth-child(2){width:40vw;height:40vw;right:-7vw;bottom:-15vw;
+  background:radial-gradient(circle at 60% 60%,rgba(var(--ml-accent-rgb),.5),transparent 70%);
+  animation:ml-fl2 33s var(--ml-ease) infinite alternate;}
+.ml-aurora>i:nth-child(3){width:30vw;height:30vw;left:42%;top:28%;
+  background:radial-gradient(circle,rgba(var(--ml-accent-rgb),.38),transparent 70%);
+  animation:ml-fl3 39s var(--ml-ease) infinite alternate;}
+@keyframes ml-fl1{to{transform:translate(13vw,9vh) scale(1.22);}}
+@keyframes ml-fl2{to{transform:translate(-11vw,-8vh) scale(1.3);}}
+@keyframes ml-fl3{to{transform:translate(-8vw,11vh) scale(.82);}}
+
+/* webgl hero canvas */
+.ml-hero-canvas{position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;opacity:0;transition:opacity 1.1s ease;}
+.ml-hero-canvas.is-on{opacity:1;}
+
+/* magnetic buttons */
+.ml-mag{transition:transform .18s var(--ml-ease);}
+
+/* cookie banner */
+#ml-cookie{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:none;
+  padding:15px 20px;color:#1c1c1c;
+  font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:rgba(255,255,255,.96);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-top:3px solid var(--ml-accent);box-shadow:0 -6px 24px rgba(0,0,0,.13);}
+#ml-cookie.show{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+#ml-cookie .ml-ck-txt{flex:1 1 320px;}
+#ml-cookie a{color:var(--ml-accent);}
+#ml-cookie .ml-ck-act{display:flex;gap:8px;}
+#ml-cookie button{cursor:pointer;border-radius:7px;padding:9px 18px;font-weight:600;
+  font-size:14px;border:1px solid var(--ml-accent);background:#fff;color:var(--ml-accent);
+  transition:transform .15s;}
+#ml-cookie button.ml-ck-primary{background:var(--ml-accent);color:#fff;}
+#ml-cookie button:hover{transform:translateY(-1px);}
+@media(max-width:600px){#ml-cookie .ml-ck-act{width:100%}#ml-cookie button{flex:1}}
+
+/* real-estate property grid */
+#ml-immo{margin:64px auto;max-width:1280px;padding:0 20px;}
+#ml-immo h2{font-size:clamp(1.7rem,3vw,2.3rem);margin:0 0 6px;}
+#ml-immo .ml-immo-sub{opacity:.7;margin:0 0 26px;font-size:15px;}
+#ml-immo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
+.ml-pcard{display:flex;flex-direction:column;background:#fff;border-radius:15px;
+  overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--ml-shadow-md);
+  transition:transform .28s var(--ml-ease),box-shadow .28s var(--ml-ease);}
+.ml-pcard:hover{transform:translateY(-7px);box-shadow:var(--ml-shadow-xl);}
+.ml-pcard-img{position:relative;aspect-ratio:4/3;overflow:hidden;
+  background:rgba(var(--ml-accent-rgb),.1);}
+.ml-pcard-img img{width:100%;height:100%;object-fit:cover;
+  transition:transform .5s var(--ml-ease);}
+.ml-pcard:hover .ml-pcard-img img{transform:scale(1.07);}
+.ml-pcard-badge{position:absolute;top:12px;left:12px;padding:5px 12px;border-radius:6px;
+  font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#fff;
+  background:var(--ml-accent);box-shadow:var(--ml-shadow-sm);}
+.ml-pcard-badge.is-sold{background:#7a7a7a;}
+.ml-pcard-badge.is-res{background:#c8861a;}
+.ml-pcard-body{padding:17px 19px 21px;display:flex;flex-direction:column;flex:1;gap:9px;}
+.ml-pcard-title{font-weight:700;font-size:1.04rem;line-height:1.32;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.ml-pcard-loc{font-size:13px;opacity:.65;}
+.ml-pcard-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;opacity:.8;}
+.ml-pcard-price{margin-top:auto;font-weight:800;font-size:1.22rem;color:var(--ml-accent);}
+
+/* broken image fallback */
+img.ml-broken{min-height:180px;
+  background:linear-gradient(135deg,rgba(var(--ml-accent-rgb),.18),rgba(var(--ml-accent-rgb),.05));}
+
+/* reduced motion: kill heavy stuff */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .ml-reveal{opacity:1!important;transform:none!important;transition:none!important;}
+  .ml-aurora>i{animation:none!important;}
+  .ml-lift,.ml-tilt,.ml-mag{transition:none!important;}
+  .ml-hero-canvas{display:none!important;}
+}
