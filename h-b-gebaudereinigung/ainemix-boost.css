@@ -1,4 +1,4 @@
-/* AiNemix Design Boost v4 - real 3D, generic, additive, freeze-safe */
+/* AiNemix Design Boost v5 - real 3D, generic, additive, freeze-safe */
 :root{
   --ml-accent:#3b6cff;
   --ml-accent-rgb:59,108,255;
@@ -58,6 +58,8 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
     -webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;
     animation:ml-shim 7.5s linear infinite;}
+  /* when the headline ALSO has the entrance class, run BOTH animations */
+  .ml-hi.ml-grad-head{animation:ml-hi 1s var(--ml-ease) forwards,ml-shim 7.5s linear infinite;}
   @keyframes ml-shim{to{background-position:-280% 0;}}
 }
 
@@ -93,15 +95,15 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 
 /* aurora / gradient-mesh hero backdrop */
 .ml-aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
-.ml-aurora>i{content:"";position:absolute;border-radius:50%;filter:blur(62px);opacity:.72;}
+.ml-aurora>i{content:"";position:absolute;border-radius:50%;filter:blur(64px);opacity:.34;}
 .ml-aurora>i:nth-child(1){width:48vw;height:48vw;left:-10vw;top:-14vw;
-  background:radial-gradient(circle at 30% 30%,rgba(var(--ml-accent-rgb),1),transparent 70%);
+  background:radial-gradient(circle at 30% 30%,rgba(var(--ml-accent-rgb),.85),transparent 70%);
   animation:ml-fl1 26s var(--ml-ease) infinite alternate;}
 .ml-aurora>i:nth-child(2){width:42vw;height:42vw;right:-8vw;bottom:-16vw;
-  background:radial-gradient(circle at 60% 60%,rgba(var(--ml-accent-rgb),.66),transparent 70%);
+  background:radial-gradient(circle at 60% 60%,rgba(var(--ml-accent-rgb),.55),transparent 70%);
   animation:ml-fl2 32s var(--ml-ease) infinite alternate;}
 .ml-aurora>i:nth-child(3){width:32vw;height:32vw;left:42%;top:26%;
-  background:radial-gradient(circle,rgba(var(--ml-accent-rgb),.52),transparent 70%);
+  background:radial-gradient(circle,rgba(var(--ml-accent-rgb),.42),transparent 70%);
   animation:ml-fl3 38s var(--ml-ease) infinite alternate;}
 @keyframes ml-fl1{to{transform:translate(14vw,10vh) scale(1.25);}}
 @keyframes ml-fl2{to{transform:translate(-12vw,-9vh) scale(1.32);}}
@@ -113,7 +115,7 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 .ml-hero-canvas.is-on{opacity:1;}
 
 /* CSS-3D signature crystal */
-.ml-cube-wrap{position:absolute;right:7%;top:50%;z-index:2;pointer-events:none;
+.ml-cube-wrap{position:absolute;right:6%;top:50%;z-index:1;pointer-events:none;
   width:170px;height:170px;margin-top:-85px;
   transform-style:preserve-3d;transition:transform .3s var(--ml-ease);}
 .ml-cube{position:relative;width:170px;height:170px;transform-style:preserve-3d;

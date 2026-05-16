@@ -1,4 +1,4 @@
-/* AiNemix Design Boost v4 - real 3D, generic, self-contained */
+/* AiNemix Design Boost v5 - real 3D, generic, self-contained */
 (function(){
   'use strict';
   var CFG = {"email":"paulsaitest@gmail.com","wrongEmails":["paul@ainemix.com","vanessa@ainemix.com","noreply@ainemix.com","test@example.com"],"isRealEstate":false,"listings":[],"phone":"+49 6181 000000","company":"H&B Gebäudereinigung"};
@@ -183,7 +183,16 @@
     });
   }
 
-  function gradientHeadline(){
+  function heroIsDark(){
+    var h=heroEl(); if(!h) return false;
+    var t=h.querySelector('h1,h2,.subline,p');
+    if(t){ var c=parseRgb(getComputedStyle(t).color); if(c) return luma(c)>135; }
+    var bg=parseRgb(getComputedStyle(h).backgroundColor);
+    if(bg && (bg[0]+bg[1]+bg[2])>0) return luma(bg)<120;
+    return false;
+  }
+  function gradientHeadline(dark){
+    if(!dark) return;
     var h=heroEl(); if(!h) return;
     var h1=h.querySelector('h1'); if(!h1) return;
     h1.classList.add('ml-grad-head');
@@ -471,13 +480,13 @@
     }
   }
 
-  /* hero scroll-recede + background parallax */
+  /* background-layer parallax only (no content recede) */
   function initScrollParallax(){
     if(reduce) return;
     var host=heroEl(); if(!host) return;
     var aur=host.querySelector('.ml-aurora');
     var cv=host.querySelector('.ml-hero-canvas');
-    var content=heroContent();
+    if(!aur && !cv) return;
     var ticking=false;
     function onScroll(){
       if(ticking) return;
@@ -486,14 +495,8 @@
         var y=window.scrollY||window.pageYOffset||0;
         var hh=host.offsetHeight||1;
         if(y<=hh){
-          var p=y/hh;
           if(aur) aur.style.transform='translateY('+(y*0.3).toFixed(1)+'px)';
           if(cv)  cv.style.transform='translateY('+(y*0.16).toFixed(1)+'px)';
-          if(content){
-            content.style.opacity=(1-p*0.9).toFixed(3);
-            content.style.transform=(content.style.transform||'').replace(/translateY\([^)]*\)|scale\([^)]*\)/g,'')
-              +' translateY('+(y*0.22).toFixed(1)+'px) scale('+(1-p*0.07).toFixed(3)+')';
-          }
         }
         ticking=false;
       });
@@ -504,6 +507,8 @@
   function init(){
     var rgb;
     try{ rgb=detectTheme(); }catch(e){ rgb=[59,108,255]; }
+    var heroDark=false;
+    try{ heroDark=heroIsDark(); }catch(e){}
     try{ fixEmails(); }catch(e){}
     try{ enhanceHeroReadability(); }catch(e){}
     try{ injectAurora(); }catch(e){}
@@ -511,7 +516,7 @@
     try{ initSpotlight(); }catch(e){}
     try{ markElements(); }catch(e){}
     try{ cinematicHeroEntrance(); }catch(e){}
-    try{ gradientHeadline(); }catch(e){}
+    try{ gradientHeadline(heroDark); }catch(e){}
     try{ injectImmo(); }catch(e){}
     try{ initReveal(); }catch(e){}
     try{ initTilt(); }catch(e){}
