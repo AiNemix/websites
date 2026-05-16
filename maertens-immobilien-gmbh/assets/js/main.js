@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Sticky Header ---
+    // --- Header Scroll Effect ---
     const header = document.querySelector('.site-header');
     if (header) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 80) {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -13,19 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Mobile Navigation ---
-    const navToggle = document.querySelector('.mobile-nav-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    if (navToggle && mainNav) {
-        navToggle.addEventListener('click', () => {
-            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !isExpanded);
-            mainNav.classList.toggle('open');
-            document.body.classList.toggle('body-no-scroll');
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileMenu = document.querySelector('#mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+    if (mobileNavToggle && mobileMenu) {
+        const toggleMenu = (open) => {
+            const isOpen = mobileMenu.classList.toggle('open', open);
+            mobileNavToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        };
+
+        mobileNavToggle.addEventListener('click', () => toggleMenu(true));
+        mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                toggleMenu(false);
+            }
         });
     }
 
     // --- Scroll Reveal Animation ---
-    const revealItems = document.querySelectorAll('.reveal-item');
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -34,155 +43,126 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { threshold: 0.1 });
-    revealItems.forEach(item => revealObserver.observe(item));
+
+    revealElements.forEach(el => revealObserver.observe(el));
 
     // --- Testimonial Carousel ---
     const carousel = document.querySelector('.testimonial-carousel');
     if (carousel) {
         const slides = carousel.querySelectorAll('.testimonial-slide');
-        const prevButton = document.querySelector('.carousel-controls .prev');
-        const nextButton = document.querySelector('.carousel-controls .next');
+        const nextBtn = document.querySelector('.carousel-controls .next');
+        const prevBtn = document.querySelector('.carousel-controls .prev');
         let currentIndex = 0;
 
-        function updateCarousel() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+        const goToSlide = (index) => {
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            currentIndex = index;
+        };
 
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
-            updateCarousel();
+        nextBtn.addEventListener('click', () => {
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= slides.length) nextIndex = 0;
+            goToSlide(nextIndex);
         });
 
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
+        prevBtn.addEventListener('click', () => {
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) prevIndex = slides.length - 1;
+            goToSlide(prevIndex);
         });
-    }
-
-    // --- Cookie Banner ---
-    const cookieBanner = document.getElementById('cookie-banner');
-    const acceptCookies = document.getElementById('accept-cookies');
-    const declineCookies = document.getElementById('decline-cookies');
-    if (cookieBanner && !localStorage.getItem('cookieConsent')) {
-        cookieBanner.classList.add('show');
-    }
-    if (acceptCookies) {
-        acceptCookies.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'accepted');
-            cookieBanner.classList.remove('show');
-        });
-    }
-    if (declineCookies) {
-        declineCookies.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'declined');
-            cookieBanner.classList.remove('show');
-        });
-    }
-
-    // --- Sticky CTA ---
-    const stickyCTA = document.getElementById('sticky-cta');
-    const heroSection = document.querySelector('.hero');
-    if (stickyCTA && heroSection) {
-        const ctaObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    stickyCTA.classList.add('show');
-                } else {
-                    stickyCTA.classList.remove('show');
-                }
-            });
-        }, { rootMargin: '200px 0px 0px 0px' });
-        ctaObserver.observe(heroSection);
+        
+        carousel.style.transition = 'transform 0.5s ease-in-out';
     }
 
     // --- Global Lightbox ---
     const lightbox = document.getElementById('km-lightbox');
     if (lightbox) {
         const lightboxImg = lightbox.querySelector('img');
-        const closeBtn = lightbox.querySelector('.close-lightbox');
-        const prevBtn = lightbox.querySelector('.prev-lightbox');
-        const nextBtn = lightbox.querySelector('.next-lightbox');
+        const closeBtn = lightbox.querySelector('.km-lightbox-close');
+        const prevBtn = lightbox.querySelector('.km-lightbox-prev');
+        const nextBtn = lightbox.querySelector('.km-lightbox-next');
         let currentImageIndex;
         let imageSources = [];
 
-        const openLightbox = (e) => {
-            const clickedImage = e.target.closest('.gallery-img');
-            if (!clickedImage) return;
-
-            e.preventDefault();
-            const gallery = clickedImage.closest('[data-gallery-id]');
-            const galleryImages = gallery ? Array.from(gallery.querySelectorAll('.gallery-img')) : [clickedImage];
-            
-            imageSources = galleryImages.map(img => img.src);
-            currentImageIndex = imageSources.indexOf(clickedImage.src);
-            
-            updateLightboxImage();
-            lightbox.classList.add('show');
-            document.body.classList.add('body-no-scroll');
-            addLightboxEventListeners();
-        };
-
-        const updateLightboxImage = () => {
+        const openLightbox = (index) => {
+            currentImageIndex = index;
             lightboxImg.src = imageSources[currentImageIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
         };
 
         const closeLightbox = () => {
-            lightbox.classList.remove('show');
-            document.body.classList.remove('body-no-scroll');
-            removeLightboxEventListeners();
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
         };
 
         const showPrevImage = () => {
-            currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : imageSources.length - 1;
-            updateLightboxImage();
+            currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
+            lightboxImg.src = imageSources[currentImageIndex];
         };
 
         const showNextImage = () => {
-            currentImageIndex = (currentImageIndex < imageSources.length - 1) ? currentImageIndex + 1 : 0;
-            updateLightboxImage();
+            currentImageIndex = (currentImageIndex + 1) % imageSources.length;
+            lightboxImg.src = imageSources[currentImageIndex];
         };
 
-        const handleKeyboard = (e) => {
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showPrevImage();
-            if (e.key === 'ArrowRight') showNextImage();
-        };
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.lightbox-trigger')) {
+                const galleryImages = Array.from(document.querySelectorAll('.lightbox-trigger'));
+                imageSources = galleryImages.map(img => img.src);
+                const index = galleryImages.indexOf(e.target);
+                openLightbox(index);
+            }
+        });
 
-        const addLightboxEventListeners = () => {
-            closeBtn.addEventListener('click', closeLightbox);
-            prevBtn.addEventListener('click', showPrevImage);
-            nextBtn.addEventListener('click', showNextImage);
-            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-            document.addEventListener('keydown', handleKeyboard);
-        };
-
-        const removeLightboxEventListeners = () => {
-            closeBtn.removeEventListener('click', closeLightbox);
-            prevBtn.removeEventListener('click', showPrevImage);
-            nextBtn.removeEventListener('click', showNextImage);
-            lightbox.removeEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-            document.removeEventListener('keydown', handleKeyboard);
-        };
-
-        document.body.addEventListener('click', openLightbox);
-    }
-
-    // --- Contact Form --- 
-    const contactForm = document.getElementById('contact-form');
-    if(contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const statusEl = document.getElementById('form-status');
-            statusEl.textContent = 'Nachricht wird gesendet...';
-            statusEl.className = 'form-status';
-
-            // This is a mock submission handler. In a real project, this would be an AJAX call.
-            setTimeout(() => {
-                statusEl.textContent = 'Vielen Dank! Ihre Nachricht wurde gesendet.';
-                statusEl.classList.add('success');
-                contactForm.reset();
-            }, 1000);
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        prevBtn.addEventListener('click', showPrevImage);
+        nextBtn.addEventListener('click', showNextImage);
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrevImage();
+                if (e.key === 'ArrowRight') showNextImage();
+            }
         });
     }
 
+    // --- Cookie Banner ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+    if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
+        cookieBanner.classList.add('show');
+    }
+    if (acceptCookiesBtn) {
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.classList.remove('show');
+        });
+    }
+
+    // --- Sticky CTA ---
+    const stickyCta = document.getElementById('sticky-cta');
+    if (stickyCta) {
+        window.addEventListener('scroll', () => {
+            const showAt = document.body.scrollHeight / 4;
+            if (window.scrollY > showAt) {
+                stickyCta.classList.add('show');
+            } else {
+                stickyCta.classList.remove('show');
+            }
+        });
+    }
+
+    // --- Contact Form URL Param ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const anliegen = urlParams.get('anliegen');
+    if (anliegen) {
+        const anliegenSelect = document.getElementById('anliegen');
+        if (anliegenSelect) {
+            anliegenSelect.value = anliegen;
+        }
+    }
 });

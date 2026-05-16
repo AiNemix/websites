@@ -4,14 +4,16 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
     <title>Impressum – Maertens Immobilien GmbH</title>
-    <meta name='description' content='Impressum der Maertens Immobilien GmbH.'>
-    <link rel='stylesheet' href='../assets/css/styles.css'>
+    <meta name='robots' content='noindex'>
+
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap' rel='stylesheet'>
 
-<link rel="stylesheet" href="../maertens-skin.css">
-<script src="../maertens-fix.js" defer></script>
+    <link rel='stylesheet' href='../assets/css/styles.css'>
+
+<link rel="stylesheet" href="../ainemix-boost.css">
+<script src="../ainemix-boost.js" defer></script>
 </head>
 <body>
     <a href='#main-content' class='skip-link'>Zum Hauptinhalt springen</a>
@@ -22,102 +24,84 @@
             <nav class='main-nav'>
                 <ul>
                     <li><a href='../'>Startseite</a></li>
-                    <li><a href='../immobilien/'>Immobilien</a></li>
                     <li><a href='../verkaufen/'>Verkaufen</a></li>
-                    <li><a href='../ueber-uns/'>Über uns</a></li>
                     <li><a href='../kontakt/'>Kontakt</a></li>
                 </ul>
             </nav>
-            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
-                <span class='hamburger-icon'></span>
+            <button class='mobile-nav-toggle' aria-label='Menü öffnen' aria-expanded='false' aria-controls='mobile-menu'>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
             </button>
         </div>
     </header>
 
-    <main id='main-content'>
-        <section class='page-hero'>
-            <div class='container'>
-                <h1>Impressum</h1>
-            </div>
-        </section>
+    <nav id='mobile-menu' class='mobile-menu' aria-hidden='true'>
+        <button class='mobile-menu-close' aria-label='Menü schließen'>&times;</button>
+        <ul>
+            <li><a href='../'>Startseite</a></li>
+            <li><a href='../verkaufen/'>Verkaufen</a></li>
+            <li><a href='../kontakt/'>Kontakt</a></li>
+        </ul>
+    </nav>
 
-        <section class='legal-content section-padding'>
-            <div class='container'>
-                <h2>Anbieterkennzeichnung (§ 5 TMG / DDG)</h2>
-                <p>Maertens Immobilien GmbH<br>Aegidienmarkt 14<br>38100 Braunschweig</p>
-                
-                <h2>Vertreten durch</h2>
-                <p class='placeholder-text'>Bitte ergänzen: Geschäftsführer</p>
-                
-                <h2>Kontakt</h2>
-                <p>E-Mail: <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a><br>Telefon: <a href='tel:+491705224355'>+49 170 5224355</a></p>
-                
-                <h2>Registerangaben</h2>
-                <p>Amtsgericht Braunschweig, HRB205708</p>
-                
-                <h2>USt-ID</h2>
-                <p class='placeholder-text'>Bitte ergänzen: Umsatzsteuer-Identifikationsnummer</p>
-                
-                <h2>Verantwortlich i.S.d. § 18 MStV</h2>
-                <p class='placeholder-text'>Bitte ergänzen: Name und Anschrift des Verantwortlichen</p>
-                
-                <h2>Haftungsausschluss</h2>
-                <p>Die Maertens Immobilien GmbH übernimmt keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
-                
-                <h2>Urheberrecht</h2>
-                <p>Die Inhalte dieser Website sind urheberrechtlich geschützt. Jede Vervielfältigung, Bearbeitung, Verbreitung oder sonstige Verwendung bedarf der vorherigen schriftlichen Zustimmung der Maertens Immobilien GmbH.</p>
-            </div>
-        </section>
+    <main id='main-content' class='legal-page'>
+        <div class='container'>
+            <h1>Impressum</h1>
+            <h2>Anbieterkennzeichnung (§ 5 TMG / DDG)</h2>
+            <p>Maertens Immobilien GmbH<br>Aegidienmarkt 14<br>38100 Braunschweig</p>
+            <h2>Vertreten durch</h2>
+            <p>Dieter Maertens</p>
+            <h2>Kontakt</h2>
+            <p>E-Mail: paul@ainemix.com<br>Telefon: +49 170 5224355</p>
+            <h2>Registerangaben</h2>
+            <p>HRB205708, Amtsgericht Braunschweig</p>
+            <h2>USt-ID</h2>
+            <p>Bitte ergänzen: USt-ID</p>
+            <h2>Verantwortlich i.S.d. § 18 MStV</h2>
+            <p>Bitte ergänzen: Name und Adresse des Verantwortlichen</p>
+            <h2>Haftungsausschluss</h2>
+            <p>Die Maertens Immobilien GmbH übernimmt keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+            <h2>Urheberrecht</h2>
+            <p>Die Inhalte dieser Website sind urheberrechtlich geschützt. Jede Vervielfältigung, Bearbeitung, Verbreitung oder sonstige Verwendung bedarf der vorherigen schriftlichen Zustimmung der Maertens Immobilien GmbH.</p>
+        </div>
     </main>
 
-    <footer class='site-footer'>
+    <footer class='site-footer-main'>
         <div class='container'>
             <div class='footer-grid'>
-                <div class='footer-column'>
+                <div class='footer-col'>
                     <h4>Maertens Immobilien GmbH</h4>
-                    <p>Ihr Spezialist für den Immobilienverkauf in Braunschweig.</p>
+                    <p>Ihr lokaler Partner für den Immobilienverkauf in Braunschweig.</p>
                 </div>
-                <div class='footer-column'>
+                <div class='footer-col'>
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href='../'>Startseite</a></li>
-                        <li><a href='../immobilien/'>Immobilien</a></li>
                         <li><a href='../verkaufen/'>Verkaufen</a></li>
-                        <li><a href='../ueber-uns/'>Über uns</a></li>
                         <li><a href='../kontakt/'>Kontakt</a></li>
                     </ul>
                 </div>
-                <div class='footer-column'>
+                <div class='footer-col'>
                     <h4>Kontakt</h4>
-                    <p>Aegidienmarkt 14<br>38100 Braunschweig</p>
-                    <p>
-                        <a href='tel:+491705224355'>+49 170 5224355</a><br>
-                        <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a>
-                    </p>
-                </div>
-                <div class='footer-column'>
-                    <h4>Rechtliches</h4>
-                    <ul>
-                        <li><a href=''>Impressum</a></li>
-                        <li><a href='../datenschutz/'>Datenschutz</a></li>
-                    </ul>
+                    <address>
+                        Maertens Immobilien GmbH<br>
+                        Aegidienmarkt 14<br>
+                        38100 Braunschweig
+                    </address>
+                    <a href='mailto:paul@ainemix.com'>paul@ainemix.com</a><br>
+                    <a href='tel:+491705224355'>+49 170 5224355</a>
                 </div>
             </div>
             <div class='footer-bottom'>
-                <p>&copy; 2024 Maertens Immobilien GmbH. Alle Rechte vorbehalten.</p>
+                <p>&copy; 2024 Maertens Immobilien GmbH</p>
+                <ul>
+                    <li><a href='../impressum/'>Impressum</a></li>
+                    <li><a href='../datenschutz/'>Datenschutz</a></li>
+                </ul>
             </div>
         </div>
     </footer>
-
-    <div class='cookie-banner' id='cookie-banner'>
-        <div class='container'>
-            <p>Wir verwenden Cookies, um die Funktionalität der Website zu gewährleisten. <a href='../datenschutz/'>Mehr erfahren</a></p>
-            <div class='cookie-buttons'>
-                <button id='accept-cookies' class='btn btn-primary'>Akzeptieren</button>
-                <button id='decline-cookies' class='btn btn-secondary'>Ablehnen</button>
-            </div>
-        </div>
-    </div>
 
     <script src='../assets/js/main.js'></script>
 
