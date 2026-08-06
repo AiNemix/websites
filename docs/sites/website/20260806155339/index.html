@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5'>
+  <title>Qualitaets Test GmbH – Robuste KI-Automatisierung & IT-Systeme</title>
+  <meta name='description' content='Betrieb statt Buzzword: Qualitaets Test GmbH entwickelt belastbare, wartbare und messbare KI-Automationen und Agenten-Systeme für Ihren operativen Alltag.'>
+  <link rel='stylesheet' href='assets/css/styles.css'>
+  <link href='https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;700&display=swap' rel='stylesheet'>
+</head>
+<body>
+  <canvas id='canvas-bg'></canvas>
+
+  <!-- Header -->
+  <header class='header'>
+    <div class='container nav-container'>
+      <a href='' class='logo'>
+        <span class='logo-dot'></span>
+        Qualitaets Test
+      </a>
+      <nav aria-label='Hauptnavigation'>
+        <ul class='nav-links'>
+          <li><a href='' class='nav-link active'>Home</a></li>
+          <li><a href='leistungen/' class='nav-link'>Leistungen</a></li>
+          <li><a href='praxis/' class='nav-link'>Über uns</a></li>
+          <li><a href='faq/' class='nav-link'>FAQ</a></li>
+          <li><a href='kontakt/' class='nav-link'>Kontakt</a></li>
+        </ul>
+      </nav>
+      <button class='nav-toggle' aria-label='Menü öffnen' aria-expanded='false'>
+        <span class='nav-toggle-bar'></span>
+        <span class='nav-toggle-bar'></span>
+        <span class='nav-toggle-bar'></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class='mobile-drawer-backdrop'></div>
+  <div class='mobile-drawer'>
+    <ul class='mobile-nav-links'>
+      <li><a href='' class='mobile-nav-link active'>Home</a></li>
+      <li><a href='leistungen/' class='mobile-nav-link'>Leistungen</a></li>
+      <li><a href='praxis/' class='mobile-nav-link'>Über uns</a></li>
+      <li><a href='faq/' class='mobile-nav-link'>FAQ</a></li>
+      <li><a href='kontakt/' class='mobile-nav-link'>Kontakt</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class='section hero' aria-labelledby='hero-heading'>
+    <div class='container hero-grid'>
+      <div class='hero-content reveal'>
+        <span class='tech-label'>BETRIEB STATT BUZZWORD</span>
+        <h1 id='hero-heading' class='hero-title'>Belastbare KI-Systeme für Ihren operativen Alltag</h1>
+        <p class='hero-subline'>Vergessen Sie instabile Demo-Lösungen. Wir entwickeln und betreiben wartbare, messbare KI-Automationen und Agenten-Systeme mit sauberer Prozessarchitektur und kontrollierter Governance.</p>
+        <div class='hero-ctas'>
+          <a href='kontakt/' class='btn btn-primary'>Process Scan anfragen</a>
+          <a href='leistungen/' class='btn btn-secondary'>Unsere Leistungen</a>
+        </div>
+        <div class='trust-chips'>
+          <span class='trust-chip'><span class='trust-chip-dot'></span>Sitz in Braunschweig</span>
+          <span class='trust-chip'><span class='trust-chip-dot'></span>Fehlerlogiken & Alerts</span>
+          <span class='trust-chip'><span class='trust-chip-dot'></span>100% DSGVO-konform</span>
+        </div>
+      </div>
+      <div class='hero-visual reveal'>
+        <div class='dashboard-mockup'>
+          <div class='dashboard-header'>
+            <div class='dashboard-dots'>
+              <span class='dashboard-dot'></span>
+              <span class='dashboard-dot'></span>
+              <span class='dashboard-dot'></span>
+            </div>
+            <span class='dashboard-title'>system_status_ok.sh</span>
+          </div>
+          <div class='dashboard-image-container'>
+            <!-- KM_IMAGE_REF: assets/img/image.png -->
+            <img src='assets/img/image.png' data-km-image='assets/img/image.png' alt='High-end abstract keyvisual representing stable process orchestration and AI agent networks.' loading='lazy'>
+          </div>
+          <div class='dashboard-code'>
+            [STATUS] Initializing AI Agent Network...
+[OK] API Connection to CRM established.
+[OK] Idempotency Guard: Active.
+[MONITORING] Uptime: 99.98%
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class='section' aria-labelledby='intro-heading'>
+    <div class='container'>
+      <div class='section-header reveal'>
+        <span class='tech-label'>PROZESS-STABILITÄT</span>
+        <h2 id='intro-heading' class='section-title'>Warum die meisten KI-Projekte scheitern – und wie wir es grundlegend anders machen</h2>
+      </div>
+      <div class='contact-grid'>
+        <div class='reveal'>
+          <p style='margin-bottom: 20px;'>In der heutigen Technologielandschaft wimmelt es von beeindruckenden Demonstrationen und Prototypen. Doch der Schritt vom spektakulären Proof of Concept (PoC) zum stabilen, täglichen Produktivbetrieb ist die größte Hürde moderner IT-Projekte. Viele Unternehmen investieren in isolierte KI-Lösungen, die im Labor glänzen, aber im rauen Alltag der operativen Systeme aufgrund fehlender Fehlerlogiken, unkontrollierter Autonomie oder mangelnder Schnittstellenstabilität kläglich scheitern. Sobald eine API ein unerwartetes Format liefert oder das Netzwerk kurzzeitig schwankt, bricht das gesamte Kartenhaus zusammen.</p>
+          <p>Bei der Qualitaets Test GmbH verfolgen wir ein klares Credo: Betrieb statt Buzzword. Wir bauen keine unkontrollierbaren Blackbox-Systeme, sondern integrieren künstliche Intelligenz als verlässlichen, deterministischen Baustein in Ihre bestehende Prozesslandschaft. Jede von uns entwickelte Automation basiert auf einer sauberen Software-Architektur, die Ausfallsicherheit, Nachvollziehbarkeit und Skalierbarkeit von Anfang an in den Mittelpunkt stellt.</p>
+        </div>
+        <div class='reveal' style='display: flex; flex-direction: column; gap: 24px;'>
+          <div class='card'>
+            <h3 class='card-title'>Kontrollierte Governance</h3>
+            <p class='card-desc'>Keine unkontrollierte Blackbox-Autonomie. Unsere Systeme arbeiten mit klaren Freigabeprozessen, sodass die menschliche Kontrolle stets gewahrt bleibt.</p>
+          </div>
+          <div class='card'>
+            <h3 class='card-title'>Robuste Fehlerlogiken</h3>
+            <p class='card-desc'>Ingerierte Retries und proaktive Alerts fangen API-Ausfälle und Dateninkonsistenzen ab, bevor sie Ihren Betrieb stören können.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars Section -->
+  <section class='section' style='background: rgba(255,255,255,0.01);' aria-labelledby='pillars-heading'>
+    <div class='container'>
+      <div class='section-header reveal'>
+        <span class='tech-label'>ARCHITEKTUR-FUNDAMENT</span>
+        <h2 id='pillars-heading' class='section-title'>Unsere vier Säulen für ausfallsichere Automatisierung</h2>
+        <p class='section-subtitle'>Wie wir sicherstellen, dass Ihre KI-Systeme langfristig und stabil einen echten Beitrag zur Wertschöpfung leisten.</p>
+      </div>
+      <div class='pillars-grid'>
+        <div class='pillar-card reveal'>
+          <h3 class='pillar-title'>Saubere Prozessarchitektur</h3>
+          <p class='card-desc'>Jeder automatisierte Ablauf wird von uns präzise modelliert und strukturiert. Wir zerlegen komplexe Aufgaben in deterministische Teilschritte. Dadurch bleibt das Gesamtsystem jederzeit verständlich, wartbar und erweiterbar.</p>
+        </div>
+        <div class='pillar-card reveal'>
+          <h3 class='pillar-title'>Robuste Fehlerlogik</h3>
+          <p class='card-desc'>Im realen Betrieb kommt es unweigerlich zu API-Ausfällen oder unerwarteten Datenstrukturen. Unsere Systeme sind darauf vorbereitet: Durch intelligente Wiederholungsmechanismen (Retries) und sofortige Alerts geht kein Datenpunkt verloren.</p>
+        </div>
+        <div class='pillar-card reveal'>
+          <h3 class='pillar-title'>Idempotenz & Konsistenz</h3>
+          <p class='card-desc'>Was passiert, wenn ein Prozess mittendrin abbricht? Unsere Architekturen sind konsequent idempotent gestaltet. Das bedeutet, dass die mehrfache Ausführung desselben Prozesses niemals zu doppelten Buchungen oder redundanten E-Mails führt.</p>
+        </div>
+        <div class='pillar-card reveal'>
+          <h3 class='pillar-title'>Governance & Kontrolle</h3>
+          <p class='card-desc'>Wir glauben nicht an die vollkommen unkontrollierte Autonomie von KI-Agenten. Unsere Systeme arbeiten nach dem Prinzip der 'Human-in-the-Loop'-Governance. Die finale Freigabe verbleibt immer bei Ihren Mitarbeitern.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview Section -->
+  <section class='section' aria-labelledby='services-heading'>
+    <div class='container'>
+      <div class='section-header reveal'>
+        <span class='tech-label'>LEISTUNGSSPEKTRUM</span>
+        <h2 id='services-heading' class='section-title'>Maßgeschneiderte Lösungen für Ihren digitalen Vorsprung</h2>
+        <p class='section-subtitle'>Von der ersten Analyse bis zum kontinuierlichen Betrieb begleiten wir Sie auf dem Weg zu hocheffizienten Prozessen.</p>
+      </div>
+      <div class='services-grid'>
+        <div class='service-card reveal'>
+          <div class='service-card-image'>
+            <!-- KM_IMAGE_REF: assets/img/image_2.png -->
+            <img src='assets/img/image_2.png' data-km-image='assets/img/image_2.png' alt='Abstract representation of seamless API integration and automated data pipelines.' loading='lazy'>
+          </div>
+          <div class='service-card-content'>
+            <h3 class='card-title'>KI- & LLM-Systeme</h3>
+            <p class='card-desc'>Wir orchestrieren komplexe Workflows unter Einbindung moderner Large Language Models (LLMs). Dabei binden wir alle relevanten Schnittstellen an – von Ihrem CRM- und ERP-System über Microsoft 365 bis hin zu Google-APIs.</p>
+          </div>
+        </div>
+        <div class='service-card reveal'>
+          <div class='service-card-image'>
+            <!-- KM_IMAGE_REF: assets/img/image_3.png -->
+            <img src='assets/img/image_3.png' data-km-image='assets/img/image_3.png' alt='High-tech collaboration and process scanning workshops.' loading='lazy'>
+          </div>
+          <div class='service-card-content'>
+            <h3 class='card-title'>Consulting & Workshops</h3>
+            <p class='card-desc'>Erfolgreiche Automatisierung beginnt mit einer präzisen Analyse. In unserem strukturierten 'Process Scan' durchleuchten wir Ihre bestehenden Arbeitsabläufe und decken konkrete Einsparpotenziale auf.</p>
+          </div>
+        </div>
+        <div class='service-card reveal'>
+          <div class='service-card-image'>
+            <!-- KM_IMAGE_REF: assets/img/image_4.png -->
+            <img src='assets/img/image_4.png' data-km-image='assets/img/image_4.png' alt='Modular prototype assembly representing fast MVP development.' loading='lazy'>
+          </div>
+          <div class='service-card-content'>
+            <h3 class='card-title'>MVP-Entwicklung</h3>
+            <p class='card-desc'>Große Visionen erfordern schnelle, greifbare Ergebnisse. Innerhalb von nur 2 bis 4 Wochen entwickeln wir für Sie ein voll funktionsfähiges, produktives Minimal Viable Product (MVP).</p>
+          </div>
+        </div>
+        <div class='service-card reveal'>
+          <div class='service-card-image'>
+            <!-- KM_IMAGE_REF: assets/img/image_5.png -->
+            <img src='assets/img/image_5.png' data-km-image='assets/img/image_5.png' alt='Futuristic dashboard representation of continuous operations and monitoring.' loading='lazy'>
+          </div>
+          <div class='service-card-content'>
+            <h3 class='card-title'>Betrieb & Monitoring</h3>
+            <p class='card-desc'>Nach dem Go-Live lassen wir Sie nicht allein. Wir übernehmen das kontinuierliche Monitoring, tracken relevante Leistungsindikatoren (KPIs) und sorgen für den stabilen Betrieb Ihrer Systeme.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section class='section' style='background: rgba(255,255,255,0.01);' aria-labelledby='use-cases-heading'>
+    <div class='container'>
+      <div class='section-header reveal'>
+        <span class='tech-label'>EINSATZFELDER</span>
+        <h2 id='use-cases-heading' class='section-title'>Typische Einsatzfelder in der Praxis</h2>
+        <p class='section-subtitle'>Erfahren Sie, wie wir künstliche Intelligenz und strukturierte Automationen einsetzen, um alltägliche Herausforderungen im Backoffice und Vertrieb zu lösen.</p>
+      </div>
+      <div class='use-cases-grid'>
+        <div class='use-case-card reveal'>
+          <h3 class='card-title' style='font-size: 1.15rem;'>Support-Triage & Ticket-Klassifizierung</h3>
+          <p class='card-desc'>Eingehende Kundenanfragen über verschiedene Kanäle werden automatisch analysiert, nach Dringlichkeit und Thema klassifiziert und direkt an die zuständigen Mitarbeiter oder Abteilungen weitergeleitet.</p>
+        </div>
+        <div class='use-case-card reveal'>
+          <h3 class='card-title' style='font-size: 1.15rem;'>Sales Lead-Scoring & Anreicherung</h3>
+          <p class='card-desc'>Neue Leads werden in Echtzeit auf Basis vordefinierter Kriterien bewertet und mit öffentlich zugänglichen Unternehmensdaten angereichert. Ihr Vertriebsteam erhält sofort qualifizierte Profile.</p>
+        </div>
+        <div class='use-case-card reveal'>
+          <h3 class='card-title' style='font-size: 1.15rem;'>Backoffice-Dokumentenverarbeitung</h3>
+          <p class='card-desc'>Egal ob Rechnungen, Lieferscheine oder Verträge: Unsere Systeme extrahieren die relevanten Daten fehlerfrei, gleichen sie mit Ihren Datenbanken ab und übergeben sie strukturiert an Ihre ERP-Software.</p>
+        </div>
+        <div class='use-case-card reveal'>
+          <h3 class='card-title' style='font-size: 1.15rem;'>Operations-Datenflüsse & Synchronisation</h3>
+          <p class='card-desc'>Schluss mit manueller Datenpflege zwischen verschiedenen Software-Inseln. Wir synchronisieren Ihre operativen Datenströme in Echtzeit über Systemgrenzen hinweg.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- References Section (Carousel) -->
+  <section class='section' aria-labelledby='references-heading'>
+    <div class='container'>
+      <div class='section-header reveal'>
+        <span class='tech-label'>ERFOLGSPROJEKTE</span>
+        <h2 id='references-heading' class='section-title'>Erfolgreich realisierte Referenzprojekte</h2>
+        <p class='section-subtitle'>Ein Auszug aus Systemen, die wir bereits erfolgreich konzipiert, entwickelt und in den produktiven Betrieb überführt haben.</p>
+      </div>
+      <div class='carousel-container reveal'>
+        <div class='carousel-track'>
+          <div class='carousel-slide'>
+            <div class='card' style='height: 100%;'>
+              <span class='tech-label'>GEN_AI</span>
+              <h3 class='card-title'>Website-Generator</h3>
+              <p class='card-desc'>Ein automatisiertes System zur dynamischen Generierung und Aktualisierung von zielgruppenspezifischen Landingpages auf Basis strukturierter Eingabedaten, nahtlos integriert in bestehende Content-Management-Systeme.</p>
+            </div>
+          </div>
+          <div class='carousel-slide'>
+            <div class='card' style='height: 100%;'>
+              <span class='tech-label'>ANALYSIS_ENGINE</span>
+              <h3 class='card-title'>LV-Analysator</h3>
+              <p class='card-desc'>Ein intelligentes Tool zur automatischen Analyse, Strukturierung und Bewertung von komplexen Leistungsverzeichnissen und Ausschreibungsdokumenten, das Kalkulatoren wertvolle Stunden manueller Arbeit erspart.</p>
+            </div>
+          </div>
+          <div class='carousel-slide'>
+            <div class='card' style='height: 100%;'>
+              <span class='tech-label'>MONITORING_BOT</span>
+              <h3 class='card-title'>Bauvorhaben-Radar</h3>
+              <p class='card-desc'>Ein automatisiertes Monitoring-System, das öffentlich zugängliche Quellen, Amtsblätter und Datenbanken nach relevanten Bauvorhaben scannt, filtert und qualifizierte Vertriebs-Leads generiert.</p>
+            </div>
+          </div>
+          <div class='carousel-slide'>
+            <div class='card' style='height: 100%;'>
+              <span class='tech-label'>VOICE_AI</span>
+              <h3 class='card-title'>Voice Agent</h3>
+              <p class='card-desc'>Ein intelligenter, sprachbasierter Assistent zur automatisierten Entgegennahme, Vorqualifizierung und Strukturierung von telefonischen Kundenanfragen, der nahtlos an das interne Ticket- und CRM-System angebunden ist.</p>
+            </div>
+          </div>
+        </div>
+        <div class='carousel-nav'>
+          <button class='carousel-btn carousel-btn--prev' aria-label='Vorheriges Projekt'>&larr;</button>
+          <button class='carousel-btn carousel-btn--next' aria-label='Nächstes Projekt'>&rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class='section' style='background: rgba(255,255,255,0.01);' aria-labelledby='process-heading'>
+    <div class='container' style='max-width: 800px;'>
+      <div class='section-header reveal' style='text-align: center; margin-left: auto; margin-right: auto;'>
+        <span class='tech-label'>IMPLEMENTIERUNGS-PFAD</span>
+        <h2 id='process-heading' class='section-title'>In 5 Schritten zu Ihrer stabilen KI-Automation</h2>
+        <p class='section-subtitle'>Unser strukturierter Weg garantiert Ihnen maximale Transparenz, schnelle Ergebnisse und absolute Betriebssicherheit.</p>
+      </div>
+      <div class='process-steps'>
+        <div class='process-step reveal'>
+          <div class='process-step-number'>01</div>
+          <div class='process-step-content'>
+            <h3 class='card-title'>Process Scan & Analyse</h3>
+            <p class='card-desc'>Wir analysieren Ihre bestehenden Workflows im Detail, identifizieren Ineffizienzen und ermitteln die profitabelsten Hebel für eine Automatisierung.</p>
+          </div>
+        </div>
+        <div class='process-step reveal'>
+          <div class='process-step-number'>02</div>
+          <div class='process-step-content'>
+            <h3 class='card-title'>Architektur-Design</h3>
+            <p class='card-desc'>Wir entwerfen eine saubere, modulare Systemarchitektur inklusive aller Schnittstellen, Fehlerlogiken, Idempotenz-Sicherungen und Governance-Regeln.</p>
+          </div>
+        </div>
+        <div class='process-step reveal'>
+          <div class='process-step-number'>03</div>
+          <div class='process-step-content'>
+            <h3 class='card-title'>MVP-Entwicklung</h3>
+            <p class='card-desc'>Innerhalb von 2 bis 4 Wochen realisieren wir ein erstes, produktives Modul, das sofort echten Mehrwert in Ihrem operativen Alltag stiftet.</p>
+          </div>
+        </div>
+        <div class='process-step reveal'>
+          <div class='process-step-number'>04</div>
+          <div class='process-step-content'>
+            <h3 class='card-title'>Integration & Testing</h3>
+            <p class='card-desc'>Wir binden das System nahtlos in Ihre bestehende IT-Landschaft ein und testen es unter realen Bedingungen intensiv auf Herz und Nieren.</p>
+          </div>
+        </div>
+        <div class='process-step reveal'>
+          <div class='process-step-number'>05</div>
+          <div class='process-step-content'>
+            <h3 class='card-title'>Betrieb & Skalierung</h3>
+            <p class='card-desc'>Wir überwachen den laufenden Betrieb, optimieren die Performance kontinuierlich auf Basis echter KPIs und bauen das System schrittweise aus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class='section cta-section' aria-labelledby='cta-heading'>
+    <div class='container'>
+      <div class='cta-content reveal'>
+        <span class='tech-label'>JETZT STARTEN</span>
+        <h2 id='cta-heading' class='cta-title'>Bereit für echte Effizienz statt leerer Versprechungen?</h2>
+        <p class='cta-text'>Lassen Sie uns gemeinsam analysieren, welche Prozesse in Ihrem Unternehmen das größte Potenzial für eine stabile, wartbare KI-Automatisierung bieten. Buchen Sie jetzt Ihren unverbindlichen Process Scan und legen Sie das Fundament für zukunftssichere Abläufe.</p>
+        <a href='kontakt/' class='btn btn-primary'>Jetzt Erstgespräch vereinbaren</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class='footer'>
+    <div class='container'>
+      <div class='footer-grid'>
+        <div class='footer-brand'>
+          <a href='' class='logo'>
+            <span class='logo-dot'></span>
+            Qualitaets Test
+          </a>
+          <p class='footer-desc'>Betrieb statt Buzzword: Qualitaets Test GmbH entwickelt belastbare, wartbare und messbare KI-Automationen und Agenten-Systeme für Ihren operativen Alltag.</p>
+        </div>
+        <div>
+          <h3 class='footer-title'>Navigation</h3>
+          <ul class='footer-links'>
+            <li><a href='' class='footer-link'>Home</a></li>
+            <li><a href='leistungen/' class='footer-link'>Leistungen</a></li>
+            <li><a href='praxis/' class='footer-link'>Über uns</a></li>
+            <li><a href='faq/' class='footer-link'>FAQ</a></li>
+            <li><a href='kontakt/' class='footer-link'>Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class='footer-title'>Rechtliches</h3>
+          <ul class='footer-links'>
+            <li><a href='impressum/' class='footer-link'>Impressum</a></li>
+            <li><a href='datenschutz/' class='footer-link'>Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class='footer-bottom'>
+        <p>&copy; 2025 Qualitaets Test GmbH. Alle Rechte vorbehalten.</p>
+        <p>Sitz der Gesellschaft: Braunschweig</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id='cookie-banner' class='cookie-banner'>
+    <h4 class='cookie-title'>Cookie-Einstellungen</h4>
+    <p class='cookie-text'>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu optimieren. Einige sind technisch notwendig, andere helfen uns, die Website zu verbessern.</p>
+    <div class='cookie-buttons'>
+      <button id='cookie-accept' class='btn btn-primary' style='padding: 8px 16px; min-height: auto; font-size: 0.85rem;'>Akzeptieren</button>
+      <button id='cookie-decline' class='btn btn-secondary' style='padding: 8px 16px; min-height: auto; font-size: 0.85rem;'>Ablehnen</button>
+    </div>
+  </div>
+
+  <!-- Sticky Context CTA -->
+  <div class='sticky-cta'>
+    <a href='kontakt/' class='btn btn-primary' style='box-shadow: var(--shadow-lift);'>Process Scan anfragen</a>
+  </div>
+
+  <!-- Global Lightbox -->
+  <div id='km-lightbox'>
+    <button class='lightbox-close' aria-label='Schließen'>&times;</button>
+    <div class='lightbox-content'>
+      <img class='lightbox-img' src='' alt='Vergrößerte Ansicht'>
+    </div>
+  </div>
+
+  <script src='assets/js/main.js'></script>
+
+
+<style id='km-chat-fix'>
+/*KM_CHAT_SANITIZED*/
+/* ensure chat never blocks the whole page */
+.n8n-chat__overlay, .n8n-chat-overlay, .n8n-chat-widget__overlay, .n8n-chat-widget-overlay {
+  pointer-events: none !important;
+  background: transparent !important;
+}
+.n8n-chat__overlay * , .n8n-chat-overlay * , .n8n-chat-widget__overlay * , .n8n-chat-widget-overlay * {
+  pointer-events: none !important;
+}
+/* keep the actual launcher/window clickable */
+.n8n-chat, .n8n-chat-widget, .n8n-chat-widget * {
+  pointer-events: auto;
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+<style id="km-chat-theme">
+  :root {
+    --chat--font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --chat--color-primary: #f97316;
+    --chat--color-primary-shade-50: #fa8c40;
+    --chat--color-secondary: #facc15;
+    --chat--color-light: #f8fafc;
+    --chat--color-dark: #050a14;
+
+    --chat--window--width: min(420px, 100vw);
+    --chat--window--height: 74vh;
+    --chat--border-radius: 22px;
+
+    --chat--header--background: transparent;
+    --chat--header--color: #f8fafc;
+    --chat--header--padding: 0.9rem 1.1rem;
+    --chat--heading--font-size: 1rem;
+    --chat--subtitle--font-size: 0.78rem;
+
+    --chat--message--bot--background: #f97b24;
+    --chat--message--bot--color: #0b1220;
+    --chat--message--user--background: #0b1220;
+    --chat--message--user--color: #e5e7eb;
+
+    --chat--launcher--background: #f97316;
+    --chat--launcher--color: #0b1220;
+    --chat--launcher--border-radius: 999px;
+  }
+
+  @keyframes km-widget-fade-up {
+    from { opacity: 0; transform: translateY(14px) scale(0.985); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes km-launcher-pulse {
+    0%   { box-shadow: 0 0 0 0 #893f0c; transform: translateY(0); }
+    60%  { box-shadow: 0 0 0 14px rgba(0,0,0,0); transform: translateY(-1px); }
+    100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); transform: translateY(0); }
+  }
+
+  /* Window: modern, ruhig, kein "klobiger Kasten" */
+  .chat-window {
+    position: relative;
+    border-radius: var(--chat--border-radius);
+    overflow: hidden;
+    background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.10), transparent 60%),
+      radial-gradient(circle at 120% 0%, rgba(255,255,255,0.07), transparent 55%),
+      rgba(8, 15, 28, 0.94);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow:
+      0 24px 70px rgba(0,0,0,0.45),
+      0 10px 28px rgba(0,0,0,0.30);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: km-widget-fade-up 240ms cubic-bezier(.2,.8,.2,1);
+  }
+
+  /* Header: Gradient + feine Linie */
+  .chat-window header {
+    background: linear-gradient(135deg, #422415 0%, #f99216 45%, #fbd231 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+  }
+
+  /* Messages: mehr Luft, weniger "billig" */
+  .chat-messages {
+    padding: 0.85rem 0.85rem 0.95rem;
+  }
+  .chat-message {
+    border-radius: 18px !important;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    box-shadow: none;
+  }
+  .chat-message.chat-message--bot {
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+  .chat-message.chat-message--user {
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Input: clean, modern, better focus */
+  .chat-input {
+    padding: 0.75rem 0.75rem 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    background: rgba(6, 10, 18, 0.72);
+    backdrop-filter: blur(8px);
+  }
+  .chat-input textarea,
+  .chat-input input {
+    border-radius: 14px !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    background: rgba(255,255,255,0.06) !important;
+    color: #e5e7eb !important;
+    outline: none !important;
+  }
+  .chat-input textarea:focus,
+  .chat-input input:focus {
+    border-color: #fb9650 !important;
+    box-shadow: 0 0 0 4px #572808 !important;
+  }
+
+  /* Buttons / Send */
+  .chat-input button {
+    border-radius: 14px !important;
+    background: #f97316 !important;
+    color: #0b1220 !important;
+    border: 1px solid rgba(255,255,255,0.10) !important;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+    transition: transform 140ms ease, filter 140ms ease;
+  }
+  .chat-input button:hover { transform: translateY(-1px); filter: brightness(1.03); }
+
+  /* Launcher: weniger "altbacken" + optionales Label */
+  .chat-launcher {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+    box-shadow: 0 18px 44px rgba(0,0,0,0.38);
+    animation: km-launcher-pulse 3.2s ease-in-out infinite;
+  }
+  .chat-launcher:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.03);
+  }
+  .chat-launcher::before {
+    content: "Chat mit Qualitaets Test GmbH";
+    position: absolute;
+    bottom: 120%;
+    right: 0;
+    transform: translateY(-4px);
+    background: rgba(8, 15, 28, 0.96);
+    color: #e5e7eb;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    border: 1px solid rgba(255,255,255,0.14);
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .chat-launcher::before { opacity: 0.9; font-size: 0.64rem; right: 4px; }
+  }
+
+  /* Mobile: App-Feeling */
+  @media (max-width: 768px) {
+    .chat-window {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: calc(100vh - 82px) !important;
+      bottom: 0 !important;
+      right: 0 !important;
+      border-radius: 20px 20px 0 0;
+      border-left: none;
+      border-right: none;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .chat-window, .chat-launcher { animation: none !important; }
+    .chat-input button { transition: none !important; }
+  }
+</style>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://n8n.srv1000937.hstgr.cloud/webhook/km-chat/chat',
+    webhookConfig: { method: 'POST', headers: {} },
+    mode: 'window',
+    chatInputKey: 'chatInput',
+    chatSessionKey: 'sessionId',
+    loadPreviousSession: true,
+    metadata: { tenantId: 'km-ainemix-de' },
+    showWelcomeScreen: false,
+    defaultLanguage: 'de',
+    initialMessages: [
+      'Willkommen bei Qualitaets Test GmbH! 👋',
+      'Wie können wir Ihnen konkret weiterhelfen?'
+    ],
+    i18n: {
+      de: {
+        title: 'Chat mit Qualitaets Test GmbH',
+        subtitle: 'Schnelle, persönliche Antworten zu Leistungen, Terminen & Angeboten.',
+        footer: '',
+        getStarted: 'Chat starten',
+        inputPlaceholder: 'Kurz Ihre Frage hier eintippen …'
+      }
+    }
+  });
+</script>
+</body>
+</html>
